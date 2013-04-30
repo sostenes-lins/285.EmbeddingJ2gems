@@ -1,86 +1,86 @@
-\documentclass[a4paper,10pt,twoside]{article}
-
-%===========PACOTES
-\usepackage[body={170mm,235mm}]{geometry}
-%\usepackage[portuguese]{babel}
-\usepackage{a1}
-\usepackage[english]{babel}
-\usepackage[latin1]{inputenc} %permite o uso de acentos
-%\usepackage[dvips]{color}
-\usepackage{amsfonts,amssymb}
-%\usepackage{epsfig}
-\usepackage{amsmath}
-\usepackage{graphicx}	
-
-% makeidx
-\usepackage{makeidx}
-% make index
-\makeindex
-%\usepackage[pdftex]{graphicx}
-
-
-\def\mapright#1#2#3{\smash{\mathop{\hbox to
-#3{\rightarrowfill}}\limits^{#1}_{#2}}}
-
-\def\mapleft#1#2#3{\smash{\mathop{\hbox to
-#3{\leftarrowfill}}\limits^{#1}_{#2}}}
-
-\def\mapright#1#2{\smash{\mathop{\hbox to 0.90cm{\rightarrowfill}}\limits^{#1}_{#2}}}
-\def\mapleft#1#2{\smash{\mathop{\hbox to 0.90cm{\leftarrowfill}}\limits^{#1}_{#2}}}
-
-\def\mapleftright#1#2{\smash{\mathop{\hbox to 0.80cm{\leftarrowfill \rightarrowfill}}\limits^{#1}_{#2}}}
-\def\ext{\times \! \vrule depth0pt height5pt width0.35pt}
-
-\def\H{\mathcal H}
-\def\D{\mathcal D}
-\def\B{\mathcal B}
-\def\C{\mathbb C}
-\def\R{\mathbb R}
-\def\S{\mathbb S}
-\def\U{\mathcal U}
-\def\Z{\mathbb Z}
-
-\title{Framed link presentations of 3-manifolds by an ${O}(n^2)$ algorithm, {III}:
-  geometric complex $\mathcal{H}_n^\star$ embedded into $\mathbb{R}^3$
-\footnote{2010 Mathematics Subject Classification: 
-57M25 and 57Q15 (primary), 57M27 and 57M15 (secondary)}} 
-\author{Sóstenes Lins and Ricardo Machado}
-
-\date{\today}
-
-
-\begin{document}
+% \documentclass[a4paper,10pt,twoside]{article}
+% 
+% %===========PACOTES
+% \usepackage[body={170mm,235mm}]{geometry}
+% %\usepackage[portuguese]{babel}
+% \usepackage{a1}
+% \usepackage[english]{babel}
+% \usepackage[latin1]{inputenc} %permite o uso de acentos
+% %\usepackage[dvips]{color}
+% \usepackage{amsfonts,amssymb}
+% %\usepackage{epsfig}
+% \usepackage{amsmath}
+% \usepackage{graphicx}	
+% 
+% % makeidx
+% \usepackage{makeidx}
+% % make index
+% \makeindex
+% %\usepackage[pdftex]{graphicx}
+% 
+% 
+% \def\mapright#1#2#3{\smash{\mathop{\hbox to
+% #3{\rightarrowfill}}\limits^{#1}_{#2}}}
+% 
+% \def\mapleft#1#2#3{\smash{\mathop{\hbox to
+% #3{\leftarrowfill}}\limits^{#1}_{#2}}}
+% 
+% \def\mapright#1#2{\smash{\mathop{\hbox to 0.90cm{\rightarrowfill}}\limits^{#1}_{#2}}}
+% \def\mapleft#1#2{\smash{\mathop{\hbox to 0.90cm{\leftarrowfill}}\limits^{#1}_{#2}}}
+% 
+% \def\mapleftright#1#2{\smash{\mathop{\hbox to 0.80cm{\leftarrowfill \rightarrowfill}}\limits^{#1}_{#2}}}
+% \def\ext{\times \! \vrule depth0pt height5pt width0.35pt}
+% 
+% \def\H{\mathcal H}
+% \def\D{\mathcal D}
+% \def\B{\mathcal B}
+% \def\C{\mathbb C}
+% \def\R{\mathbb R}
+% \def\S{\mathbb S}
+% \def\U{\mathcal U}
+% \def\Z{\mathbb Z}
+% 
+% \title{Framed link presentations of 3-manifolds by an ${O}(n^2)$ algorithm, {III}:
+%   geometric complex $\mathcal{H}_n^\star$ embedded into $\mathbb{R}^3$
+% \footnote{2010 Mathematics Subject Classification: 
+% 57M25 and 57Q15 (primary), 57M27 and 57M15 (secondary)}} 
+% \author{Sóstenes Lins and Ricardo Machado}
+% 
+% \date{\today}
 
 
-\maketitle
-
-\begin{abstract}
-In this final part of a 3-part paper we introduce
-the pair of ``wings'' of the abstract 
-PL-colored complexes $\mathcal{H}_{m}^\star$, described in the second paper.
-The wings, via a weight enhanced Tutte's barycentric 
-embedding of a planar map, produce the unexpected reformutation of a 3-dimensionl problem
-into a 2-dimensional one. The total number of edges in 
-each one of the pair of final wings is less than $8n-5$. Tutte's method is applied $O(n)$ times
-to each one of the 2 wings in the final pair to assure rectilinearity of the embeddings of the planar maps,
-which include the final wings. A cone construction over the final wings provides a PL-complex $\mathcal{H}_1^\diamond$,
-which contain the set of 0-simplices $\{a_1, a_2,\ldots,a_f\} \cup \{b_1, b_2,\ldots,b_g\}$ (as defined in the 
-second part of the article) properly fixed in $\mathbb{R}^3$.
-The other 0-simplices are obtained by bisections of segments linking previously defined points.
-This implies that $\mathcal{H}_n$ is PL-embedded into $\mathbb{R}^3$. 
-We then conclude the surgery description of
-the 3-manifold induced by the gem with its resolution by 
-defining some disjoint cylinders contained in  $\mathcal{H}_{n}^\star$,
-directly from the hinges (dual of the twistors of the resolution), in a 1-1 correspondence. 
-The medial curves of the cylinders define the link we seek. The framing of a medial curve is
-the linking number of the boundary components of the corresponding cylinder.
-The analysis of the whole proccess
-shows that the memory and time requirement to complete the algorithm is
-$O(n^2)$. Data for the Weber-Seifert 3-manifold, which answers Jeffrey Weeks's question
-is given in the appendix. It consists of a link with 142 crossings but it admits simplifications. 
+%\begin{document}
 
 
-\end{abstract}
+
+% 
+% \begin{abstract}
+% In this final part of a 3-part paper we introduce
+% the pair of ``wings'' of the abstract 
+% PL-colored complexes $\mathcal{H}_{m}^\star$, described in the second paper.
+% The wings, via a weight enhanced Tutte's barycentric 
+% embedding of a planar map, produce the unexpected reformutation of a 3-dimensionl problem
+% into a 2-dimensional one. The total number of edges in 
+% each one of the pair of final wings is less than $8n-5$. Tutte's method is applied $O(n)$ times
+% to each one of the 2 wings in the final pair to assure rectilinearity of the embeddings of the planar maps,
+% which include the final wings. A cone construction over the final wings provides a PL-complex $\mathcal{H}_1^\diamond$,
+% which contain the set of 0-simplices $\{a_1, a_2,\ldots,a_f\} \cup \{b_1, b_2,\ldots,b_g\}$ (as defined in the 
+% second part of the article) properly fixed in $\mathbb{R}^3$.
+% The other 0-simplices are obtained by bisections of segments linking previously defined points.
+% This implies that $\mathcal{H}_n$ is PL-embedded into $\mathbb{R}^3$. 
+% We then conclude the surgery description of
+% the 3-manifold induced by the gem with its resolution by 
+% defining some disjoint cylinders contained in  $\mathcal{H}_{n}^\star$,
+% directly from the hinges (dual of the twistors of the resolution), in a 1-1 correspondence. 
+% The medial curves of the cylinders define the link we seek. The framing of a medial curve is
+% the linking number of the boundary components of the corresponding cylinder.
+% The analysis of the whole proccess
+% shows that the memory and time requirement to complete the algorithm is
+% $O(n^2)$. Data for the Weber-Seifert 3-manifold, which answers Jeffrey Weeks's question
+% is given in the appendix. It consists of a link with 142 crossings but it admits simplifications. 
+% 
+% 
+% \end{abstract}
 
 
 \section{Wings as seeds for obtaining the dual PL-complex $\mathcal{H}_n^\star$}
@@ -1587,39 +1587,39 @@ Pillow $\mathcal{P}_{12}^\star \leftarrow \nabla_{1,12}\cup \nabla_{2,12}$
 
 
 %-----------------------------------
-\bibliographystyle{plain}
+%\bibliographystyle{plain}
 %\bibliographystyle{is-alpha}
 %\addcontentsline{toc}{bibliografia}{\MakeTextUppercase{Referências Bibliográficas}}
 %\bibliography{d:/slsl\3.DadosSostenes.35.ArtigosLivros.bibtexGoogleScholar/bibtexIndex.bib} % bib file is slsl.bib
 %\bibliography{~/home/ricardo/Dropbox/35.ArtigosLivros.bibtexGoogleScholar/bibtexIndex.bib}
-\bibliography{bibtexIndex.bib}
+%\bibliography{bibtexIndex.bib}
 %\bibliography{slsl}
 
-\vspace{10mm}
-\begin{center}
+% \vspace{10mm}
+% \begin{center}
+% 
+% 
+% \hspace{7mm}
+% \begin{tabular}{l}
+%    S\'ostenes L. Lins\\
+%    Centro de Inform\'atica, UFPE \\
+%    Recife--PE \\
+%    Brazil\\
+%    sostenes@cin.ufpe.br
+% \end{tabular}
+% \hspace{20mm}
+% \begin{tabular}{l}
+%    Ricardo N. Machado\\
+%    Núcleo de Formação de Docentes, UFPE\\
+%    Caruaru--PE \\
+%    Brazil\\
+%    ricardonmachado@gmail.com
+% \end{tabular}
+% 
+% \end{center}
 
 
-\hspace{7mm}
-\begin{tabular}{l}
-   S\'ostenes L. Lins\\
-   Centro de Inform\'atica, UFPE \\
-   Recife--PE \\
-   Brazil\\
-   sostenes@cin.ufpe.br
-\end{tabular}
-\hspace{20mm}
-\begin{tabular}{l}
-   Ricardo N. Machado\\
-   Núcleo de Formação de Docentes, UFPE\\
-   Caruaru--PE \\
-   Brazil\\
-   ricardonmachado@gmail.com
-\end{tabular}
-
-\end{center}
-
-
-\end{document}
+%\end{document}
 
 
 
