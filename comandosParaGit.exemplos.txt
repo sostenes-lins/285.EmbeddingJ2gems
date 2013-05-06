@@ -1,0 +1,8 @@
+git push git@github.com:sostenes-lins/285.EmbeddingJ2gems.git ricardo
+
+
+
+git pull significa
+git fetch origin <branch-name> && git merge <branch-name>
+
+

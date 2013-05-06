@@ -11,3 +11,11 @@ bin-release/
 # information for Eclipse / Flash Builder.
 
 *.aux
+*.blg
+*.ilg
+*.idx
+*.ind
+*.log
+main.pdf
+*~
+*backup
