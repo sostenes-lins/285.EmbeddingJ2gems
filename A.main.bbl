@@ -1,0 +1,36 @@
+\begin{thebibliography}{1}
+
+\bibitem{lins1995gca}
+S.~Lins.
+\newblock {\em {Gems, Computers, and Attractors for 3-Manifolds}}.
+\newblock World Scientific, 1995.
+
+\bibitem{linsmachadoA2012}
+S.~Lins and R.~Machado.
+\newblock Framed link presentations of 3-manifolds by an ${O}(n^2)$ algorithm,
+  {I}: gems and their duals.
+\newblock {\em arXiv:1211.1953v2 [math.GT]}, 2012.
+
+\bibitem{linsmachadoB2012}
+S.~Lins and R.~Machado.
+\newblock Framed link presentations of 3-manifolds by an ${O}(n^2)$ algorithm,
+  {II}: colored complexes and boundings in their complexity.
+\newblock {\em arXiv:1212.0826v2 [math.GT]}, 2012.
+
+\bibitem{linsmachadoC2012}
+S.~Lins and R.~Machado.
+\newblock Framed link presentations of 3-manifolds by an ${O}(n^2)$ algorithm,
+  {III}: geometric complex $\mathcal{H}_n^\star$ embedded into $\mathbb{R}^3$.
+\newblock {\em arXiv:1212.0827v2 [math.GT]}, 2012.
+
+\bibitem{lins1985graph}
+S.~Lins and A.~Mandel.
+\newblock {Graph-encoded 3-manifolds.}
+\newblock {\em Discrete Math.}, 57(3):261--284, 1985.
+
+\bibitem{rourke1982introduction}
+C.P. Rourke and B.J. Sanderson.
+\newblock {\em Introduction to piecewise-linear topology}, volume~69.
+\newblock Springer-Verlag, 1982.
+
+\end{thebibliography}
