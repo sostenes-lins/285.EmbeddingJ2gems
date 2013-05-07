@@ -1,4 +1,4 @@
-\section{Gems}
+\section{Gems and their duals}
 A {\em (3+1)-graph} \index{(3+1)-graph} $G$ is a connected regular graph of degree 4 where 
 to each vertex there are four incident differently colored edges in the color 
 set $\{0,1,2,3\}$.
@@ -35,7 +35,8 @@ Let $K$ be the dual of a gem $G$.
 An $\overline{i}$-residue of $G$ corresponds in $K$ to a $0$-simplex of $K$. Most 0-simplices of $K$
 do not correspond to $\overline{i}$-residues of $G$.
 An $ij$-gon of a gem $G$ corresponds in $K$ to a {\em PL1-face} formed by a sequence of
-1-simplices of $K$; this PL1-face is the intersection of two PL2-faces of colors $i$ and $j$. 
+1-simplices of $K$; this PL1-face is the intersection of two PL2-faces of colors $i$ and $j$; their
+two bounding $0$-simplices correspond to a $\overline{h}$- and to $\overline{k}$-residue.
 An $i$-colored edge of $G$ corresponds to a {\em PL2-face} 
 which is a 2-disk triangulated by a subset of $i$-colored 2-simplices of $K$. Finally to a vertex of $G$, 
 it corresponds a {\em PL3-face} of $K$ which is a 3-ball formed by a subset of 3-simplices of $K$.

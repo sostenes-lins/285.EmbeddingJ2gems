@@ -1,4 +1,20 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{ferri1982crystallisation}
+M.~Ferri and C.~Gagliardi.
+\newblock {Crystallisation moves}.
+\newblock {\em Pacific J. Math}, 100(1):85--103, 1982.
+
+\bibitem{lins1985simple}
+S.~Lins.
+\newblock {A simple proof of Gagliardi's handle recognition theorem}.
+\newblock {\em Discrete mathematics}, 57(3):253--260, 1985.
+
+\bibitem{lins1988fundamental}
+S.~Lins.
+\newblock {On the fundamental group of 3-gems and a planar class of
+  3-manifolds}.
+\newblock {\em European Journal of Combinatorics}, 9(4):291--305, 1988.
 
 \bibitem{lins1995gca}
 S.~Lins.
@@ -27,6 +43,12 @@ S.~Lins and R.~Machado.
 S.~Lins and A.~Mandel.
 \newblock {Graph-encoded 3-manifolds.}
 \newblock {\em Discrete Math.}, 57(3):261--284, 1985.
+
+\bibitem{lins2006blobs}
+S.~Lins and M.~Mulazzani.
+\newblock {Blobs and flips on gems}.
+\newblock {\em Journal of Knot Theory and its Ramifications}, 15(8):1001--1035,
+  2006.
 
 \bibitem{rourke1982introduction}
 C.P. Rourke and B.J. Sanderson.
