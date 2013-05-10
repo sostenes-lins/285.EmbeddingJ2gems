@@ -247,7 +247,7 @@ Let $\nabla_u \cup \nabla_v$ be the {\em balloon's head} and let $\Delta_{rs}$
 be the {\em balloon's tail}.
 
 
-\subsection{The Strategy for obtaining the PL-embedding we seek}
+\subsection{The Strategy for obtaining the PL-embedding of the dual of a $J^2$-gem}
 We want to find a PL-embedding for the dual, $\mathcal{H}^\star$, of a $J^2$-gem $\mathcal{H}$ 
 into $\mathbb{S}^3$. To this end we remove one PL3-face of $\mathcal{H}^\star$ find
 in $\mathbb{R}^3$ a PL-embedding of the complementary ball so that their union form
@@ -267,25 +267,31 @@ We split the algorithm into 3 phases. First we find a sequence of $n-1$ 2-dipole
 3-dipoles so that the final gem is simply a circular arrangement of $n$ 3-dipoles with internal
 colors $0,1,2$.
 Such a canonical $n$-gem is named a {\em bloboid} and is denoted $\mathcal{B}_n$. 
-This sequence is easily obtainable from the
-primal objects, the gems: $\mathcal{H}=\mathcal{H}_1, \mathcal{H}_2, \ldots, 
-\mathcal{H}_{n-1}=\mathcal{B}_n.$ In the second phase we find specific abstract PL-triangulations
-of the PL2-faces for the inverse sequence of colored 2-dimensional PL-complexes: 
-$\mathcal{B}^\star_n=\mathcal{H}^\star_{n-1}, \ldots, 
-\mathcal{H}^\star_2, \mathcal{H}^\star_{1}=\mathcal{H}^\star.$ At the same time that we get 
-we get also another sequence $\mathcal{W}^\star_{n-1}, \ldots, 
-\mathcal{W}^\star_2, \mathcal{W}^\star_{1}=\mathcal{W}^\star$. Each term of this
-$\mathcal{W}$-sequence is called a {\em wing} and it is a section 
-of the previous $\mathcal{H}$-sequence by two adequated semi-planes.
+This indexing decreasing sequence is easily obtainable from the
+primal objects, the gems: 
+$$\mathcal{H}=\mathcal{H}_{n} \mapright{2dip}{thick_1} \mathcal{H}_{n-1} \mapright{2dip}{thick_2} \ldots 
+\mapright{2dip}{thick_{n-1}} \mathcal{H}_{1}=\mathcal{B}_n=\mathcal{B}.$$ 
+In the second phase we find specific abstract PL-triangulations
+of the PL2-faces for the index increasing sequence of abstract colored 2-dimensional PL-complexes: 
+$$\mathcal{B}^\star=\mathcal{H}^\star_{1} \mapright{bp}{move_1}  \mathcal{H}^\star_{2}  \mapright{bp}{move_{2}} \ldots
+\mapright{bp}{move_{n-1}} \mathcal{H}^\star_{n}=\mathcal{H}^\star.$$ At the same time that we get 
+we get also a sequence of {\em wings}
+$$\mathcal{W}^\star_{1} \mapright{wbp}{move_{1}} \mathcal{W}^\star_{2}  \mapright{wbp}{move_{2}} \ldots
+\mapright{wbp}{move_{n-1}} \mathcal{W}^\star_{n}=\mathcal{W}^\star.$$ Each wing
+$\mathcal{W}_m$'s corresponds to a section 
+of the previous sequence $\mathcal{H}_m$'s by two adequated fixed semi-planes $\Pi_\ell$ and $\Pi_r$.
 Each wing $\mathcal{W}_m$ has an associated {\em nervure}, denoted $\mathcal{N}_m$.
-Each nervure is an auxilary spanning tree which helps in finding canonical embeddings for the
+Each nervure is an auxilary spanning tree which helps in finding canonical embeddings for the planar
 graph $\mathcal{U}_m = \mathcal{W}_m \cup \mathcal{N}_m$ ($m=n-1, \ldots, 1$), in 
-two fixed semi-planes: $\Pi_\ell$ and $\Pi_r$.
-The third phase uses the wings and the abstract 2-dimensional PL-complexes to produce 
-a new sequence $\mathcal{H}^\diamond_{1},  
-\mathcal{H}^\diamond_2, \ldots, \mathcal{H}^\diamond_{n}=\mathcal{H}^\star.$
+$\Pi_\ell$ and $\Pi_r$.
+The third phase uses the final wing and the sequence of $\mathcal{H}^\star_{m}$'s to produce 
+a pillow filling sequence $$\mathcal{H}^\diamond_{1}  \mapright{pillow}{filling_{1}}  
+\mathcal{H}^\diamond_2  \mapright{pillow}{filling_{2}} \ldots  \mapright{pillow}{filling_{n-1}}
+\mathcal{H}^\diamond_{n}=\mathcal{H}^\star.$$
 In this phase everything is embedded into $\mathbb{R}^3$ and the last element
-is the PL-embedding that we seek.
+is the PL-embedding that we seek. The whole procedure can be implemented as a formal 
+algorithm that takes $O(n^2)$-space
+and $O(n^2)$-time complexity, where $2n$ is the number of vertices of the original gem.
 
 \subsection{Acknowledgements}
 We thank the anonimous referees, which made us think and provide an $O(n)$-solution
