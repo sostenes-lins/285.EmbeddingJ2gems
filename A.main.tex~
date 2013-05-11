@@ -1,0 +1,312 @@
+\documentclass[a4paper,10pt,twoside]{article}
+
+%===========PACOTES
+\usepackage[body={170mm,235mm}]{geometry}
+%\usepackage[portuguese]{babel}
+\usepackage{a1}
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc} %permite o uso de acentos
+%\usepackage[dvips]{color}
+\usepackage{amsfonts,amssymb}
+%\usepackage{epsfig}
+\usepackage{amsmath}
+\usepackage{graphicx}	
+
+% makeidx
+\usepackage{makeidx}
+% make index
+\makeindex
+%\usepackage[pdftex]{graphicx}
+
+
+\def\mapright#1#2#3{\smash{\mathop{\hbox to
+#3{\rightarrowfill}}\limits^{#1}_{#2}}}
+
+\def\mapleft#1#2#3{\smash{\mathop{\hbox to
+#3{\leftarrowfill}}\limits^{#1}_{#2}}}
+
+\def\mapright#1#2{\smash{\mathop{\hbox to 0.90cm{\rightarrowfill}}\limits^{#1}_{#2}}}
+\def\mapleft#1#2{\smash{\mathop{\hbox to 0.90cm{\leftarrowfill}}\limits^{#1}_{#2}}}
+
+\def\mapleftright#1#2{\smash{\mathop{\hbox to 0.80cm{\leftarrowfill \rightarrowfill}}\limits^{#1}_{#2}}}
+\def\ext{\times \! \vrule depth0pt height5pt width0.35pt}
+
+\def\H{\mathcal H}
+\def\D{\mathcal D}
+\def\B{\mathcal B}
+\def\C{\mathbb C}
+\def\R{\mathbb R}
+\def\S{\mathbb S}			
+\def\U{\mathcal U}
+\def\Z{\mathbb Z}
+
+\title{PL-embedding the dual of $J^2$-gems into $\mathbb{S}^ 3$ by an $O(n^ 2)$-algorithm
+\footnote{2010 Mathematics Subject Classification: 
+57M25 and 57Q15 (primary), 57M27 and 57M15 (secondary)}} 
+\author{Sóstenes Lins and Ricardo Machado}
+
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+%\input{global}
+%\input{C.introduction}
+%\input{D.sect1.gems}
+% \input{sect1}
+% \input{sect2}
+% \input{sect3}
+% \input{sect4}
+% \input{sect5}
+
+
+
+\begin{abstract}
+Let be given a {\em colored 3-pseudo-triangulation} $\mathcal{H}^\star$ with $n$ tetrahedra.
+Colored means that each tetrahedron have vertices 
+distinctively colored 0,1,2,3.
+In a {\em pseudo} 3-triangulation the intersection of simplices might be subsets of simplices
+of smaller dimensions, instead of singletons of such faces, 
+as for true triangulations. If $\mathcal{H}^\star$ is the dual of a $J^2$-gem (shortly defined),
+then we show that $|\mathcal{H}^\star|$ is $\mathbb{S}^3$ and we make available an $O(n^2$)-algorithm to produce a
+PL-embedding (\cite{rourke1982introduction}) of $\mathcal{H}^\star$ into $\mathbb{S}^3$.
+This is rather surprising because such PL-embeddings are often of exponential size.
+This work is the first step towards obtaining, via an $O(n^ 2)$-algorithm,
+a framed link presentation inducing the same closed orientable 3-manifold
+as the one given by a colored pseudo-triangulation. 
+% A {\em $J^ 2$-gem} is a 4-regular, 4-edge-colored planar graph $\mathcal{H}$ obtained from the
+% intersection pattern of two Jordan curves $X$ and $Y$ with $2n$ transversal
+% crossings.
+% These crossings define consecutive segments of $X$ alternatively 
+% inside $Y$ and outside $Y$. Color the first type 2 and the second type 3.
+% The crossings also define consecutive segments of $Y$ alternatively 
+% inside $X$ and outside $X$. Color the first type 0 and the second type 1.
+% This defines a 4-regular 4-edge-colored graph $\mathcal{H}$ where the vertices are the crossings
+% and the edges are the colored colored segments.
+% Let $\mathcal{H}^ \star$ be the 3-dimensional abstract 3-complex formed by taking a set of 
+% vertex colored tetrahedra in 1--1 correspondence with $V(\mathcal{H})$ so that each tetrahedra
+% has vertices of colors 0,1,2,3. For each $i$-colored edge of $\mathcal{H}$ with ends $u$ and $v$
+% paste the corresponding tetrahedra $\nabla_u$ and $\nabla_v$ so as to paste the two triangular
+% faces that do not contain a vertex of color $i$ in such a way as to
+% to match vertices of the other three colors. 
+% We show that the topological space 
+% $|\mathcal{H}^\star|$ induced by $\mathcal{H}^\star$ is $\mathbb{S}^ 3$. Moreover we describe an $O(n^2)$-algorithm
+% to make available a PL-embedding (\cite{rourke1982introduction}) of $\mathcal{H}^\star$ 
+% into $\mathbb{S}^3$. We get explicit coordinates in $\mathbb{S}^ 3$ for the 0-simplices and
+% the p-simplices $(p \in \{1,2,3\}$) are linear simplices in the spherical geometry.
+Previous work on this topic appear in
+\cite{linsmachadoA2012}, \cite{linsmachadoB2012} and \cite{linsmachadoC2012}.
+However, the exposition and new proofs of this paper are meant to be entirely self-contained.
+
+\end{abstract}
+
+
+\section{Introduction}
+\subsection{$J^2$-gems}
+A {\em $J^ 2$-gem} is a 4-regular, 4-edge-colored planar graph $\mathcal{H}$ obtained from the
+intersection pattern of two Jordan curves $X$ and $Y$ with $2n$ transversal
+crossings.
+These crossings define consecutive segments of $X$ alternatively 
+inside $Y$ and outside $Y$. Color the first type 2 and the second type 3.
+The crossings also define consecutive segments of $Y$ alternatively 
+inside $X$ and outside $X$. Color the first type 0 and the second type 1.
+This defines a 4-regular 4-edge-colored graph $\mathcal{H}$ where the vertices are the crossings
+and the edges are the colored colored segments.
+Let $\mathcal{H}^\star$ be the 3-dimensional abstract 3-complex formed by taking a set of 
+vertex colored tetrahedra in 1--1 correspondence with the set of vertices of $\mathcal{H}$,
+$V(\mathcal{H})$, so that each tetrahedra
+has vertices of colors 0,1,2,3. This vertex coloring induces a face coloring of the 
+triangular faces of the tetrahedron: color $i$ the face opposite to the vertex colored $i$.
+For each $i$-colored edge of $\mathcal{H}$ with ends $u$ and $v$
+paste the corresponding tetrahedra $\nabla_u$ and $\nabla_v$ so as to paste the two triangular
+faces that do not contain a vertex of color $i$ in such a way as to
+to match vertices of the other three colors. 
+We show that the topological space 
+$|K|$ induced by $\mathcal{H}^\star$ is $\mathbb{S}^ 3$. Moreover we describe an $O(n^2)$-algorithm
+to make available a PL-embedding (\cite{rourke1982introduction}) of $\mathcal{H}^\star$ 
+into $\mathbb{S}^3$. We get explicit coordinates in $\mathbb{S}^ 3$ for the 0-simplices and
+the p-simplices $(p \in \{1,2,3\}$) are linear simplices in the spherical geometry.
+
+
+\subsection{Gems and their duals}
+A {\em (3+1)-graph} \index{(3+1)-graph} $\mathcal{H}$ is a connected regular graph of degree 4 where 
+to each vertex there are four incident differently colored edges in the color 
+set $\{0,1,2,3\}$.
+\index{residue}
+For $I \subseteq \{0,1,2,3\}$, an {\em $I$-residue} is a component of the subgraph 
+induced by the $I$-colored edges. Denote by $v(\mathcal{H})$ the number of
+$0$-residues (vertices) of $\mathcal{H}$. For $0\le i < j\le3$, an $\{i,j\}$-residue is also 
+called an {\em $ij$-gon} or an $i$- and $j$-colored {\em bigon} (it is an even polygon, where the edges are 
+alternatively colored $i$ and $j$). Denote by $b(\mathcal{H})$ the total number of $ij$-gons 
+for $0\le i < j\le3$. Denote by $t(\mathcal{H})$ the total number of 
+$\overline{i}$-residues for $0\le i\le 3$, where $\overline{i}$ 
+means complement of $\{i\}$ in $\{0,1,2,3\}$.
+
+We briefly recall the definition of gems taken from \cite{lins1995gca}.
+A {\em $3$-gem} \index{3-gem} is a $(3+1)$-graph $\mathcal{H}$
+satisfying $v(\mathcal{H})+t(\mathcal{H})=b(\mathcal{H})$. This relation is equivalent to having the vertices, 
+edges and bigons 
+restricted to any $\{i,j,k\}$-residue inducing a plane graph where the 
+faces are bounded by the 
+bigons. Therefore we can embed each such $\{i,j,k\}$-residue into a sphere 
+$\mathbb{S}^2$. We consider
+the ball bounded this $\mathbb{S}^2$ as induced by the  $\{i,j,k\}$-residue. For this reason
+an $\{i,j,k\}$-residue in a 3-gem, $i<j<k$, is also called a \index{triball} {\em triball}.
+An $ij$-gon appears once in the boundary of triball $\{i,j,k\}$ and once in the boundary
+of triball $\{i,j,h\}$. By pasting the triballs along disks bounded by all 
+the pairs of $ij$-gons, $\{i,j\} \subset \{0,1,2,3\}$ of a gem $\mathcal{H}$,
+we obtain a closed 3-manifold denoted by $|\mathcal{H}|$. 
+This general construction is dual to the one 
+exemplified in the abstract and produces any closed 3-manifold. 
+The manifold is orientable if and only if 
+$\mathcal{H}$ is bipartite, \cite{lins1985graph}. A {\em crystallization} is a
+gem which remains connected after deleting all the edges of any given color, that is,
+it has one $\{i,j,k\}$-residue for each trio of colors $\{i,j,k\} \subset \{0,1,2,3\}$.
+
+Let $\mathcal{H}^\star$ be the dual of a gem $\mathcal{H}$.
+An $\overline{i}$-residue of $\mathcal{H}$ corresponds in $\mathcal{H}^\star$ to a $0$-simplex of $\mathcal{H}^\star$. Most 0-simplices of $\mathcal{H}^\star$
+do not correspond to $\overline{i}$-residues of $\mathcal{H}$.
+An $ij$-gon of a gem $\mathcal{H}$ corresponds in $\mathcal{H}^\star$ to a {\em PL1-face} formed by a sequence of
+1-simplices of $\mathcal{H}^\star$; this PL1-face is the intersection of two PL2-faces of colors $i$ and $j$; their
+two bounding $0$-simplices correspond to an $\overline{h}$- and to a $\overline{k}$-residue, where
+$\{h,i,j,k\}=\{0,1,2,3\}$.
+An $i$-colored edge of $\mathcal{H}$ corresponds to a {\em PL2-face} 
+which is a 2-disk triangulated by a subset of $i$-colored 2-simplices of $\mathcal{H}^\star$. Finally to a vertex of $\mathcal{H}$, 
+it corresponds a {\em PL3-face} of $\mathcal{H}^\star$ which is a 3-ball formed by a subset of 3-simplices of $\mathcal{H}^\star$.
+
+\begin{proposition}
+\label{prop:abovecoloring}
+The $3$-manifold induced by a $J^2$-gem $\mathcal{H}$ is $\mathbb{S}^3$.
+\end{proposition}
+\begin{proof}
+Removing from $\mathcal{H}$ all the edges of a given color still yields a connected graph
+which a plane graph and they come embedded so that the faces are the 2-residues.
+So $\mathcal{H}$ has four 3-residues, one of each type. 
+Denote by $b_{ij}$ the number of $ij$-gons of $\mathcal{H}$.
+Each one of these residues are planar graphs
+having $v=2n$ vertices, $3v/2$ edges and $b_{12}+b_{13}+b_{23}$, 
+$b_{02}+b_{03}+b_{23}$, $b_{01}+b_{13}+b_{03}$ and  $b_{12}+b_{01}+b_{02}$ faces
+for, respectively, the $\overline{0}$-, $\overline{1}$-, $\overline{2}$-, 
+$\overline{3}$-residue. Adding the four formulas for the Euler characteristic of the sphere
+imply that $v(\mathcal{H})+4=b(\mathcal{H})$. Therefore, $\mathcal{H}$ is a crystallization having one $0i$-gon and
+one $jk$-gon. This implies that the fundamental group of the induced manifold is trivial:
+as proved in \cite{lins1988fundamental}, the fundamental group of the space induced by a crystallization
+is generated by $b_{0i}-1$ generators, and in our case this number is 0.
+Since Poincaré Conjecture is now proved, we are done. 
+However, we can avoid using this fact and, as a bonus, obtaining the validity
+of the next corollary, which is used in the sequel.
+
+Assume that $\mathcal{H}$ is a $J^2$-gem which does not induce $\mathbb{S}^3$ and has the smallest possible
+number of vertices satisfying these assumptions. By planarity we must have a pair of edges of
+$\mathcal{H}$ having the same ends $\{p,q\}$. Consider the graph $\mathcal{H} fus \{p,q\}$ obtained from
+$\mathcal{H}$ by removing the vertices $p$, $q$ and the 2 edges linking them as well as welding the 2
+pairs of pendant edges along edges of the same color. In \cite{lins1985simple} S. Lins proves that
+if $\mathcal{H}$ is a gem, $\mathcal{H}'=\mathcal{H} fus \{p,q\}$ is also a gem and that two exclusive 
+relations hold regarding $|\mathcal{H}|$ and $ |\mathcal{H}'|$, their induced 3-manifolds:
+either $|\mathcal{H}| = |\mathcal{H}'|$ in the case that $\{p,q\}$ induces a 2-dipole
+or else  $|\mathcal{H}| = |\mathcal{H}'| \# (\mathbb{S}^2\times \mathbb{S}^1)$. Since
+$\mathcal{H}'$ is a $J^2$-gem, by our minimality hypothesis on $\mathcal{H}$
+the valid alternative is the second. But this
+is a contradiction: the fundamental group of $|\mathcal{H}|$ would not be trivial, 
+because of the summand $\mathbb{S}^2\times \mathbb{S}^1$. 
+\end{proof}
+
+
+\subsection{Dipoles, pillows and balloons} 
+
+Suppose there are $m$ edges linking vertices $x$ and $y$ of a gem, $m \in \{1,2,3\}$.
+We say that $\{u,v\}$ is an {\em $m$-dipole} if removing all edges in the colors of the ones linking $x$ to $y$,
+these vertices are in distinct components of the graph induced by the edges in the complementary
+set of colors. To {\em cancel the dipole} means deleting the subgraph induced by $\{u,v\}$ and identify pairs 
+of the hanging edges along the same remaining color. To {\em create the dipole} is the inverse operation.
+It is simple to prove that the manifold of a gem is invariant under dipole cancellation or creation.
+Even though is not relevant for the present work state the foundational result on gems: two $3$-manifolds
+are homeomorphic if and only if any two gems inducing it are linked by a finite number of
+cancellations and creations of dipoles, \cite{ferri1982crystallisation, lins2006blobs}.
+
+The dual of a $2$-dipole $\{u,v\}$, with internal colors $i,j$ is named a {\em pillow}. 
+It consistes of two PL3-faces $\nabla_u$ and $\nabla_v$ sharing two PL2-faces colored $i$ and $j$.
+The {\em thickening of a 2-dipole into a 3-dipole} is defined as follows. Let
+$i,j$ be the two colors internal to 2-dipole $\{u,v\}$ and $k$ a third color.
+Let $a$ be the $k$-neighboor of $x$ and $b$ be the $k$-neighboor of $y$. Remove
+edges $[a,x]$ and $[b,y]$ and put back $k$-edges $[u,v]$ and $[r,s]$. This completes
+the thickening. It is simple to prove that the thickening in a gem produces a gem. 
+We must be carefull because the inverse blind inverse operation {\em thinning a 3-dipole} 
+not always produces a gem. The catch is that the result of the thinning perhaps is not a 2-dipole.
+In this sense the thinning move is not local: we must make sure that the result is a 2-dipole.
+To the data needed in thinning a 3-dipole $\{u,v\}$ with internal colors $\{i,j,k\}$ 
+we must add the $k$-edge $[r,s]$. Note that the $k$-edges $[u,v]$ and $[r,s]$ are in the same $hk$-gon,
+where $h$ is the fourth color. Denote by $\Delta_{rs}$ the dual of $[r,s]$.
+Let $\nabla_u \cup \nabla v \cup \Delta_{rs}$ be called a {\em balloon}. 
+Note that it consists of 2 PL3-faces $\nabla_u$ and $\nabla_v$ sharing three PL2-faces 
+in colors $\{i,j,k\}$ together
+with a $k$-colored PL2-face whose intersection with  $\nabla_u \cup \nabla_v$ is 
+a PL1-face corresponding to the dual of the $hk$-gon, where $h$ is the fourth color.
+Let $\nabla_u \cup \nabla_v$ be the {\em balloon's head} and let $\Delta_{rs}$
+be the {\em balloon's tail}.
+
+
+\subsection{The Strategy for obtaining the PL-embedding of the dual of a $J^2$-gem}
+We want to find a PL-embedding for the dual, $\mathcal{H}^\star$, of a $J^2$-gem $\mathcal{H}$ 
+into $\mathbb{S}^3$. To this end we remove one PL3-face of $\mathcal{H}^\star$ find
+in $\mathbb{R}^3$ a PL-embedding of the complementary ball so that their union form
+triangulated tetrahedron. After we use the inverse of a stereographic projection with center
+in further in the exterior of the triangulated tetrahedron. In this way we recover in $\mathbb{S}^3$
+the missing PL3-face.
+
+In this work we describe the PL-embedded PL3-faces of $\mathcal{H}^\star$ 
+into $\mathbb{R}^3$ by making it geometrically clear that its boundary
+is a set of 4 PL2-faces, one of each color, forming an embedded $\mathbb{S}^2$ whose interior is
+disjoint from the interior of $\mathbb{S}^2$'s corresponding to others PL3-faces. Thus, for our purposes
+it will be only necessary to embed the 2-skeleton of $\mathcal{H}^\star$.
+
+A direct approach to find the PL-embedding of the dual of a general $J^2$-gem with $2n$ vertices,
+seems very hard.
+We split the algorithm into 3 phases. First we find a sequence of $n-1$ 2-dipole thickenings into
+3-dipoles so that the final gem is simply a circular arrangement of $n$ 3-dipoles with internal
+colors $0,1,2$.
+Such a canonical $n$-gem is named a {\em bloboid} and is denoted $\mathcal{B}_n$. 
+This indexing decreasing sequence is easily obtainable from the
+primal objects, the gems: 
+$$\mathcal{H}=\mathcal{H}_{n} \mapright{2dip}{thick_1} \mathcal{H}_{n-1} \mapright{2dip}{thick_2} \ldots 
+\mapright{2dip}{thick_{n-1}} \mathcal{H}_{1}=\mathcal{B}_n=\mathcal{B}.$$ 
+In the second phase we find specific abstract PL-triangulations
+of the PL2-faces for the index increasing sequence of abstract colored 2-dimensional PL-complexes: 
+$$\mathcal{B}^\star=\mathcal{H}^\star_{1} \mapright{bp}{move_1}  \mathcal{H}^\star_{2}  \mapright{bp}{move_{2}} \ldots
+\mapright{bp}{move_{n-1}} \mathcal{H}^\star_{n}=\mathcal{H}^\star.$$ At the same time that we get 
+we get also a sequence of {\em wings}
+$$\mathcal{W}^\star_{1} \mapright{wbp}{move_{1}} \mathcal{W}^\star_{2}  \mapright{wbp}{move_{2}} \ldots
+\mapright{wbp}{move_{n-1}} \mathcal{W}^\star_{n}=\mathcal{W}^\star.$$ Each wing
+$\mathcal{W}_m$'s corresponds to a section 
+of the previous sequence $\mathcal{H}_m$'s by two adequated fixed semi-planes $\Pi_\ell$ and $\Pi_r$.
+Each wing $\mathcal{W}_m$ has an associated {\em nervure}, denoted $\mathcal{N}_m$.
+Each nervure is an auxilary spanning tree which helps in finding canonical embeddings for the planar
+graph $\mathcal{U}_m = \mathcal{W}_m \cup \mathcal{N}_m$ ($m=n-1, \ldots, 1$), in 
+$\Pi_\ell$ and $\Pi_r$.
+The third phase uses the final wing and the sequence of $\mathcal{H}^\star_{m}$'s to produce 
+a pillow filling sequence $$\mathcal{H}^\diamond_{1}  \mapright{pillow}{filling_{1}}  
+\mathcal{H}^\diamond_2  \mapright{pillow}{filling_{2}} \ldots  \mapright{pillow}{filling_{n-1}}
+\mathcal{H}^\diamond_{n}=\mathcal{H}^\star.$$
+In this phase everything is embedded into $\mathbb{R}^3$ and the last element
+is the PL-embedding that we seek. The whole procedure can be implemented as a formal 
+algorithm that takes $O(n^2)$-space
+and $O(n^2)$-time complexity, where $2n$ is the number of vertices of the original gem.
+
+\subsection{Acknowledgements}
+We thank the anonimous referees, which made us think and provide an $O(n)$-solution
+for finding the wing sequence, instead of an $O(n^3)$-solution based on a bare Tutte's
+barycetric methods.
+
+\section{Abstract 2-dimensional PL-complexes, their wings and nervures}
+\section{Diamond complexes}
+\section{Further work}
+
+\include{E.refAffiliation}
+%\input{affiliation}
+
+
+\end{document}
+
+
+

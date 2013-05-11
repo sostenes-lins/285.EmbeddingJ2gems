@@ -1,0 +1,55 @@
+\section{Gems and their duals}
+A {\em (3+1)-graph} \index{(3+1)-graph} $G$ is a connected regular graph of degree 4 where 
+to each vertex there are four incident differently colored edges in the color 
+set $\{0,1,2,3\}$.
+\index{residue}
+For $I \subseteq \{0,1,2,3\}$, an {\em $I$-residue} is a component of the subgraph 
+induced by the $I$-colored edges. Denote by $v(G)$ the number of
+$0$-residues (vertices) of $G$. For $0\le i < j\le3$, an $\{i,j\}$-residue is also 
+called an {\em $ij$-gon} or an $i$- and $j$-colored {\em bigon} (it is an even polygon, where the edges are 
+alternatively colored $i$ and $j$). Denote by $b(G)$ the total number of $ij$-gons 
+for $0\le i < j\le3$. Denote by $t(G)$ the total number of 
+$\overline{i}$-residues for $0\le i\le 3$, where $\overline{i}$ 
+means complement of $\{i\}$ in $\{0,1,2,3\}$.
+
+We briefly recall the definition of gems taken from \cite{lins1995gca}.
+A {\em $3$-gem} \index{3-gem} is a $(3+1)$-graph $G$
+satisfying $v(G)+t(G)=b(G)$. This relation is equivalent to having the vertices, 
+edges and bigons 
+restricted to any $\{i,j,k\}$-residue inducing a plane graph where the 
+faces are bounded by the 
+bigons. Therefore we can embed each such $\{i,j,k\}$-residue into a sphere 
+$\mathbb{S}^2$. We consider
+the ball bounded this $\mathbb{S}^2$ as induced by the  $\{i,j,k\}$-residue. For this reason
+an $\{i,j,k\}$-residue in a 3-gem, $i<j<k$, is also called a \index{triball} {\em triball}.
+An $ij$-gon appears once in the boundary of triball $\{i,j,k\}$ and once in the boundary
+of triball $\{i,j,h\}$. By pasting the triballs along disks bounded by all 
+the pairs of $ij$-gons, $\{i,j\} \subset \{0,1,2,3\}$ of a gem $G$,
+we obtain a closed 3-manifold denoted by $|G|$. 
+This general construction is dual to the one 
+exemplified in the abstract and produces any closed 3-manifold. 
+The manifold is orientable if and only if 
+$G$ is bipartite, \cite{lins1985graph}. 
+
+Let $K$ be the dual of a gem $G$.
+An $\overline{i}$-residue of $G$ corresponds in $K$ to a $0$-simplex of $K$. Most 0-simplices of $K$
+do not correspond to $\overline{i}$-residues of $G$.
+An $ij$-gon of a gem $G$ corresponds in $K$ to a {\em PL1-face} formed by a sequence of
+1-simplices of $K$; this PL1-face is the intersection of two PL2-faces of colors $i$ and $j$; their
+two bounding $0$-simplices correspond to a $\overline{h}$- and to $\overline{k}$-residue.
+An $i$-colored edge of $G$ corresponds to a {\em PL2-face} 
+which is a 2-disk triangulated by a subset of $i$-colored 2-simplices of $K$. Finally to a vertex of $G$, 
+it corresponds a {\em PL3-face} of $K$ which is a 3-ball formed by a subset of 3-simplices of $K$.
+
+
+In this work we describe the embedded $PL3$-faces of $K$ by making it geometrically clear that its boundary
+is a set of 4 PL2-faces, one of each color forming an embedded $\mathbb{S}^2$ whose interior is
+disjoint from the interior of $\mathbb{S}^2$'s corresponding to others $PL3$-faces. Thus, for our purposes
+it will be only necessary to embed the 2-skeleton of $K$.
+Our strategy to embed $K$ into $\mathbb{S}^3$ is removing one of its $PL3$-faces and obtain an embedding of
+the remaining ball into $\mathbb{R}^3$ after coming back to $\mathbb{S}^3$ by an inverse stereographic projection
+with its center in the exterior of the triangulated ball.
+
+
+
+

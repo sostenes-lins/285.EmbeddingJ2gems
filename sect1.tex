@@ -1,4 +1,17 @@
-
+\section{Definition of Gem}
+For completeness we briefly recall the basic definitions of gem theory, leading to its definition, \cite{lins1995gca}.
+A {\em 4-graph} $G$ is a finite bipartite 4-regular graph whose edges are partitioned into 4 colors,
+0,1,2, and 3, 
+so that at each vertex there is an edge of each color, a proper edge-coloration, \cite{bondy1976gta}.
+For each $i \in \{0,1,2,3\}$, let $E_i$ denote the set of $i$-colored edges of $G$.
+A $\{j,k\}$-residue in a $4$-graph $G$ is a connected component of the subgraph induced by $E_j \cup E_k$.
+A 2-residue is a $\{j,k\}$-residue, for some distinct colors $j$ and $k$.
+A {\em gem} is a 4-graph $G$ such that for each color $i$, $G\backslash E_i$ can be embedded in the plane 
+such that the boundary of each face is a 2-residue. From a gem there exists a straightforward
+algorithm to obtain a closed orientable 3-manifold, in two different, dual ways. Every such a manifold is obtainable in this way.
+An unecessary big gem is obtained from a triangulation $T$ for a manifold by taking the dual of the 
+barycentric subdivision of $T$. Here the colors corresponds to the dimensions. Doing simplifications in the gem
+completely destroys this correspondence.
 
 
 \section{Wings as seeds for obtaining the dual PL-complex $\mathcal{H}_n^\star$}
