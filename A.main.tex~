@@ -97,7 +97,7 @@ as the one given by a colored pseudo-triangulation.
 % the p-simplices $(p \in \{1,2,3\}$) are linear simplices in the spherical geometry.
 Previous work on this topic appear in
 \cite{linsmachadoA2012}, \cite{linsmachadoB2012} and \cite{linsmachadoC2012}.
-However, the exposition and new proofs of this paper are meant to be entirely self-contained.
+However, the exposition and the new proofs of this paper are meant to be entirely self-contained.
 
 \end{abstract}
 
@@ -176,7 +176,7 @@ which is a 2-disk triangulated by a subset of $i$-colored 2-simplices of $\mathc
 it corresponds a {\em PL3-face} of $\mathcal{H}^\star$ which is a 3-ball formed by a subset of 3-simplices of $\mathcal{H}^\star$.
 
 \begin{proposition}
-\label{prop:abovecoloring}
+\label{prop:j2shere}
 The $3$-manifold induced by a $J^2$-gem $\mathcal{H}$ is $\mathbb{S}^3$.
 \end{proposition}
 \begin{proof}
@@ -251,8 +251,8 @@ be the {\em balloon's tail}.
 We want to find a PL-embedding for the dual, $\mathcal{H}^\star$, of a $J^2$-gem $\mathcal{H}$ 
 into $\mathbb{S}^3$. To this end we remove one PL3-face of $\mathcal{H}^\star$ find
 in $\mathbb{R}^3$ a PL-embedding of the complementary ball so that their union form
-triangulated tetrahedron. After we use the inverse of a stereographic projection with center
-in further in the exterior of the triangulated tetrahedron. In this way we recover in $\mathbb{S}^3$
+PL-triangulated tetrahedron. After we use the inverse of a stereographic projection with center
+in the exterior of the triangulated tetrahedron. In this way we recover in $\mathbb{S}^3$
 the missing PL3-face.
 
 In this work we describe the PL-embedded PL3-faces of $\mathcal{H}^\star$ 
@@ -263,44 +263,119 @@ it will be only necessary to embed the 2-skeleton of $\mathcal{H}^\star$.
 
 A direct approach to find the PL-embedding of the dual of a general $J^2$-gem with $2n$ vertices,
 seems very hard.
-We split the algorithm into 3 phases. First we find a sequence of $n-1$ 2-dipole thickenings into
+We split the algorithm into 4 phases. 
+
+In the first phase we find a sequence of $n-1$ 2-dipole thickenings into
 3-dipoles so that the final gem is simply a circular arrangement of $n$ 3-dipoles with internal
 colors $0,1,2$.
 Such a canonical $n$-gem is named a {\em bloboid} and is denoted $\mathcal{B}_n$. 
 This indexing decreasing sequence is easily obtainable from the
-primal objects, the gems: 
+primal objects, in the case, simplifying $J^2B$-gems: 
 $$\mathcal{H}=\mathcal{H}_{n} \mapright{2dip}{thick_1} \mathcal{H}_{n-1} \mapright{2dip}{thick_2} \ldots 
 \mapright{2dip}{thick_{n-1}} \mathcal{H}_{1}=\mathcal{B}_n=\mathcal{B}.$$ 
-In the second phase we find specific abstract PL-triangulations
-of the PL2-faces for the index increasing sequence of abstract colored 2-dimensional PL-complexes: 
-$$\mathcal{B}^\star=\mathcal{H}^\star_{1} \mapright{bp}{move_1}  \mathcal{H}^\star_{2}  \mapright{bp}{move_{2}} \ldots
-\mapright{bp}{move_{n-1}} \mathcal{H}^\star_{n}=\mathcal{H}^\star.$$ At the same time that we get 
-we get also a sequence of {\em wings}
-$$\mathcal{W}^\star_{1} \mapright{wbp}{move_{1}} \mathcal{W}^\star_{2}  \mapright{wbp}{move_{2}} \ldots
-\mapright{wbp}{move_{n-1}} \mathcal{W}^\star_{n}=\mathcal{W}^\star.$$ Each wing
-$\mathcal{W}_m$'s corresponds to a section 
-of the previous sequence $\mathcal{H}_m$'s by two adequated fixed semi-planes $\Pi_\ell$ and $\Pi_r$.
-Each wing $\mathcal{W}_m$ has an associated {\em nervure}, denoted $\mathcal{N}_m$.
-Each nervure is an auxilary spanning tree which helps in finding canonical embeddings for the planar
-graph $\mathcal{U}_m = \mathcal{W}_m \cup \mathcal{N}_m$ ($m=n-1, \ldots, 1$), in 
-$\Pi_\ell$ and $\Pi_r$.
-The third phase uses the final wing and the sequence of $\mathcal{H}^\star_{m}$'s to produce 
+
+In the second phase we first find (phase 2A) specific abstract PL-triangulations, 
+for the PL2-faces for the index increasing sequence of abstract colored 2-dimensional PL-complexes.
+Each of these complexes, later, are going to be PL-embedded into $\mathbb{R}^3$ so 
+that the PL2-faces are topologically 2-spheres with disjoint interior. Attaching 
+3-balls bounded by these spheres we get the dual of the $J^2$-gem $\mathcal{H}$ (with a vertex
+removed).
+$$\mathcal{B}^\star=\mathcal{H}^\star_{1} \mapright{bp}{move_1}  \mathcal{H}^\star_{2}  
+\mapright{bp}{move_{2}} \ldots
+\mapright{bp}{move_{n-1}} \mathcal{H}^\star_{n}=\mathcal{H}^\star.$$ 
+In parallel to the construction of the sequence $\mathcal{H}^\star_{m}$'s we also construct
+(phase 2B) a sequence of {\em wings} $\mathcal{W}^\star_{m}$'s and their {\em nervures} 
+$\mathcal{N}^\star_{m}$'s so that  $\mathcal{W}^\star_{m} \cup \mathcal{N}^\star_{m}$ 
+is an easy to define adequate planar graph:
+$$\mathcal{W}^\star_{1} \cup \mathcal{N}^\star_{1} \mapright{wbp}{move_{1}} 
+\mathcal{W}^\star_{2} \cup \mathcal{N}^\star_{2} \mapright{wbp}{move_{2}} \ldots
+\mapright{wbp}{move_{n-1}} 
+\mathcal{W}^\star_{n} \cup \mathcal{N}^\star_{n}=
+\mathcal{W}^\star \cup \mathcal{N}^\star.$$ 
+Each wing $\mathcal{W}_m^\star$'s corresponds to a section 
+of the previous sequence $\mathcal{H}_m^\star$'s by two adequated 
+fixed semi-planes $\Pi_\ell$ and $\Pi_r$.
+The construction of the planar graphs $\mathcal{W}_m^\star \cup \mathcal{N}_m^\star$ is
+recursive. Initially $\mathcal{W}_1^\star$ is a pincel of lines and $\mathcal{N}_1^\star$ 
+is $\varnothing$.  Going from $\mathcal{W}_{m-1}^\star \cup \mathcal{N}_{m-1}^\star$ 
+to $\mathcal{W}_{m}^\star \cup \mathcal{N}_{m}^\star$ is very simple: two new vertices and four
+new edges appear, so as to maintain planarity.
+% a vertex is broken into two
+% and a new vertex of $\mathcal{N}_{m}^\star$ appear;
+% two new edges are adjoined to $\mathcal{W}_{m}^\star$ and two new edges are adjoined to 
+% $\mathcal{N}_{m}^\star$, in a way as to respect some cyclic ordering around the new vertices.
+
+
+In the third phase we make the abstract final element 
+$\mathcal{W}^\star \cup \mathcal{N}^\star$
+of the second phase {\em rectilinearly} (that is each edge is a straihgt line segment) PL-embedded. 
+By a cone construction we obtain from the rectilinearly PL-embedded 
+$\mathcal{W}^\star \cup \mathcal{N}^\star$  a special
+PL-complex, named $\mathcal{H}_1^\diamond$. This complex does not correpond to a gem dual
+and it can be loosely explained as $\mathcal{H}_1^\star$ with all balloon's heads ``opened''.
+% More details can only be given in the actual construct of Section \ref{}.
+
+
+The fourth phase, the {\em pillow filling phase} 
+starts with $\mathcal{H}_1^\diamond$ and the uses the abstract sequence 
+$\mathcal{H}^\star_{m}$'s to produce 
 a pillow filling sequence $$\mathcal{H}^\diamond_{1}  \mapright{pillow}{filling_{1}}  
 \mathcal{H}^\diamond_2  \mapright{pillow}{filling_{2}} \ldots  \mapright{pillow}{filling_{n-1}}
 \mathcal{H}^\diamond_{n}=\mathcal{H}^\star.$$
 In this phase everything is embedded into $\mathbb{R}^3$ and the last element
-is the PL-embedding that we seek. The whole procedure can be implemented as a formal 
+is the PL-embedding that we seek. 
+% It is worth mentioning that (except for the last one) these
+% complexes have no counterpart in the dual gems, that is they do not have PL2-faces, only
+% the part correspondig to the balloon's head  $\nabla_u \cup \nabla_v$.
+
+The whole procedure can be implemented as a formal 
 algorithm that takes $O(n^2)$-space
-and $O(n^2)$-time complexity, where $2n$ is the number of vertices of the original gem.
+and $O(n^2)$-time complexity, where $2n$ is the number of vertices of the original $J^2$-gem.
 
 \subsection{Acknowledgements}
 We thank the anonimous referees, which made us think and provide an $O(n)$-solution
 for finding the wing sequence, instead of an $O(n^3)$-solution based on a bare Tutte's
 barycetric methods.
 
-\section{Abstract 2-dimensional PL-complexes, their wings and nervures}
-\section{Diamond complexes}
-\section{Further work}
+\section{Details of the whole construction}
+\subsection{First phase: from a $J^2$-gem $\mathcal{H}$ to a bloboid $\mathcal{B}$}
+
+\begin{proposition}
+\label{prop:startingwith}
+Starting with a $J^2$-gem $\mathcal{J}^2$ with $2n$ vertices we can arrive to an
+$n$-bloboid $\mathcal{B}$ by means of $n-1$ operations which thickens a 2-dipole into a 3-dipole,
+producing a sequence of $J^2B$-gems each inducing $\mathbb{S}^3$,
+$$(\mathcal{J}^2=\mathcal{H}_{n},\mathcal{H}_{n-1},\ldots, \mathcal{H}_{2},\mathcal{H}_{1}=\mathcal{B}).$$
+
+\end{proposition}
+\begin{proof}
+The proof is by induction. For $\ell=n$ we have $\mathcal{H}_{n}=\mathcal{J}^2$ and
+so it is a $J^2B$-gem, establishing the basis of the induction. Assume that
+$\mathcal{H}_\ell$ is a $J^2B$-gem.
+For $\ell>1$, let $\mathcal{H}'_\ell$ denote  $\mathcal{H}_\ell$ after cancelling the blobs.
+Since $\mathcal{H}'_\ell$ is a $J^2$-gem by the Jordan curve theorem
+a 2-dipole is present in it. The same 2-dipole is also present in $\mathcal{H}_\ell$.
+Therefore it can be thickened, defining  $J^2B$-gem $\mathcal{H}_{\ell-1}$, which
+establishes the inductive step. In face of Proposition \ref{prop:j2shere} and from
+the fact that thickening dipoles on gems produce gems inducing the same manifold, 
+every member of the sequence induces $\mathbb{S}^3$.
+\end{proof}
+
+% The above proof is illustrated in Fig. \ref{fig:j2gemrSEQ}. Note that the thickenings are of two
+% types: either of type $0$ where the edges $e$ and $f$ are $0$-edges in the interior of the $23$-gon, or else
+% of type $1$ if they  are $1$-edges in its exterior. The above sequence is by no means unique because
+% various 2-dipole choices present themselves along the way. We fix one and such a sequence and 
+% used it as the basis for
+% establishing bounds on the size of the colored complexes, 
+% dual of the $J^2$-gem. This is done in the companion
+% paper \cite{linsmachadoB2012}.
+
+\subsection{Second phase: colored abstract complexes, their wings and nervures}
+\subsection{Third phase: a rectilinear PL-embedding for 
+$\mathcal{W}^\star \cup \mathcal{N}^\star$ and its induced $\mathcal{H}_1^\diamond$}
+\subsection{Fourth phase: filling the pillows to obtain the PL-embedding of $\mathcal{H}^\star$ we seek}
+
+\section{Conclusion and further work}
 
 \include{E.refAffiliation}
 %\input{affiliation}
