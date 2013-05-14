@@ -16,6 +16,6 @@ bin-release/
 *.idx
 *.ind
 *.log
-main.pdf
+A.main.pdf
 *~
 *backup
