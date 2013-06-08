@@ -1,7 +1,7 @@
 \documentclass[a4paper,12pt,twoside]{article}
 
 %===========PACOTES
-\usepackage[body={170mm,235mm}]{geometry}
+\usepackage[body={173mm,235mm}]{geometry}
 %\usepackage[portuguese]{babel}
 \usepackage{a1}
 \usepackage[english]{babel}
@@ -248,18 +248,20 @@ Let $\nabla_u \cup \nabla_v$ be the {\em balloon's head} and let $\Delta_{rs}$
 be the {\em balloon's tail}.
 
 
-\subsection{The Strategy for obtaining the PL-embedding of the dual of a $J^2$-gem}
-We want to find a PL-embedding for the dual, $\mathcal{H}^\star$, of a $J^2$-gem $\mathcal{H}$ 
-into $\mathbb{S}^3$. To this end we remove one PL3-face of $\mathcal{H}^\star$ find
-in $\mathbb{R}^3$ a PL-embedding of the complementary ball so that their union form
-PL-triangulated tetrahedron. After we use the inverse of a stereographic projection with center
+\subsection{The Strategy for finding the $O(n^2)$-algorithm}
+We want to find a PL-embedding for the dual $\mathcal{H}^\star$ of a $J^2$-gem $\mathcal{H}$ 
+into $\mathbb{S}^3$. To this end we remove one PL3-face of $\mathcal{H}^\star$ 
+(one vertex of $\mathcal{H}$) and find
+a PL-embedding in $\mathbb{R}^3$  forming a a PL-triangulated tetrahedron. 
+After we use the inverse of a stereographic projection with center
 in the exterior of the triangulated tetrahedron. In this way we recover in $\mathbb{S}^3$
 the missing PL3-face.
 
 In this work we describe the PL-embedded PL3-faces of $\mathcal{H}^\star$ 
 into $\mathbb{R}^3$ by making it geometrically clear that its boundary
 is a set of 4 PL2-faces, one of each color, forming an embedded $\mathbb{S}^2$ whose interior is
-disjoint from the interior of $\mathbb{S}^2$'s corresponding to others PL3-faces. Thus, for our purposes
+disjoint from the interior of 
+$\mathbb{S}^2$'s corresponding to others PL3-faces. Thus, for our purposes
 it will be only necessary to embed the 2-skeleton of $\mathcal{H}^\star$.
 
 A direct approach to find the PL-embedding of the dual of a general $J^2$-gem with $2n$ vertices,
@@ -290,20 +292,25 @@ $$\mathcal{B}^\star=\mathcal{H}^\star_{1} \mapright{bp}{move_1}  \mathcal{H}^\st
 \mapright{bp}{move_{n-1}} \mathcal{H}^\star_{n}=\mathcal{H}^\star.$$ 
 In parallel to the construction of the sequence $\mathcal{H}^\star_{m}$'s we also construct
 (phase 2B) a sequence of {\em wings} $\mathcal{W}^\star_{m}$'s and their {\em nervures} 
-$\mathcal{N}^\star_{m}$'s so that  $\mathcal{W}^\star_{m} \cup \mathcal{N}^\star_{m}$ 
-is an easy to define adequate planar graph:
-$$\mathcal{W}^\star_{1} \cup \mathcal{N}^\star_{1} \mapright{wbp}{move_{1}} 
-\mathcal{W}^\star_{2} \cup \mathcal{N}^\star_{2} \mapright{wbp}{move_{2}} \ldots
+$\mathcal{N}^\star_{m}$'s so that  
+$\mathcal{S}^\star_m=\mathcal{W}^\star_{m} \cup \mathcal{N}^\star_{m}$,
+called {\em a strut}, is an adequate planar graph, defined recursively. 
+Moreover, wings and nervures are partitioned into their {\em left} and {\em right} parts: 
+$\mathcal{W}_m=\mathcal{W}'_m \cup \mathcal{W}''_m$ and
+$\mathcal{N}_m=\mathcal{N}'_m \cup \mathcal{N}''_m$. The sequence of struts is
+$$\mathcal{S}_1^\star=\mathcal{W}_{1} \cup \mathcal{N}_{1} 
+\mapright{wbp}{move_{1}} 
+\mathcal{S}_2^\star=\mathcal{W}_{2} \cup \mathcal{N}_{2} \mapright{wbp}{move_{2}} \ldots
 \mapright{wbp}{move_{n-1}} 
-\mathcal{W}^\star_{n} \cup \mathcal{N}^\star_{n}=
-\mathcal{W}^\star \cup \mathcal{N}^\star.$$ 
-Each wing $\mathcal{W}_m^\star$'s corresponds to a section 
+\mathcal{S}_n^\star=\mathcal{W}_{n} \cup \mathcal{N}_{n}=
+\mathcal{W} \cup \mathcal{N}=\mathcal{S}^\star.$$ 
+Each wing $\mathcal{W}_m$'s corresponds to a section 
 of the previous sequence $\mathcal{H}_m^\star$'s by two adequated 
 fixed semi-planes $\Pi_\ell$ and $\Pi_r$.
-The construction of the planar graphs $\mathcal{W}_m^\star \cup \mathcal{N}_m^\star$ is
+The construction of the struts (which are planar graphs) is
 recursive. Initially $\mathcal{W}_1^\star$ is a pincel of lines and $\mathcal{N}_1^\star$ 
-is $\varnothing$.  Going from $\mathcal{W}_{m-1}^\star \cup \mathcal{N}_{m-1}^\star$ 
-to $\mathcal{W}_{m}^\star \cup \mathcal{N}_{m}^\star$ is very simple: two new vertices and four
+is $\varnothing$.  Going from $\mathcal{S}^\star_{m}$
+to $\mathcal{S}_{m+1}^\star$ is very simple: two new vertices and four
 new edges appear, so as to maintain planarity.
 % a vertex is broken into two
 % and a new vertex of $\mathcal{N}_{m}^\star$ appear;
@@ -314,8 +321,8 @@ new edges appear, so as to maintain planarity.
 In the third phase we make the abstract final element 
 $\mathcal{W}^\star \cup \mathcal{N}^\star$
 of the second phase {\em rectilinearly} (that is each edge is a straihgt line segment) PL-embedded. 
-By a cone construction we obtain from the rectilinearly PL-embedded 
-$\mathcal{W}^\star \cup \mathcal{N}^\star$  a special
+By a cone construction we obtain from the rectilinearly PL-embedded strut
+$\mathcal{S}^\star$ a special
 PL-complex, named $\mathcal{H}_1^\diamond$. This complex does not correpond to a gem dual
 and it can be loosely explained as $\mathcal{H}_1^\star$ with all balloon's heads ``opened''.
 % More details can only be given in the actual construct of Section \ref{}.
@@ -327,8 +334,10 @@ $\mathcal{H}^\star_{m}$'s to produce
 a pillow filling sequence $$\mathcal{H}^\diamond_{1}  \mapright{pillow}{filling_{1}}  
 \mathcal{H}^\diamond_2  \mapright{pillow}{filling_{2}} \ldots  \mapright{pillow}{filling_{n-1}}
 \mathcal{H}^\diamond_{n}=\mathcal{H}^\star.$$
-In this phase everything is embedded into $\mathbb{R}^3$ and the last element
-is the PL-embedding that we seek. 
+In this phase everything is embedded into $\mathbb{R}^3$ and the last 
+element, $\mathcal{H}^\star$,
+is the PL-embedding that we seek: the PL-embedding of the dual of the original
+$J^2$-gem $\mathcal{H}$ minus a vertex into $\mathbb{R}^3$.
 % It is worth mentioning that (except for the last one) these
 % complexes have no counterpart in the dual gems, that is they do not have PL2-faces, only
 % the part correspondig to the balloon's head  $\nabla_u \cup \nabla_v$.
@@ -338,9 +347,117 @@ algorithm that takes $O(n^2)$-space
 and $O(n^2)$-time complexity, where $2n$ is the number of vertices of the original $J^2$-gem.
 
 \subsection{A complete example}
-In the next six figures we gather and display all data structure we need for the $O(n^2)$-algorithm
-to PL-embed the dual of a $J^2$-gem.
-\include{F.Appendix}
+In the example coming from $r^{24}_5$ (Figs. \ref{fig:winglist01} to \ref{fig:winglist06})
+we gather and display the data structure we need for the $O(n^2)$-algorithm
+to PL-embed the dual of a $J^2$-gem. At each step only one of the left and right struts
+is changed in going from $\mathcal{S}^\star_m=\mathcal{W}_m \cup \mathcal{N}_m$ to
+$\mathcal{S}^\star_{m+1}=\mathcal{W}_{m+1} \cup \mathcal{N}_{m+1}$.
+
+
+
+%\include{F.Appendix}
+%-----------------------------------
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm]{A.figs/bpandwinglist123.pdf} \\
+\caption{\sf The initial right wing $\mathcal{W}''_1$
+is a pincel of lines emanating from $b_1$.
+The initial right nervure $\mathcal{N}''_1$ is empty. 
+The initial left wing $\mathcal{W}'_1$
+is a pincel of lines emanating from $a_1$.
+The initial left nervure $\mathcal{N}'_1$ is empty.
+At the end of each $wpb$-move a pair of edges is added to the nervure.
+Lower case symbols $a_j, b_k$ refer to 13-gons and 03-gons. Upper case symbols
+$A_j, B_k$ are auxiliary 0-simplexes.
+}
+\label{fig:winglist01}
+\end{center}
+\end{figure}
+%-----------------------------------
+
+%-----------------------------------
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14.1cm]{A.figs/bpandwinglist345.pdf} \\
+\caption{\sf A left wing and nervure is modified by a $wbp$-move. What is needed as input 
+is a pair of adjacent 
+shaded triangles and a thick edge. In the lower part a left wing and nervure is further 
+modified by another $wbp$-move. The modification of balloons into pillows define the new
+colored abstract combinatorial complexes. The nervures $\mathcal{N}_m$ are auxiliar devices
+that will be disposed after we find the rectilinear embedded
+$\mathcal{W}$ by a deterministic linear algorithm,
+See Fig. \ref{fig:winglist06}.}
+\label{fig:winglist02}
+\end{center}
+\end{figure}
+%-----------------------------------
+
+%-----------------------------------
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm]{A.figs/bpandwinglist567.pdf}
+\caption{\sf
+In the above first $wbp$-move a left wing is extended based on $a_5$. 
+In all the figures of this $r^{24}_5$-example (except for the $\mathcal{W}$ at the last one) 
+we have used Tutte's barycentric
+method \cite{tutte1963dg,colin2003tutte} to obtain the embedded final struts. 
+However, only the combinatorics of the embeddings (the rotations)
+are needed.
+In the second $wbp$-move one of the two shaded triangles
+is in the outside. Depite this special case, the manifestation of the 
+move behaves as in the usual case.
+}
+\label{fig:winglist03}
+\end{center}
+\end{figure}
+%-----------------------------------
+
+%-----------------------------------
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14.7cm]{A.figs/bpandwinglist789.pdf} \\
+\caption{\sf The first $wbp$-move induces a bifurcation on the nervure of a
+right wing based on $b_4$. 
+The second $wbp$-move produces an extension based on $b_3$ 
+of the nervure of the final right
+wing of the first $wbp$-move.
+}
+\label{fig:winglist04}
+\end{center}
+\end{figure}
+%-----------------------------------
+
+%-----------------------------------
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm]{A.figs/bpandwinglist91011.pdf} \\
+\caption{\sf The first $wbp$-move induces another bifurcation on the nervure of a
+right wing based in $b_8$. The second $wbp$-move 
+produces an extension of the nervure of a left
+wing based on $a_2$.}
+\label{fig:winglist05}
+\end{center}
+\end{figure}
+%-----------------------------------
+
+%-----------------------------------
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14.5cm]{A.figs/bpandwinglist1112LW.pdf} \\
+\caption{\sf The globally last $wbp$-move is the extension based at $a_8$ 
+(correponding to a 13-gon which breaks into two $a_{12}$ and $a_{13}$). The bottom part of
+the figure despict the final pair of wings $\mathcal{W}$. For this object we have
+a rectilinear embedding based on the deterministic 
+linear algorithm which we explain in Section{??}.
+Obtaining this embedding by a linear deterministic 
+algorithmic is central for our purposes.
+}
+\label{fig:winglist06}
+\end{center}
+\end{figure}
+%-----------------------------------
+
+
 
 \subsection{Acknowledgements}
 We thank the anonimous referees, which made us think and provide an $O(n)$-solution

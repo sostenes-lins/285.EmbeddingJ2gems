@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{colin2003tutte}
+{\'E}.~Colin~de Verdi{\`e}re, M.~Pocchiola, and G.~Vegter.
+\newblock Tutte's barycenter method applied to isotopies.
+\newblock {\em Computational Geometry}, 26(1):81--97, 2003.
+
 \bibitem{ferri1982crystallisation}
 M.~Ferri and C.~Gagliardi.
 \newblock {Crystallisation moves}.
@@ -16,29 +21,6 @@ S.~Lins.
   3-manifolds}.
 \newblock {\em European Journal of Combinatorics}, 9(4):291--305, 1988.
 
-\bibitem{lins1995gca}
-S.~Lins.
-\newblock {\em {Gems, Computers, and Attractors for 3-Manifolds}}.
-\newblock World Scientific, 1995.
-
-\bibitem{linsmachadoA2012}
-S.~Lins and R.~Machado.
-\newblock Framed link presentations of 3-manifolds by an ${O}(n^2)$ algorithm,
-  {I}: gems and their duals.
-\newblock {\em arXiv:1211.1953v2 [math.GT]}, 2012.
-
-\bibitem{linsmachadoB2012}
-S.~Lins and R.~Machado.
-\newblock Framed link presentations of 3-manifolds by an ${O}(n^2)$ algorithm,
-  {II}: colored complexes and boundings in their complexity.
-\newblock {\em arXiv:1212.0826v2 [math.GT]}, 2012.
-
-\bibitem{linsmachadoC2012}
-S.~Lins and R.~Machado.
-\newblock Framed link presentations of 3-manifolds by an ${O}(n^2)$ algorithm,
-  {III}: geometric complex $\mathcal{H}_n^\star$ embedded into $\mathbb{R}^3$.
-\newblock {\em arXiv:1212.0827v2 [math.GT]}, 2012.
-
 \bibitem{lins1985graph}
 S.~Lins and A.~Mandel.
 \newblock {Graph-encoded 3-manifolds.}
@@ -50,9 +32,37 @@ S.~Lins and M.~Mulazzani.
 \newblock {\em Journal of Knot Theory and its Ramifications}, 15(8):1001--1035,
   2006.
 
+\bibitem{lins1995gca}
+S.~L. Lins.
+\newblock {\em {Gems, Computers, and Attractors for 3-Manifolds}}.
+\newblock World Scientific, 1995.
+
+\bibitem{linsmachadoA2012}
+S.~L. Lins and R.~N. Machado.
+\newblock Framed link presentations of 3-manifolds by an ${O}(n^2)$ algorithm,
+  {I}: gems and their duals.
+\newblock {\em arXiv:1211.1953v2 [math.GT]}, 2012.
+
+\bibitem{linsmachadoB2012}
+S.~L. Lins and R.~N. Machado.
+\newblock Framed link presentations of 3-manifolds by an ${O}(n^2)$ algorithm,
+  {II}: colored complexes and boundings in their complexity.
+\newblock {\em arXiv:1212.0826v2 [math.GT]}, 2012.
+
+\bibitem{linsmachadoC2012}
+S.~L. Lins and R.~N. Machado.
+\newblock Framed link presentations of 3-manifolds by an ${O}(n^2)$ algorithm,
+  {III}: geometric complex $\mathcal{H}_n^\star$ embedded into $\mathbb{R}^3$.
+\newblock {\em arXiv:1212.0827v2 [math.GT]}, 2012.
+
 \bibitem{rourke1982introduction}
 C.P. Rourke and B.J. Sanderson.
 \newblock {\em Introduction to piecewise-linear topology}, volume~69.
 \newblock Springer-Verlag, 1982.
+
+\bibitem{tutte1963dg}
+W.~T. Tutte.
+\newblock {How to draw a graph}.
+\newblock {\em Proc. London Math. Soc}, 13(3):743--768, 1963.
 
 \end{thebibliography}

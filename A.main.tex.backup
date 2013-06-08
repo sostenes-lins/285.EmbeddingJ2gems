@@ -1,7 +1,7 @@
 \documentclass[a4paper,12pt,twoside]{article}
 
 %===========PACOTES
-\usepackage[body={170mm,235mm}]{geometry}
+\usepackage[body={173mm,235mm}]{geometry}
 %\usepackage[portuguese]{babel}
 \usepackage{a1}
 \usepackage[english]{babel}
@@ -248,18 +248,20 @@ Let $\nabla_u \cup \nabla_v$ be the {\em balloon's head} and let $\Delta_{rs}$
 be the {\em balloon's tail}.
 
 
-\subsection{The Strategy for obtaining the PL-embedding of the dual of a $J^2$-gem}
-We want to find a PL-embedding for the dual, $\mathcal{H}^\star$, of a $J^2$-gem $\mathcal{H}$ 
-into $\mathbb{S}^3$. To this end we remove one PL3-face of $\mathcal{H}^\star$ find
-in $\mathbb{R}^3$ a PL-embedding of the complementary ball so that their union form
-PL-triangulated tetrahedron. After we use the inverse of a stereographic projection with center
+\subsection{The Strategy for finding the $O(n^2)$-algorithm}
+We want to find a PL-embedding for the dual $\mathcal{H}^\star$ of a $J^2$-gem $\mathcal{H}$ 
+into $\mathbb{S}^3$. To this end we remove one PL3-face of $\mathcal{H}^\star$ 
+(one vertex of $\mathcal{H}$) and find
+a PL-embedding in $\mathbb{R}^3$  forming a a PL-triangulated tetrahedron. 
+After we use the inverse of a stereographic projection with center
 in the exterior of the triangulated tetrahedron. In this way we recover in $\mathbb{S}^3$
 the missing PL3-face.
 
 In this work we describe the PL-embedded PL3-faces of $\mathcal{H}^\star$ 
 into $\mathbb{R}^3$ by making it geometrically clear that its boundary
 is a set of 4 PL2-faces, one of each color, forming an embedded $\mathbb{S}^2$ whose interior is
-disjoint from the interior of $\mathbb{S}^2$'s corresponding to others PL3-faces. Thus, for our purposes
+disjoint from the interior of 
+$\mathbb{S}^2$'s corresponding to others PL3-faces. Thus, for our purposes
 it will be only necessary to embed the 2-skeleton of $\mathcal{H}^\star$.
 
 A direct approach to find the PL-embedding of the dual of a general $J^2$-gem with $2n$ vertices,
@@ -290,20 +292,25 @@ $$\mathcal{B}^\star=\mathcal{H}^\star_{1} \mapright{bp}{move_1}  \mathcal{H}^\st
 \mapright{bp}{move_{n-1}} \mathcal{H}^\star_{n}=\mathcal{H}^\star.$$ 
 In parallel to the construction of the sequence $\mathcal{H}^\star_{m}$'s we also construct
 (phase 2B) a sequence of {\em wings} $\mathcal{W}^\star_{m}$'s and their {\em nervures} 
-$\mathcal{N}^\star_{m}$'s so that  $\mathcal{W}^\star_{m} \cup \mathcal{N}^\star_{m}$ 
-is an easy to define adequate planar graph:
-$$\mathcal{W}^\star_{1} \cup \mathcal{N}^\star_{1} \mapright{wbp}{move_{1}} 
-\mathcal{W}^\star_{2} \cup \mathcal{N}^\star_{2} \mapright{wbp}{move_{2}} \ldots
+$\mathcal{N}^\star_{m}$'s so that  
+$\mathcal{S}^\star_m=\mathcal{W}^\star_{m} \cup \mathcal{N}^\star_{m}$,
+called {\em a strut}, is an adequate planar graph, defined recursively. 
+Moreover, wings and nervures are partitioned into their {\em left} and {\em right} parts: 
+$\mathcal{W}_m=\mathcal{W}'_m \cup \mathcal{W}''_m$ and
+$\mathcal{N}_m=\mathcal{N}'_m \cup \mathcal{N}''_m$. The sequence of struts is
+$$\mathcal{S}_1^\star=\mathcal{W}_{1} \cup \mathcal{N}_{1} 
+\mapright{wbp}{move_{1}} 
+\mathcal{S}_2^\star=\mathcal{W}_{2} \cup \mathcal{N}_{2} \mapright{wbp}{move_{2}} \ldots
 \mapright{wbp}{move_{n-1}} 
-\mathcal{W}^\star_{n} \cup \mathcal{N}^\star_{n}=
-\mathcal{W}^\star \cup \mathcal{N}^\star.$$ 
-Each wing $\mathcal{W}_m^\star$'s corresponds to a section 
+\mathcal{S}_n^\star=\mathcal{W}_{n} \cup \mathcal{N}_{n}=
+\mathcal{W} \cup \mathcal{N}=\mathcal{S}^\star.$$ 
+Each wing $\mathcal{W}_m$'s corresponds to a section 
 of the previous sequence $\mathcal{H}_m^\star$'s by two adequated 
 fixed semi-planes $\Pi_\ell$ and $\Pi_r$.
-The construction of the planar graphs $\mathcal{W}_m^\star \cup \mathcal{N}_m^\star$ is
+The construction of the struts (which are planar graphs) is
 recursive. Initially $\mathcal{W}_1^\star$ is a pincel of lines and $\mathcal{N}_1^\star$ 
-is $\varnothing$.  Going from $\mathcal{W}_{m-1}^\star \cup \mathcal{N}_{m-1}^\star$ 
-to $\mathcal{W}_{m}^\star \cup \mathcal{N}_{m}^\star$ is very simple: two new vertices and four
+is $\varnothing$.  Going from $\mathcal{S}^\star_{m}$
+to $\mathcal{S}_{m+1}^\star$ is very simple: two new vertices and four
 new edges appear, so as to maintain planarity.
 % a vertex is broken into two
 % and a new vertex of $\mathcal{N}_{m}^\star$ appear;
@@ -314,8 +321,8 @@ new edges appear, so as to maintain planarity.
 In the third phase we make the abstract final element 
 $\mathcal{W}^\star \cup \mathcal{N}^\star$
 of the second phase {\em rectilinearly} (that is each edge is a straihgt line segment) PL-embedded. 
-By a cone construction we obtain from the rectilinearly PL-embedded 
-$\mathcal{W}^\star \cup \mathcal{N}^\star$  a special
+By a cone construction we obtain from the rectilinearly PL-embedded strut
+$\mathcal{S}^\star$ a special
 PL-complex, named $\mathcal{H}_1^\diamond$. This complex does not correpond to a gem dual
 and it can be loosely explained as $\mathcal{H}_1^\star$ with all balloon's heads ``opened''.
 % More details can only be given in the actual construct of Section \ref{}.
@@ -327,8 +334,10 @@ $\mathcal{H}^\star_{m}$'s to produce
 a pillow filling sequence $$\mathcal{H}^\diamond_{1}  \mapright{pillow}{filling_{1}}  
 \mathcal{H}^\diamond_2  \mapright{pillow}{filling_{2}} \ldots  \mapright{pillow}{filling_{n-1}}
 \mathcal{H}^\diamond_{n}=\mathcal{H}^\star.$$
-In this phase everything is embedded into $\mathbb{R}^3$ and the last element
-is the PL-embedding that we seek. 
+In this phase everything is embedded into $\mathbb{R}^3$ and the last 
+element, $\mathcal{H}^\star$,
+is the PL-embedding that we seek: the PL-embedding of the dual of the original
+$J^2$-gem $\mathcal{H}$ minus a vertex into $\mathbb{R}^3$.
 % It is worth mentioning that (except for the last one) these
 % complexes have no counterpart in the dual gems, that is they do not have PL2-faces, only
 % the part correspondig to the balloon's head  $\nabla_u \cup \nabla_v$.
@@ -336,6 +345,119 @@ is the PL-embedding that we seek.
 The whole procedure can be implemented as a formal 
 algorithm that takes $O(n^2)$-space
 and $O(n^2)$-time complexity, where $2n$ is the number of vertices of the original $J^2$-gem.
+
+\subsection{A complete example}
+In the example coming from $r^{24}_5$ (Figs. \ref{fig:winglist01} to \ref{fig:winglist06})
+we gather and display the data structure we need for the $O(n^2)$-algorithm
+to PL-embed the dual of a $J^2$-gem. At each step only one of the left and right struts
+is changed in going from $\mathcal{S}^\star_m=\mathcal{W}_m \cup \mathcal{N}_m$ to
+$\mathcal{S}^\star_{m+1}=\mathcal{W}_{m+1} \cup \mathcal{N}_{m+1}$.
+
+
+
+%\include{F.Appendix}
+%-----------------------------------
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm]{A.figs/bpandwinglist123.pdf} \\
+\caption{\sf The initial right wing $\mathcal{W}''_1$
+is a pincel of lines emanating from $b_1$.
+The initial right nervure $\mathcal{N}''_1$ is empty. 
+The initial left wing $\mathcal{W}'_1$
+is a pincel of lines emanating from $a_1$.
+The initial left nervure $\mathcal{N}'_1$ is empty.
+At the end of each $wpb$-move a pair of edges is added to the nervure.
+Lower case symbols $a_j, b_k$ refer to 13-gons and 03-gons. Upper case symbols
+$A_j, B_k$ are auxiliary 0-simplexes.
+}
+\label{fig:winglist01}
+\end{center}
+\end{figure}
+%-----------------------------------
+
+%-----------------------------------
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14.1cm]{A.figs/bpandwinglist345.pdf} \\
+\caption{\sf A left wing and nervure is modified by a $wbp$-move. What is needed as input 
+is a pair of adjacent 
+shaded triangles and a thick edge. In the lower part a left wing and nervure is further 
+modified by another $wbp$-move. The modification of balloons into pillows define the new
+colored abstract combinatorial complexes. The nervures $\mathcal{N}_m$ are auxiliar devices
+that will be disposed after we find the rectilinear embedded
+$\mathcal{W}$ by a deterministic linear algorithm,
+See Fig. \ref{fig:winglist06}.}
+\label{fig:winglist02}
+\end{center}
+\end{figure}
+%-----------------------------------
+
+%-----------------------------------
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm]{A.figs/bpandwinglist567.pdf}
+\caption{\sf
+In the above first $wbp$-move a left wing is extended based on $a_5$. 
+In all the figures of this $r^{24}_5$-example (except for the $\mathcal{W}$ at the last one) 
+we have used Tutte's barycentric
+method \cite{tutte1963dg,colin2003tutte} to obtain the embedded final struts. 
+However, only the combinatorics of the embeddings (the rotations)
+are needed.
+In the second $wbp$-move one of the two shaded triangles
+is in the outside. Depite this special case, the manifestation of the 
+move behaves as in the usual case.
+}
+\label{fig:winglist03}
+\end{center}
+\end{figure}
+%-----------------------------------
+
+%-----------------------------------
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14.7cm]{A.figs/bpandwinglist789.pdf} \\
+\caption{\sf The first $wbp$-move induces a bifurcation on the nervure of a
+right wing based on $b_4$. 
+The second $wbp$-move produces an extension based on $b_3$ 
+of the nervure of the final right
+wing of the first $wbp$-move.
+}
+\label{fig:winglist04}
+\end{center}
+\end{figure}
+%-----------------------------------
+
+%-----------------------------------
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm]{A.figs/bpandwinglist91011.pdf} \\
+\caption{\sf The first $wbp$-move induces another bifurcation on the nervure of a
+right wing based in $b_8$. The second $wbp$-move 
+produces an extension of the nervure of a left
+wing based on $a_2$.}
+\label{fig:winglist05}
+\end{center}
+\end{figure}
+%-----------------------------------
+
+%-----------------------------------
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm]{A.figs/bpandwinglist1112LW.pdf} \\
+\caption{\sf The globally last $wbp$-move is the extension based at $a_8$ 
+(correponding to a 13-gon which breaks into two $a_{12}$ and $a_{13}$). The bottom part of
+the figure despict the final pair of wings $\mathcal{W}$. For this object we have
+a rectilinear embedding based on the deterministic 
+linear algorithm which we explain in Section{??}.
+Obtaining this embedding by a linear deterministic 
+algorithmic is central for our purposes.
+}
+\label{fig:winglist06}
+\end{center}
+\end{figure}
+%-----------------------------------
+
+
 
 \subsection{Acknowledgements}
 We thank the anonimous referees, which made us think and provide an $O(n)$-solution
@@ -627,7 +749,7 @@ $\mathcal{W}_m \cup \mathcal{N}_m \backslash \delta(Z)=\mathcal{N}_m$.
 
 Let $\Pi_\ell$  ($\Pi_r$) be the half plane limited by the $z$-axis 
 which contains $a_1=z_0z_2/2$ $(b_1=z_1z_2/2)$.
-The construction of the wings and nervures of the next section are exemplified in Figs. \ref{fig:winglist01} to \ref{fig:winglist11}.
+The construction of the wings and nervures of the next section are exemplified in Figs. \ref{fig:winglist01} to \ref{fig:winglist06}.
 
 
 
@@ -736,7 +858,7 @@ semi-plane is depicted as a {\em thick edge}. \index{thick edge}}
 \begin{center}
 \includegraphics[width=15cm]{A.figs/ExWings.pdf}
 \caption{An example of $wbp$-move: four new edges and two new vertices are created.
-0-simplex $b_4$ corresponding to a 03-gon XXXXXXXXXXXX}
+0-simplex $b_4$ corresponding to a 03-gon $(16\uparrow 23, 4, 5)$}
  %meaning that some faces are bounded by plane quadrilaterals instead of triangles.}
 \label{fig:controlmaps01novo1}
 \end{center}
@@ -779,10 +901,20 @@ Thus each one of the final left and right wings with nervures has at most $6n-4$
 
 
 \subsection{Third phase: a rectilinear PL-embedding for 
-$\mathcal{W}^\star \cup \mathcal{N}^\star$ and its induced $\mathcal{H}_1^\diamond$}
+$\mathcal{W}^\star \cup \mathcal{N}^\star$ 
+and its induced diamond complex $\mathcal{H}_1^\diamond$, by a cone construction}
 
 
-\begin{figure}[!htb] 
+\begin{figure}[H] 
+\begin{center}
+\includegraphics[width=15 cm]{A.figs/coordX.pdf}
+\caption{\sf Defining x coordinates.}
+\label{fig:coordX}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[H] 
 \begin{center}
 \includegraphics[width=15 cm]{A.figs/drawLastWing.pdf}
 \caption{\sf A linear algorithm for 
@@ -794,12 +926,232 @@ In the general step we have the black vertices which are in their fixed position
 \end{figure}
 
 
-\subsection{Fourth phase: filling the pillows to obtain the PL-embedding of $\mathcal{H}^\star$ we seek}
+Defining the PL-embedding $\mathcal{H}_{1}^\diamond$
+
+
+Let $\mathcal{L}_{i+1}^\star$ be a subset of the pillow $\mathcal{P}_{i+1}^\star$, formed by the part
+that comes from the tail of the balloon after the i-th $bp$-move is applied, see Fig. \ref{fig:U3}.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=13cm]{A.figs/U3.pdf}
+\caption{The set $\mathcal{L}_{i+1}^\star$.} 
+\label{fig:U3}
+\end{center}
+\end{figure}
+
+
+Let $\{x\} \cup Y \subseteq \mathbb{R}^N$, for $1\le N \in \mathbb{N}$. 
+The \index{cone} {\em cone} \cite{rourke1982introduction} 
+with vertex $x$ and base $Y$, denoted $x \ast Y \subseteq \mathbb{R}^N$,
+is the union of $Y$ with all line 
+segments which link $x$ to $y \in Y$.
+
+
+Now we define a PL-complex $\mathcal{H}^\diamond_1$ explicitly embedded into $\mathbb{R}^3$. 
+We use the (rectilinearly embedded into $\Pi_\ell \cup \Pi_r$) 
+final wings and the cone contruction to get the 
+$\mathcal{H}^\diamond_1$. To this end, select a distinguished representative 
+of the edges of $\mathcal{W}_n^\ell$ (resp. $\mathcal{W}_n^r$) incident to $z_3^j$ in the following way: if there is just one edge, choose it, 
+otherwise the representative is the edge whose other end has the smallest indexed upper case label.
+Let $R$ denote the set of representatives.
+
+For each $e \in R$ 
+%let  $v \in \{a_k,A_{k'},b_\ell,B_{\ell'}\}$ 
+%be the other end of $e$.
+add the two 2-simplices $z_0\ast e$ and $z_2\ast e$ (resp. the two 2-simplices 
+$z_1\ast e$ and $z_2\ast e$) to  $\mathcal{H}^\diamond_1$.  
+To complete 
+$\mathcal{H}^\diamond_1$ add the 
+2-simplices $\{z_3^jz_1z_0 \ | \ j=1,\ldots,2n\}$.
+In Fig. \ref{fig:U} the solid lines
+  (the edges of $R$) and the dashed edges are part of $\mathcal{L}^\star_i$,
+and are treated in next section.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm]{A.figs/U.pdf}
+\caption{We use the cone construction with the solid lines to obtain $\mathcal{H}_1^\diamond.$ 
+Then we use the dashed lines
+to obtain the information of $z_3^\dagger$ and $a_{p'}, A_p, a_{p''}$ or $b_{q'}, B_q, b_{q''}$ 
+latter when obtaining $\mathcal{L}_i^\star$. Also, we have $p'''\in\{p' ,p''\}$ and  $q'''\in\{q' ,q''\}$.} 
+\label{fig:U}
+\end{center}
+\end{figure}
+
+\begin{proposition}
+\label{cor:embedcone}
+If $\mathcal{W}_m^h$ is embedded rectilinearly in $\Pi_h$, $h \in \{\ell,r\}$,
+then the pair of embeddings can be 
+extended to an embedding of $\mathcal{H}^\diamond_1$ into $\mathbb{R}^3$,
+via the cone construction.
+\end{proposition}
+\begin{proof}
+ Straighforward from the simple geometry of the situation.
+\end{proof}
+
+\subsection{Fourth phase: filling the pillows, 
+to obtain the PL-embedding of $\mathcal{H}^\star$ we seek:
+$\mathcal{H}^\diamond_1, \mathcal{H}^\diamond_2,\ldots$  
+$\mathcal{H}^\diamond_{n-1}, \mathcal{H}^\diamond_n= \mathcal{H}^\star$}
+
+
+The process of replacing the embedded tail of a balloon by the corresponding
+trio of PL2-faces in the pillow is denominated \index{blow up a tail} {\em the blowing up of the 
+balloon's tail}.
+
+%{\huge \bf Aqui insira seus $\alpha, \beta, \gamma$, bumps, etc}
+%\begin{theorem}\label{theo:teoremadeumalinha}
+% There is an $O(n)$-algorithm for blowing up a single balloon's tail.
+%Thus finding $E\mathcal{L}_n^\star$ and  $E\mathcal{H}_n^\star= 
+%E\mathcal{U}_n^\star \cup E\mathcal{L}_n^\star$
+%take $O(n^2)$ steps.
+%\end{theorem}
+\begin{theorem}\label{theo:teoremadeumalinha}
+ There is an $O(n)$-algorithm for blowing up a single balloon's tail.
+Thus finding $\mathcal{H}_n^\star$ take, $O(n^2)$ steps.
+\end{theorem}
+\begin{proof}
+%Here we get an explicit embedding $E\mathcal{L}_{n}^\star$.
+%This finishes the description of $E\mathcal{H}_n^\star.$
+%This 2-complex becomes geometrically
+%consistent with the combinatorial one in the sense 
+%that there are no spurious crossings. 
+$\mathcal{H}_{i+1}^\diamond$ is the union of $\mathcal{H}_{i}^\diamond$ with $\mathcal{L}_{i+1}^\star$
+and an {\em $\epsilon$-change} in some PL3-faces, if the rank of the type of balloon's tail of the i-th $bp$-move has rank greater than 1
+(we call $\epsilon$-change because this change is small, as described below).
+At the same time we update the colors of the middle layer to match the colors of the $i$-th pillow in the sequence of $bp$-moves.
+
+
+%(We proceed the embed of $\mathcal{L}_i^\star$ in the same order as the $bp$-move.
+%In each step from $E\mathcal{U}_i^\star$ to $E\mathcal{U}_{i+1}^\star$,
+% we change the color of two 2-simplices in the medial layer, of the open balloon's head of this step in $E\mathcal{U}_i^\star$,
+%to match with the medial layer of the $bp$-move and embed $\mathcal{L}_i^\star$.
+%Basically $E\mathcal{U}_{i+1}^\star$ is the union of $E\mathcal{U}_{i}^\star$ with 
+%$E\mathcal{L}_{i}^\star$ and a change of the color in two 2-simplices of $\mathcal{U}_{i}^\star$
+%(in some steps we make changes in some tetrahedra which is already embedded to create space to the embed of $\mathcal{L}_i^\star$).
+% The final embedding $E\mathcal{U}_n^\star$ is equals to $E\mathcal{H}_n^\star$,
+%but $E\mathcal{U}_i^\star \neq E\mathcal{H}_i^\star$ if $i<n.$
+
+Now we describe how to embed each kind of $\mathcal{L}_{i}^\star$ 
+(explaining how to $\epsilon$-change some PL3-faces,
+to get space for $E\mathcal{L}_i^\star$).
+
+
+If the balloon's tail is of type $P_1$ (the case $B_1$ is analogous).
+Make two copies of $P_1$, resulting in three $P_1$, but change the color of the one which will be in
+the middle, and define the 0-simplices like in Fig. \ref{fig:3d2}.
+
+\begin{figure}[!htb] 
+\begin{center}
+\includegraphics[width=14cm]{A.figs/3d2.pdf}
+\caption{Embedding the part of the pillow corresponding to the tail of the balloon: case $P_1$ of the tail.}
+\label{fig:3d2}
+\end{center}
+\end{figure}
+If the balloon's tail is of type $B_i$, $i>1$ (the case $P_i$ is analogous).
+Make two copies of $B_i$, refine the copies and the original, resulting in three $B_i'$, 
+but change the color of the one which will be in
+the middle, and define the 0-simplices like in Fig. \ref{fig:3d3}.
+
+
+The images $\chi_j$ we already know from previous $bp$-move, now we need to define all the images
+$\alpha_j, \beta_j$ and $\gamma_j.$
+Let $\beta_j$ be $\frac{z_2+\chi_{j+1}}{2}$ 
+for each $j=1,\ldots, i$.
+As the images $\alpha_j$ and $\gamma_j$ can be defined in analogus way, we just explain how to define each $\alpha_j$.
+We know that each $\alpha_j$ is in the PL3-face $\nabla_r$. To 
+define each $\alpha_j$ we need 
+to reduce the PL3-face $\nabla_r$
+in order to get enough space for the PL2-faces of color 0 and 2 of the PL3-faces $\nabla_u$ and $\nabla_v$.
+Consider the PL3-face $\nabla_r$, each $\beta_j$ is already defined, so 
+define each $\zeta_j$ as $\frac{z_2+\omega_{j+1}}{2}$, where $\omega_k$ is previously defined, %that they are as if we where going to refine
+ see Fig. \ref{fig:nextdual3}. Define $\alpha_j$ as $\frac{\zeta_j+\beta_j}{2}$. 
+
+\begin{figure}[!htb] 
+\begin{center}
+\includegraphics[width=14cm]{A.figs/3d3.pdf}
+\caption{Embedding the part of the pillow corresponding to the tail of the balloon: case $B_i$ of the tail.}
+\label{fig:3d3}
+\end{center}
+\end{figure}
+
+\begin{figure}[!htb] 
+\begin{center}
+\includegraphics[scale=0.8]{A.figs/nextdual3.pdf}
+\caption{Using the PL3-face corresponding to $r$ to define the $\alpha_j$ as $\frac{\zeta_j+\beta_j}{2}$.}
+\label{fig:nextdual3}
+\end{center}
+\end{figure}
+
+
+The last case is when balloon's tail is refined, that means it is of type $P_i'$ or $B_i'$, $i>1$. We treat the case $B_i'$,
+ see Fig. \ref{fig:3d4}. All the 0-simplices $\beta_j$ are already defined, we need to define each
+$\alpha_j$ and each $\gamma_j$. Observe that here $r\neq s-1$ and the definitions of $\alpha_j$ and $\gamma_j$ 
+are not analogous.
+
+\begin{figure}[!htb] 
+\begin{center}
+\includegraphics[width=15cm]{A.figs/3d4.pdf}
+\caption{Embedding the part of the pillow corresponding to the tail of the balloon: case $B_i'$ of the tail.}
+\label{fig:3d4}
+\end{center}
+\end{figure}
+
+
+In this case, we need to reduce the PL3-faces $\nabla_r$ and $\nabla_s$
+to create enough space to build PL2-faces 0- and 2-colored.
+To define 0-simplices $\alpha_j$ and $\gamma_j$, one of these cases is analogous to the case not
+ refined, but the other we describe here. ($\nabla_r$ is in the new case is the rank 
+%of
+%the PL2$_0$- and PL2$_1$-faces of $\nabla_r$, the new case 
+%happens when the rank
+ of PL2$_0$-face is equals to the rank of the PL2$_1$-face plus 2, if its not true,
+the new case is in the PL3-face $\nabla_v$).
+Suppose that the new case is in the PL3-face, $\nabla_r$. To define $\alpha_j$,
+suppose that the PL2$_0$-face of this PL3-face is not refined,
+ see Fig. \ref{fig:3d5}. Define each $\alpha_j$  as the middle point between $\beta_j$ and $\omega_j$.
+
+
+
+\begin{figure}[!htb] 
+\begin{center}
+\includegraphics[scale=0.7]{A.figs/3d5.pdf}
+\caption{Using the PL3-face $\nabla_r$ to define $\alpha_j$ as $\frac{\omega_j+\beta_j}{2}$.}
+\label{fig:3d5}
+\end{center}
+\end{figure}
+
+Consider the case that the PL2$_0$-face, of the PL3-face $\nabla_r$, is refined
+see Fig. \ref{fig:3d6}.
+ This is a final subtlety which 
+is treated with the {\em bump}. \index{bump} This is characterized by a
+non-convex pentagon shown in the bottom part of Fig. \ref{fig:3d6}.
+Let $\nu_j$ be $\frac{z_2+\omega_j}{2}$
+and $\alpha_j$ as $\frac{\beta_{j-1}+\nu_j}{2}$, for $j=1,\ldots, i-1$. Observe that
+if we define $\alpha_j$ as if the PL2$_0$-face
+where not refined, some 1-simplices may cross.
+
+
+
+
+\begin{figure}[!htb] 
+\begin{center}
+\includegraphics[scale=0.7]{A.figs/3d6.pdf}
+\caption{The bump: a final subtlety and how to deal with it.}
+\label{fig:3d6}
+\end{center}
+\end{figure}
+
+\end{proof}
 
 \section{Conclusion and further work}
 
 
-\include{F.Appendix}
+
+
+
+
 \include{E.refAffiliation}
 %\input{affiliation}
 

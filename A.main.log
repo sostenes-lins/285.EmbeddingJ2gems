@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.1.11)  3 JUN 2013 16:50
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.1.11)  8 JUN 2013 10:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -202,7 +202,7 @@ Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
 
 
 Writing index file A.main.idx
-(./A.main.aux (./F.Appendix.aux) (./E.refAffiliation.aux))
+(./A.main.aux (./E.refAffiliation.aux))
 \openout1 = `A.main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
@@ -226,14 +226,14 @@ LaTeX Font Info:    ... okay on input line 52.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: twoside 
-* h-part:(L,W,R)=(45.52441pt, 483.69684pt, 68.28662pt)
+* h-part:(L,W,R)=(42.11008pt, 492.23267pt, 63.16513pt)
 * v-part:(T,H,B)=(70.56284pt, 668.63976pt, 105.84425pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=483.69684pt
+* \textwidth=492.23267pt
 * \textheight=668.63976pt
-* \oddsidemargin=-26.74557pt
-* \evensidemargin=-3.98337pt
+* \oddsidemargin=-30.15991pt
+* \evensidemargin=-9.10486pt
 * \topmargin=-38.70715pt
 * \headheight=12.0pt
 * \headsep=25.0pt
@@ -318,89 +318,90 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 54.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-)
-Overfull \hbox (3.7352pt too wide) in paragraph at lines 67--102
-\OT1/cmr/m/n/10.95 that each tetra-he-dron have ver-tices dis-tinc-tively col-o
-red 0,1,2,3. In a \OT1/cmr/m/it/10.95 pseudo \OT1/cmr/m/n/10.95 3-triangulation
+) [1
 
- []
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]
-\openout2 = `F.Appendix.aux'.
-
-
-(./F.Appendix.tex
-<A.figs/bpandwinglist123.pdf, id=35, 541.67935pt x 784.13356pt>
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+<A.figs/bpandwinglist123.pdf, id=29, 541.67935pt x 784.13356pt>
 File: A.figs/bpandwinglist123.pdf Graphic file (type pdf)
 
 <use A.figs/bpandwinglist123.pdf>
-Package pdftex.def Info: A.figs/bpandwinglist123.pdf used on input line 6.
+Package pdftex.def Info: A.figs/bpandwinglist123.pdf used on input line 362.
 (pdftex.def)             Requested size: 426.79134pt x 617.84348pt.
+ [4]
+Overfull \vbox (33.55927pt too high) has occurred while \output is active []
 
-<A.figs/bpandwinglist345.pdf, id=36, 541.41444pt x 802.0406pt>
+
+[5 <./A.figs/bpandwinglist123.pdf>]
+<A.figs/bpandwinglist345.pdf, id=154, 541.41444pt x 802.0406pt>
 File: A.figs/bpandwinglist345.pdf Graphic file (type pdf)
 
 <use A.figs/bpandwinglist345.pdf>
-Package pdftex.def Info: A.figs/bpandwinglist345.pdf used on input line 21.
-(pdftex.def)             Requested size: 426.79134pt x 632.2467pt.
+Package pdftex.def Info: A.figs/bpandwinglist345.pdf used on input line 381.
+(pdftex.def)             Requested size: 401.18402pt x 594.30847pt.
+
+Overfull \vbox (23.50203pt too high) has occurred while \output is active []
 
 
-LaTeX Warning: Float too large for page by 4.4625pt on input line 30.
-
-<A.figs/bpandwinglist567.pdf, id=37, 577.99588pt x 788.63701pt>
+[6 <./A.figs/bpandwinglist345.pdf>]
+<A.figs/bpandwinglist567.pdf, id=273, 577.99588pt x 788.63701pt>
 File: A.figs/bpandwinglist567.pdf Graphic file (type pdf)
 
 <use A.figs/bpandwinglist567.pdf>
-Package pdftex.def Info: A.figs/bpandwinglist567.pdf used on input line 36.
+Package pdftex.def Info: A.figs/bpandwinglist567.pdf used on input line 398.
 (pdftex.def)             Requested size: 426.79134pt x 582.34277pt.
 
-<A.figs/bpandwinglist789.pdf, id=38, 556.03664pt x 820.9081pt>
+Overfull \vbox (11.53633pt too high) has occurred while \output is active []
+
+
+[7 <./A.figs/bpandwinglist567.pdf>]
+<A.figs/bpandwinglist789.pdf, id=393, 556.03664pt x 820.9081pt>
 File: A.figs/bpandwinglist789.pdf Graphic file (type pdf)
 
 <use A.figs/bpandwinglist789.pdf>
-Package pdftex.def Info: A.figs/bpandwinglist789.pdf used on input line 51.
-(pdftex.def)             Requested size: 426.79134pt x 630.09703pt.
+Package pdftex.def Info: A.figs/bpandwinglist789.pdf used on input line 418.
+(pdftex.def)             Requested size: 418.25542pt x 617.49583pt.
+
+Overfull \vbox (17.68939pt too high) has occurred while \output is active []
 
 
-LaTeX Warning: Float too large for page by 2.31282pt on input line 60.
-
-<A.figs/bpandwinglist91011.pdf, id=39, 563.84909pt x 811.29202pt>
+[8 <./A.figs/bpandwinglist789.pdf>]
+<A.figs/bpandwinglist91011.pdf, id=511, 563.84909pt x 811.29202pt>
 File: A.figs/bpandwinglist91011.pdf Graphic file (type pdf)
 
 <use A.figs/bpandwinglist91011.pdf>
-Package pdftex.def Info: A.figs/bpandwinglist91011.pdf used on input line 66.
+Package pdftex.def Info: A.figs/bpandwinglist91011.pdf used on input line 433.
 (pdftex.def)             Requested size: 426.79134pt x 614.08772pt.
 
-<A.figs/bpandwinglist1112LW.pdf, id=40, 573.91196pt x 804.73157pt>
+<A.figs/bpandwinglist1112LW.pdf, id=512, 573.91196pt x 804.73157pt>
 File: A.figs/bpandwinglist1112LW.pdf Graphic file (type pdf)
 
 <use A.figs/bpandwinglist1112LW.pdf>
-Package pdftex.def Info: A.figs/bpandwinglist1112LW.pdf used on input line 81.
-(pdftex.def)             Requested size: 426.79134pt x 598.43904pt.
-) [5 <./A.figs/bpandwinglist123.pdf>]
-[6 <./A.figs/bpandwinglist345.pdf>] [7 <./A.figs/bpandwinglist567.pdf>]
-[8 <./A.figs/bpandwinglist789.pdf>] [9 <./A.figs/bpandwinglist91011.pdf>]
+Package pdftex.def Info: A.figs/bpandwinglist1112LW.pdf used on input line 446.
+
+(pdftex.def)             Requested size: 412.56496pt x 578.48535pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9 <./A.figs/bpandwinglist91011.pdf>]
+Overfull \vbox (8.3122pt too high) has occurred while \output is active []
+
+
 [10 <./A.figs/bpandwinglist1112LW.pdf>]
 <A.figs/dualPL2.pdf, id=692, 264.83292pt x 121.70432pt>
 File: A.figs/dualPL2.pdf Graphic file (type pdf)
 
 <use A.figs/dualPL2.pdf>
-Package pdftex.def Info: A.figs/dualPL2.pdf used on input line 419.
+Package pdftex.def Info: A.figs/dualPL2.pdf used on input line 537.
 (pdftex.def)             Requested size: 264.83226pt x 121.70401pt.
 
 Underfull \vbox (badness 2119) has occurred while \output is active []
 
- [11
-
-
-]
+ [11]
 <A.figs/pillowother2NOVO.pdf, id=696, 466.92953pt x 309.83252pt>
 File: A.figs/pillowother2NOVO.pdf Graphic file (type pdf)
 
 <use A.figs/pillowother2NOVO.pdf>
-Package pdftex.def Info: A.figs/pillowother2NOVO.pdf used on input line 466.
+Package pdftex.def Info: A.figs/pillowother2NOVO.pdf used on input line 584.
 (pdftex.def)             Requested size: 426.79134pt x 283.21031pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -410,141 +411,148 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: A.figs/allkinds3.pdf Graphic file (type pdf)
 
 <use A.figs/allkinds3.pdf>
-Package pdftex.def Info: A.figs/allkinds3.pdf used on input line 520.
+Package pdftex.def Info: A.figs/allkinds3.pdf used on input line 638.
 (pdftex.def)             Requested size: 372.73126pt x 194.32283pt.
 
 <A.figs/pillowother5.pdf, id=927, 268.81606pt x 61.51604pt>
 File: A.figs/pillowother5.pdf Graphic file (type pdf)
 
 <use A.figs/pillowother5.pdf>
-Package pdftex.def Info: A.figs/pillowother5.pdf used on input line 535.
+Package pdftex.def Info: A.figs/pillowother5.pdf used on input line 653.
 (pdftex.def)             Requested size: 341.43306pt x 78.13385pt.
 
 <A.figs/pillowother3.pdf, id=928, 268.64223pt x 85.6821pt>
 File: A.figs/pillowother3.pdf Graphic file (type pdf)
 
 <use A.figs/pillowother3.pdf>
-Package pdftex.def Info: A.figs/pillowother3.pdf used on input line 550.
+Package pdftex.def Info: A.figs/pillowother3.pdf used on input line 668.
 (pdftex.def)             Requested size: 341.43306pt x 108.90393pt.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 680.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 680.
  [14 <./A.figs/allkinds3.pdf> <./A.figs/pillowother5.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./A.figs/pillowother5.pdf): PDF inclusi
 on: multiple pdfs with page group included in a single page
->]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 562.
+>] [15 <./A.figs/pillowother3.pdf>]
 
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 562.
- [15 <./A.figs/pillowother3.pdf>]
+LaTeX Warning: Reference `fig:winglist11' on page 16 undefined on input line 82
+2.
 
-LaTeX Warning: Reference `fig:winglist11' on page 16 undefined on input line 70
-4.
 
-[16] <A.figs/controlmaps01.pdf, id=1089, 531.77222pt x 173.25615pt>
+Underfull \vbox (badness 3849) has occurred while \output is active []
+
+ [16]
+<A.figs/controlmaps01.pdf, id=1089, 531.77222pt x 173.25615pt>
 File: A.figs/controlmaps01.pdf Graphic file (type pdf)
 
 <use A.figs/controlmaps01.pdf>
-Package pdftex.def Info: A.figs/controlmaps01.pdf used on input line 731.
+Package pdftex.def Info: A.figs/controlmaps01.pdf used on input line 849.
 (pdftex.def)             Requested size: 438.17226pt x 142.7636pt.
 
 <A.figs/ExWings.pdf, id=1090, 522.83827pt x 337.7779pt>
 File: A.figs/ExWings.pdf Graphic file (type pdf)
 
 <use A.figs/ExWings.pdf>
-Package pdftex.def Info: A.figs/ExWings.pdf used on input line 742.
+Package pdftex.def Info: A.figs/ExWings.pdf used on input line 860.
 (pdftex.def)             Requested size: 426.79134pt x 275.73752pt.
 
 <A.figs/controlmaps01novo2.pdf, id=1091, 427.03671pt x 110.71362pt>
 File: A.figs/controlmaps01novo2.pdf Graphic file (type pdf)
 
 <use A.figs/controlmaps01novo2.pdf>
-Package pdftex.def Info: A.figs/controlmaps01novo2.pdf used on input line 752.
+Package pdftex.def Info: A.figs/controlmaps01novo2.pdf used on input line 870.
 (pdftex.def)             Requested size: 426.79134pt x 110.65083pt.
- [17 <./A.figs/controlmaps01.pdf>] [18 <./A.figs/ExWings.pdf> <./A.figs/control
-maps01novo2.pdf
+
+<A.figs/coordX.pdf, id=1092, 565.98953pt x 108.405pt>
+File: A.figs/coordX.pdf Graphic file (type pdf)
+ <use A.figs/coordX.pdf>
+Package pdftex.def Info: A.figs/coordX.pdf used on input line 911.
+(pdftex.def)             Requested size: 426.79134pt x 81.74684pt.
+
+Underfull \vbox (badness 1097) has occurred while \output is active []
+
+ [17 <./A.figs/controlmaps01.pdf>]
+Overfull \vbox (125.93866pt too high) has occurred while \output is active []
+
+
+[18 <./A.figs/ExWings.pdf> <./A.figs/controlmaps01novo2.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./A.figs/controlmaps01novo2.pdf): PDF i
 nclusion: multiple pdfs with page group included in a single page
->] <A.figs/coordX.pdf, id=1266, 565.98953pt x 108.405pt>
-File: A.figs/coordX.pdf Graphic file (type pdf)
+> <./A.figs/coordX.pdf
 
-<use A.figs/coordX.pdf>
-Package pdftex.def Info: A.figs/coordX.pdf used on input line 793.
-(pdftex.def)             Requested size: 426.79134pt x 81.74684pt.
-
-<A.figs/drawLastWing.pdf, id=1267, 458.03247pt x 219.37262pt>
+pdfTeX warning: /usr/bin/pdflatex (file ./A.figs/coordX.pdf): PDF inclusion: mu
+ltiple pdfs with page group included in a single page
+>] <A.figs/drawLastWing.pdf, id=1268, 458.03247pt x 219.37262pt>
 File: A.figs/drawLastWing.pdf Graphic file (type pdf)
 
 <use A.figs/drawLastWing.pdf>
-Package pdftex.def Info: A.figs/drawLastWing.pdf used on input line 802.
+Package pdftex.def Info: A.figs/drawLastWing.pdf used on input line 920.
 (pdftex.def)             Requested size: 426.79134pt x 204.4094pt.
 
-<A.figs/U3.pdf, id=1268, 273.37132pt x 89.10791pt>
+<A.figs/U3.pdf, id=1269, 273.37132pt x 89.10791pt>
 File: A.figs/U3.pdf Graphic file (type pdf)
  <use A.figs/U3.pdf>
-Package pdftex.def Info: A.figs/U3.pdf used on input line 820.
+Package pdftex.def Info: A.figs/U3.pdf used on input line 938.
 (pdftex.def)             Requested size: 369.88582pt x 120.57872pt.
 
-Underfull \vbox (badness 3323) has occurred while \output is active []
-
- [19 <./A.figs/coordX.pdf> <./A.figs/drawLastWing.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./A.figs/drawLastWing.pdf): PDF inclusi
-on: multiple pdfs with page group included in a single page
->] <A.figs/U.pdf, id=1276, 484.82767pt x 362.09267pt>
+<A.figs/U.pdf, id=1270, 484.82767pt x 362.09267pt>
 File: A.figs/U.pdf Graphic file (type pdf)
  <use A.figs/U.pdf>
-Package pdftex.def Info: A.figs/U.pdf used on input line 856.
+Package pdftex.def Info: A.figs/U.pdf used on input line 974.
 (pdftex.def)             Requested size: 426.79134pt x 318.75304pt.
+ [19 <./A.figs/drawLastWing.pdf> <./A.figs/U3.pdf
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [20 <./A.figs/U3.pdf>] [21 <./A.figs/U.pdf>]
-<A.figs/3d2.pdf, id=1343, 493.94621pt x 77.16635pt>
+pdfTeX warning: /usr/bin/pdflatex (file ./A.figs/U3.pdf): PDF inclusion: multip
+le pdfs with page group included in a single page
+>] [20 <./A.figs/U.pdf>] <A.figs/3d2.pdf, id=1339, 493.94621pt x 77.16635pt>
 File: A.figs/3d2.pdf Graphic file (type pdf)
- <use A.figs/3d2.pdf>
-Package pdftex.def Info: A.figs/3d2.pdf used on input line 930.
+
+<use A.figs/3d2.pdf>
+Package pdftex.def Info: A.figs/3d2.pdf used on input line 1048.
 (pdftex.def)             Requested size: 398.33858pt x 62.23004pt.
-
-<A.figs/3d3.pdf, id=1344, 544.28392pt x 155.01237pt>
+ <A.figs/3d3.pdf, id=1340, 544.28392pt x 155.01237pt>
 File: A.figs/3d3.pdf Graphic file (type pdf)
- <use A.figs/3d3.pdf>
-Package pdftex.def Info: A.figs/3d3.pdf used on input line 956.
-(pdftex.def)             Requested size: 398.33858pt x 113.44664pt.
 
-<A.figs/nextdual3.pdf, id=1345, 361.9622pt x 138.7396pt>
+<use A.figs/3d3.pdf>
+Package pdftex.def Info: A.figs/3d3.pdf used on input line 1074.
+(pdftex.def)             Requested size: 398.33858pt x 113.44664pt.
+ <A.figs/nextdual3.pdf, id=1341, 361.9622pt x 138.7396pt>
 File: A.figs/nextdual3.pdf Graphic file (type pdf)
 
 <use A.figs/nextdual3.pdf>
-Package pdftex.def Info: A.figs/nextdual3.pdf used on input line 964.
+Package pdftex.def Info: A.figs/nextdual3.pdf used on input line 1082.
 (pdftex.def)             Requested size: 289.57014pt x 110.9918pt.
 
-<A.figs/3d4.pdf, id=1346, 547.36201pt x 155.83003pt>
+<A.figs/3d4.pdf, id=1342, 547.36201pt x 155.83003pt>
 File: A.figs/3d4.pdf Graphic file (type pdf)
  <use A.figs/3d4.pdf>
-Package pdftex.def Info: A.figs/3d4.pdf used on input line 978.
+Package pdftex.def Info: A.figs/3d4.pdf used on input line 1096.
 (pdftex.def)             Requested size: 426.79134pt x 121.5065pt.
 
-<A.figs/3d5.pdf, id=1347, 344.03375pt x 200.67473pt>
+<A.figs/3d5.pdf, id=1343, 344.03375pt x 200.67473pt>
 File: A.figs/3d5.pdf Graphic file (type pdf)
  <use A.figs/3d5.pdf>
-Package pdftex.def Info: A.figs/3d5.pdf used on input line 1002.
+Package pdftex.def Info: A.figs/3d5.pdf used on input line 1120.
 (pdftex.def)             Requested size: 240.82198pt x 140.47134pt.
 
-[22 <./A.figs/3d2.pdf> <./A.figs/3d3.pdf
+[21 <./A.figs/3d2.pdf> <./A.figs/3d3.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./A.figs/3d3.pdf): PDF inclusion: multi
 ple pdfs with page group included in a single page
->] <A.figs/3d6.pdf, id=1436, 459.01495pt x 355.08633pt>
+>] <A.figs/3d6.pdf, id=1431, 459.01495pt x 355.08633pt>
 File: A.figs/3d6.pdf Graphic file (type pdf)
  <use A.figs/3d6.pdf>
-Package pdftex.def Info: A.figs/3d6.pdf used on input line 1023.
+Package pdftex.def Info: A.figs/3d6.pdf used on input line 1141.
 (pdftex.def)             Requested size: 321.30827pt x 248.55872pt.
 
-[23 <./A.figs/nextdual3.pdf> <./A.figs/3d4.pdf
+[22 <./A.figs/nextdual3.pdf> <./A.figs/3d4.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./A.figs/3d4.pdf): PDF inclusion: multi
 ple pdfs with page group included in a single page
@@ -552,22 +560,22 @@ ple pdfs with page group included in a single page
 
 pdfTeX warning: /usr/bin/pdflatex (file ./A.figs/3d5.pdf): PDF inclusion: multi
 ple pdfs with page group included in a single page
->] [24 <./A.figs/3d6.pdf>]
+>] [23 <./A.figs/3d6.pdf>]
 \openout2 = `E.refAffiliation.aux'.
 
- (./E.refAffiliation.tex (./A.main.bbl)) [25
+ (./E.refAffiliation.tex (./A.main.bbl)) [24
 
 ]
-(./A.main.aux (./F.Appendix.aux) (./E.refAffiliation.aux))
+(./A.main.aux (./E.refAffiliation.aux))
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3660 strings out of 493485
- 49583 string characters out of 3143526
- 121994 words of memory out of 3000000
- 6854 multiletter control sequences out of 15000+200000
+ 3656 strings out of 493485
+ 49515 string characters out of 3143526
+ 120716 words of memory out of 3000000
+ 6857 multiletter control sequences out of 15000+200000
  17510 words of font info for 67 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  37i,13n,31p,1050b,280s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -592,10 +600,10 @@ type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/symbols/msbm10.pfb>
-Output written on A.main.pdf (25 pages, 2063533 bytes).
+Output written on A.main.pdf (24 pages, 2069204 bytes).
 PDF statistics:
- 1785 PDF objects out of 2073 (max. 8388607)
- 1031 compressed objects within 11 object streams
+ 1780 PDF objects out of 2073 (max. 8388607)
+ 1027 compressed objects within 11 object streams
  0 named destinations out of 1000 (max. 500000)
  121 words of extra memory for PDF output out of 10000 (max. 10000000)
 

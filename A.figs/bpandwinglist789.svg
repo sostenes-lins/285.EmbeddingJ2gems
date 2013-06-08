@@ -12,7 +12,7 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    sodipodi:docname="bpandwinglist789.svg"
-   inkscape:version="0.47 r22583"
+   inkscape:version="0.48.3.1 r9886"
    version="1.1"
    id="svg2"
    height="297mm"
@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.65475341"
-     inkscape:cx="207.75817"
-     inkscape:cy="398.96534"
+     inkscape:zoom="1.5527399"
+     inkscape:cx="243.45518"
+     inkscape:cy="757.06802"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -40,10 +40,10 @@
      inkscape:object-nodes="true"
      inkscape:snap-smooth-nodes="true"
      inkscape:snap-midpoints="true"
-     inkscape:window-width="1920"
-     inkscape:window-height="997"
-     inkscape:window-x="0"
-     inkscape:window-y="33"
+     inkscape:window-width="1855"
+     inkscape:window-height="1056"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
      inkscape:window-maximized="1"
      inkscape:snap-global="false" />
   <defs
@@ -2842,7 +2842,7 @@
        inkscape:connector-curvature="0" />
     <path
        id="path22264"
-       d="m 176.81958,390.55825 33.70125,31.1175"
+       d="m 168.44728,358.35711 33.70125,31.1175"
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        inkscape:connector-curvature="0" />
     <path
@@ -3074,7 +3074,7 @@
       </g>
     </g>
     <g
-       transform="matrix(1.6724001,0,0,1.6724001,-151.58295,104.0343)"
+       transform="matrix(1.6724001,0,0,1.6724001,-161.88732,74.409248)"
        id="g46796-3-8">
       <g
          id="g43901-4-7-7"
