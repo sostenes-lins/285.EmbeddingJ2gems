@@ -450,13 +450,30 @@ the figure despict the final pair of wings $\mathcal{W}$. For this object we hav
 a rectilinear embedding based on the deterministic 
 linear algorithm which we explain in Section{??}.
 Obtaining this embedding by a linear deterministic 
-algorithmic is central for our purposes.
+algorithmic is central for our purposes. The passage 
+$\mathcal{W} \rightarrow \mathcal{H}_1^\diamond$ is straighforward by a cone algorithm.
 }
 \label{fig:winglist06}
 \end{center}
 \end{figure}
 %-----------------------------------
 
+%-----------------------------------
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14.5cm]{A.figs/Wdiamond1.pdf} \\
+\caption{\sf To get $\mathcal{W}^\diamond_1$ from $\mathcal{W}$ remove
+all but two straight line segments emanating from  $z_3^k$, one in each side.
+The segment that survices are the ones finishing at the smallest index upper case $A_p$
+and the smallest indexed upper case $B_q$.
+The passage 
+$\mathcal{W}_1^ \diamond \rightarrow \mathcal{H}_1^\diamond$ is 
+straighforward by a cone algorithm.
+}
+\label{fig:Wdiamond1}
+\end{center}
+\end{figure}
+%-----------------------------------
 
 
 \subsection{Acknowledgements}
