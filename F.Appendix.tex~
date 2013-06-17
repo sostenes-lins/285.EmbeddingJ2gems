@@ -90,3 +90,77 @@ Pillow $\mathcal{P}_{7}^\star \leftarrow
 \end{figure}
 %-----------------------------------
 
+
+%-----------------------------------
+\begin{figure}
+\begin{center}
+\includegraphics[width=15cm]{A.figs/bpandwinglist07.pdf} \\
+\caption{\sf 
+$\mathcal{H}^\star_{8} \leftarrow \mathcal{H}^\star_7 
+\cup (\mathcal{P}_{8}^\star \backslash \mathcal{B}_7^\star)$. 
+Pillow $\mathcal{P}_{8}^\star \leftarrow 
+\nabla_{17,12}\cup \nabla_{18,12}$
+($r^{24}_5$-example).}
+\label{fig:winglist07}
+\end{center}
+\end{figure}
+%-----------------------------------
+
+%-----------------------------------
+\begin{figure}
+\begin{center}
+\includegraphics[width=15cm]{A.figs/bpandwinglist08.pdf} \\
+\caption{\sf 
+$\mathcal{H}^\star_{9} \leftarrow \mathcal{H}^\star_8 
+\cup (\mathcal{P}_{9}^\star \backslash \mathcal{B}_8^\star)$. 
+Pillow $\mathcal{P}_{9}^\star \leftarrow 
+\nabla_{11,12}\cup \nabla_{12,12}$
+($r^{24}_5$-example).}
+\label{fig:winglist08}
+\end{center}
+\end{figure}
+%-----------------------------------
+
+%-----------------------------------
+\begin{figure}
+\begin{center}
+\includegraphics[width=15cm]{A.figs/bpandwinglist09.pdf} \\
+\caption{\sf 
+$\mathcal{H}^\star_{10} \leftarrow \mathcal{H}^\star_9 
+\cup (\mathcal{P}_{10}^\star \backslash \mathcal{B}_9^\star)$. 
+Pillow $\mathcal{P}_{10}^\star \leftarrow 
+\nabla_{7,12}\cup \nabla_{8,12}$
+($r^{24}_5$-example).}
+\label{fig:winglist09}
+\end{center}
+\end{figure}
+%-----------------------------------
+
+%-----------------------------------
+\begin{figure}
+\begin{center}
+\includegraphics[width=15cm]{A.figs/bpandwinglist10.pdf} \\
+\caption{\sf 
+$\mathcal{H}^\star_{11} \leftarrow \mathcal{H}^\star_{10}
+\cup (\mathcal{P}_{11}^\star \backslash \mathcal{B}_{10}^\star)$.
+Pillow $\mathcal{P}_{11}^\star \leftarrow 
+\nabla_{19,12}\cup \nabla_{20,12}$
+($r^{24}_5$-example).}
+\label{fig:winglist10}
+\end{center}
+\end{figure}
+%-----------------------------------
+
+%-----------------------------------
+\begin{figure}
+\begin{center}
+\includegraphics[width=15cm]{A.figs/bpandwinglist11.pdf} \\
+\caption{\sf 
+$\mathcal{H}^\star_{12} \leftarrow \mathcal{H}^\star_{11} 
+\cup (\mathcal{P}_{12}^\star \backslash \mathcal{B}_{11}^\star)$. 
+Pillow $\mathcal{P}_{12}^\star \leftarrow \nabla_{1,12}\cup \nabla_{2,12}$
+($r^{24}_5$-example).}
+\label{fig:winglist11}
+\end{center}
+\end{figure}
+%-----------------------------------

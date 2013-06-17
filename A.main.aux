@@ -37,7 +37,7 @@
 \newlabel{fig:winglist05}{{5}{9}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \sf  The globally last $wbp$-move is the extension based at $a_8$ (correponding to a 13-gon which breaks into two $a_{12}$ and $a_{13}$). The bottom part of the figure despict the final pair of wings $\mathcal  {W}$. For this object we have a rectilinear embedding based on the deterministic linear algorithm which we explain in Section{??}. Obtaining this embedding by a linear deterministic algorithmic is central for our purposes. The passage $\mathcal  {W} \rightarrow \mathcal  {H}_1^\diamond $ is straighforward by a cone algorithm. }}{10}}
 \newlabel{fig:winglist06}{{6}{10}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \sf  To get $\mathcal  {W}^\diamond _1$ from $\mathcal  {W}$ remove all but two straight line segments emanating from $z_3^k$, one in each side. The segment that survices are the ones finishing at the smallest index upper case $A_p$ and the smallest indexed upper case $B_q$. The passage $\mathcal  {W}_1^ \diamond \rightarrow \mathcal  {H}_1^\diamond $ is straighforward by a cone algorithm. }}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \sf  To get $\mathcal  {W}^\diamond _1=\mathcal  {W}^{\diamond '}_1 \cup \mathcal  {W}^{\diamond ''}_1$ from $\mathcal  {W}$ remove all but two straight line segments emanating from $z_3^k$, one in each side. The segment that survices are the ones finishing at the smallest index upper case $A_p$ and the smallest indexed upper case $B_q$. The passage $\mathcal  {W}_1^ \diamond \rightarrow \mathcal  {H}_1^\diamond $ is straighforward by a cone algorithm: for each $e'\in \mathcal  {W}_1^{\diamond '}$ add the two 2-simplices $z_0\ast e'$ and $z_2\ast e'$ to $\mathcal  {H}^\diamond _1$; for each $e''\in \mathcal  {W}_1^{\diamond ''}$ add the two 2-simplices $z_1\ast e''$ and $z_2\ast e''$ to $\mathcal  {H}^\diamond _1.$ To complete $\mathcal  {H}^\diamond _1$ add the 2-simplices $\{z_3^jz_1z_0 ~|~ j=1, \ldots  , 2n \}.$ }}{11}}
 \newlabel{fig:Wdiamond1}{{7}{11}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.6}Acknowledgements}{12}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Details of the whole construction}{12}}
@@ -63,35 +63,37 @@
 \newlabel{lem:internalpointsbigons}{{2.4}{18}}
 \@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces $wbp$-move: balloon's head section is painted in gray, and the part of balloon's tail that is intersecting the appropriate semi-plane is depicted as a {\em  thick edge}. }}{18}}
 \newlabel{fig:controlmaps01}{{13}{18}}
-\newlabel{lem:numberofedges}{{2.5}{18}}
 \@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces An example of $wbp$-move: four new edges and two new vertices are created. 0-simplex $b_4$ corresponding to a 03-gon $(16\delimiter "3222378 23, 4, 5)$}}{19}}
 \newlabel{fig:controlmaps01novo1}{{14}{19}}
 \@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces The general $wbp$-move: the {\em  star}  of a vertex of a graph embedded in an onrientable surface (in our case the plane) is the counterclockwise cyclic sequence of edges incident to the vertex (such an ordering is induced by the surface). The set of stars is called a { \em  rotation}  and has the characterizing property that each edge appears twice. The general case of changing rotation when going from $\mathcal  {W}_{m-1} \cup \mathcal  {N}_{m-1}$ to $\mathcal  {W}_{m} \cup \mathcal  {N}_{m}$ is depicted above: the vertex $XxyzYt$ breaks into three $Xxnt'$, $nyn't$ and $n'zYt''$ and the vertex $Zt$ changes into $Zt'tt''$. Two new vertices and four new edges are created. Two of these edges ($n$ and $n'$) are in the nervure $\mathcal  {N}_{m}$ and the other two ($t'$ and $t''$) are in the wing $\mathcal  {W}_{m}$. The new rotation completely specifies the topological embedding of $\mathcal  {W}_{m} \cup \mathcal  {N}_{m}$.}}{19}}
 \newlabel{fig:controlmaps01novo2}{{15}{19}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Third phase: a rectilinear PL-embedding for $\mathcal  {W}^\star \cup \mathcal  {N}^\star $ and its induced diamond complex $\mathcal  {H}_1^\diamond $, by a cone construction}{19}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces \sf  Defining x coordinates.}}{19}}
-\newlabel{fig:coordX}{{16}{19}}
+\citation{cormen2001introduction}
+\citation{cormen2001introduction}
+\newlabel{lem:numberofedges}{{2.5}{20}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Third phase: a rectilinear PL-embedding for $\mathcal  {W}^\star \cup \mathcal  {N}^\star $ and its induced diamond complex $\mathcal  {H}_1^\diamond $, by a cone construction}{20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces \sf  Algorithm to find the $x$-coordinates of the vertices of the left nervure $\mathcal  {N}'$ (the right nervure $\mathcal  {N}''$ is similar). BEGIN: find the BFS-number (\cite  {cormen2001introduction}) of vertices of the tree $\mathcal  {N}'$ with root vertex being the leftmost one of $\mathcal  {N}'$. Let the vertices be labeled by its BFS-number. In the algorithm, we use a partition of the edges of $\mathcal  {N}'$ into paths; make all vertices except the root unused; $i=0$; make the path partition empty; REPEAT: $i \leftarrow i+1$; take the ancestor path $\pi _i$ starting with the highest BFS-numbered vertex not yet used and finishing at the first used vertex; put the sequence of vertices of $\pi _i$ defining a new member of the edge-path partition; declare all the vertices in $\pi _i$ as used; let $\delta _i$ be $L_i/\lambda _i$, where $L_i$ is the $x$-distance from the first and last vertices of $\pi _i$ and $\lambda _i$ is the number of vertices in $\pi _i$; let $\delta _i$ be the $x$-distance between consecutive vertices of $\pi _i$ (note that the $x$-coordinate of the last vertex of $\pi _i$ has been already defined and so the $x$-coordinates of the all the vertices of $\pi _i$ becomes fixed, never to change); UNTIL all vertices are used; END. }}{20}}
+\newlabel{fig:coordX}{{16}{20}}
 \citation{rourke1982introduction}
-\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces \sf  A linear algorithm for rectilinearly embedding one side of the last pair of wings (the other side is similar). In the general step we have the black vertices which are in their fixed position.}}{20}}
-\newlabel{fig:drawLasWing}{{17}{20}}
-\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces The set $\mathcal  {L}_{i+1}^\star $.}}{20}}
-\newlabel{fig:U3}{{18}{20}}
-\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces We use the cone construction with the solid lines to obtain $\mathcal  {H}_1^\diamond .$ Then we use the dashed lines to obtain the information of $z_3^\dagger $ and $a_{p'}, A_p, a_{p''}$ or $b_{q'}, B_q, b_{q''}$ latter when obtaining $\mathcal  {L}_i^\star $. Also, we have $p'''\in \{p' ,p''\}$ and $q'''\in \{q' ,q''\}$.}}{21}}
-\newlabel{fig:U}{{19}{21}}
-\newlabel{cor:embedcone}{{2.6}{21}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Fourth phase: filling the pillows, to obtain the PL-embedding of $\mathcal  {H}^\star $ we seek: $\mathcal  {H}^\diamond _1, \mathcal  {H}^\diamond _2,\ldots  $ $\mathcal  {H}^\diamond _{n-1}, \mathcal  {H}^\diamond _n= \mathcal  {H}^\star $}{21}}
-\newlabel{theo:teoremadeumalinha}{{2.7}{21}}
-\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Embedding the part of the pillow corresponding to the tail of the balloon: case $P_1$ of the tail.}}{22}}
-\newlabel{fig:3d2}{{20}{22}}
-\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Embedding the part of the pillow corresponding to the tail of the balloon: case $B_i$ of the tail.}}{22}}
-\newlabel{fig:3d3}{{21}{22}}
-\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces Using the PL3-face corresponding to $r$ to define the $\alpha _j$ as $\frac  {\zeta _j+\beta _j}{2}$.}}{23}}
-\newlabel{fig:nextdual3}{{22}{23}}
-\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Embedding the part of the pillow corresponding to the tail of the balloon: case $B_i'$ of the tail.}}{23}}
-\newlabel{fig:3d4}{{23}{23}}
-\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces Using the PL3-face $\nabla _r$ to define $\alpha _j$ as $\frac  {\omega _j+\beta _j}{2}$.}}{23}}
-\newlabel{fig:3d5}{{24}{23}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Conclusion and further work}{23}}
-\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces The bump: a final subtlety and how to deal with it.}}{24}}
-\newlabel{fig:3d6}{{25}{24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces \sf  A linear algorithm for rectilinearly embedding $\mathcal  {W}'$, that is, the last left wing (the right side of the last wing $\mathcal  {W}''$ is similar). BEGIN: by using the Algorithm of Fig. \ref  {fig:coordX} we have already the $x$-coordinates of all the vertices of $\mathcal  {W}'$. Let $\gamma _1, \gamma _2, \ldots  \gamma _k$ be the sequence of inverses of the paths $\pi _i$'s, obtained in the algorithm of Fig. \ref  {fig:coordX}; let $y_1^1$ be the $y$-coordinate of the first vertex of $\gamma _1$; $y_1^1 \leftarrow 0$; $i \leftarrow 0$; REPEAT: $i \leftarrow i+1$; $j \leftarrow 0$; REPEAT: $j \leftarrow j+1$; let $e_{ij}$ be the edge in the nervure incident to $\gamma _i^{j}$ (the $j$-th vertex in the path $\gamma _i$) and $\gamma _i^{j-1}$; let $e_{ij}'$ be the edge which succeeds $e_{ij}$ and $e_{ij}''$ be the edge that preceeds it in the counterclockwise rotation of vertex $\gamma _i^{j-1}$; note that the other ends of $e_{ij}'$ and $e_{ij}''$ are $z_3^p$ and $z_3^q$ for some $p<q$; (Obs: in the case of $\gamma _1^1$ it might happen that $e_{11}''$ does not exist; in this case define $e_{11}''$ as a virtual edge that links $\gamma _1^1$ to $z_3^{2n}$, where $2n$ is the number of vertices of the $J^2$-gem); let $v$ be the intersection of the line $x=x_i^j$ and the edge $e_{ij}'$; let $w$ be the intersection of the line $x=x_i^j$ and the edge $e_{ij}''$; $y_i^j \leftarrow (v+w)/2$; UNTIL $j$ = length of $\gamma _i$; UNTIL $i = k$; END. }}{21}}
+\newlabel{fig:drawLasWing}{{17}{21}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces The set $\mathcal  {L}_{i+1}^\star $.}}{21}}
+\newlabel{fig:U3}{{18}{21}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces We use the cone construction with the solid lines to obtain $\mathcal  {H}_1^\diamond .$ Then we use the dashed lines to obtain the information of $z_3^\dagger $ and $a_{p'}, A_p, a_{p''}$ or $b_{q'}, B_q, b_{q''}$ latter when obtaining $\mathcal  {L}_i^\star $. Also, we have $p'''\in \{p' ,p''\}$ and $q'''\in \{q' ,q''\}$.}}{22}}
+\newlabel{fig:U}{{19}{22}}
+\newlabel{cor:embedcone}{{2.6}{22}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Fourth phase: filling the pillows, to obtain the PL-embedding of $\mathcal  {H}^\star $ we seek: $\mathcal  {H}^\diamond _1, \mathcal  {H}^\diamond _2,\ldots  $ $\mathcal  {H}^\diamond _{n-1}, \mathcal  {H}^\diamond _n= \mathcal  {H}^\star $}{22}}
+\newlabel{theo:teoremadeumalinha}{{2.7}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Embedding the part of the pillow corresponding to the tail of the balloon: case $P_1$ of the tail.}}{23}}
+\newlabel{fig:3d2}{{20}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Embedding the part of the pillow corresponding to the tail of the balloon: case $B_i$ of the tail.}}{23}}
+\newlabel{fig:3d3}{{21}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces Using the PL3-face corresponding to $r$ to define the $\alpha _j$ as $\frac  {\zeta _j+\beta _j}{2}$.}}{24}}
+\newlabel{fig:nextdual3}{{22}{24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Embedding the part of the pillow corresponding to the tail of the balloon: case $B_i'$ of the tail.}}{24}}
+\newlabel{fig:3d4}{{23}{24}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Conclusion and further work}{24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces Using the PL3-face $\nabla _r$ to define $\alpha _j$ as $\frac  {\omega _j+\beta _j}{2}$.}}{25}}
+\newlabel{fig:3d5}{{24}{25}}
+\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces The bump: a final subtlety and how to deal with it.}}{25}}
+\newlabel{fig:3d6}{{25}{25}}
 \@input{E.refAffiliation.aux}

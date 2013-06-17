@@ -1,0 +1,67 @@
+This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: A.main.aux
+A level-1 auxiliary file: E.refAffiliation.aux
+The style file: plain.bst
+Database file #1: bibtexIndex.bib.bib
+I was expecting a `,' or a `}'---line 1237 of file bibtexIndex.bib.bib
+ : 
+ : @article{joli2012B,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 1531 of file bibtexIndex.bib.bib
+ : 
+ : @article{polyak2010minimal,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 6223 of file bibtexIndex.bib.bib
+ : @misc{cormen2001introduction
+ :                             ,
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 6453 of file bibtexIndex.bib.bib
+ : 
+ : %160
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You've used 13 entries,
+            2118 wiz_defined-function locations,
+            579 strings with 5826 characters,
+and the built_in function-call counts, 3777 in all, are:
+= -- 374
+> -- 160
+< -- 1
++ -- 63
+- -- 50
+* -- 256
+:= -- 657
+add.period$ -- 39
+call.type$ -- 13
+change.case$ -- 61
+chr.to.int$ -- 0
+cite$ -- 13
+duplicate$ -- 143
+empty$ -- 306
+format.name$ -- 50
+if$ -- 767
+int.to.chr$ -- 0
+int.to.str$ -- 13
+missing$ -- 16
+newline$ -- 68
+num.names$ -- 26
+pop$ -- 61
+preamble$ -- 1
+purify$ -- 51
+quote$ -- 0
+skip$ -- 95
+stack$ -- 0
+substring$ -- 237
+swap$ -- 14
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 46
+warning$ -- 0
+while$ -- 40
+width$ -- 15
+write$ -- 140
+(There were 4 error messages)

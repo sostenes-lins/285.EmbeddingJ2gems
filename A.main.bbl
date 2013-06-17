@@ -5,6 +5,11 @@
 \newblock Tutte's barycenter method applied to isotopies.
 \newblock {\em Computational Geometry}, 26(1):81--97, 2003.
 
+\bibitem{cormen2001introduction}
+Thomas~H Cormen, Charles~E Leiserson, Ronald~L Rivest, and Clifford Stein.
+\newblock {\em Introduction to {A}lgorithms}.
+\newblock MIT press, 2001.
+
 \bibitem{ferri1982crystallisation}
 M.~Ferri and C.~Gagliardi.
 \newblock {Crystallisation moves}.
