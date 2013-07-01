@@ -41,7 +41,8 @@
 \def\U{\mathcal U}
 \def\Z{\mathbb Z}
 
-\title{PL-embedding the dual of $J^2$-gems into $\mathbb{S}^ 3$ by an $O(n^ 2)$-algorithm
+\title{PL-embedding the dual of two Jordan curves \\ 
+into $\mathbb{S}^ 3$ by an $O(n^ 2)$-algorithm
 \footnote{2010 Mathematics Subject Classification: 
 57M25 and 57Q15 (primary), 57M27 and 57M15 (secondary)}} 
 \author{Sóstenes Lins and Ricardo Machado}
@@ -69,8 +70,9 @@ Colored means that each tetrahedron have vertices
 distinctively colored 0,1,2,3.
 In a {\em pseudo} 3-triangulation the intersection of simplices might be subsets of simplices
 of smaller dimensions, instead of singletons of such faces, 
-as for true triangulations. If $\mathcal{H}^\star$ is the dual of a $J^2$-gem (shortly defined),
-then we show that $|\mathcal{H}^\star|$ is $\mathbb{S}^3$ and we make available an $O(n^2$)-algorithm to produce a
+as for true triangulations. If $\mathcal{H}^\star$ is the dual of a $J^2$-gem 
+(shortly to be defined in the Introduction),
+then we show that the induced 3-manifold $|\mathcal{H}^\star|$ is $\mathbb{S}^3$ and we make available an $O(n^2$)-algorithm to produce a
 PL-embedding (\cite{rourke1982introduction}) of $\mathcal{H}^\star$ into $\mathbb{S}^3$.
 This is rather surprising because such PL-embeddings are often of exponential size.
 This work is the first step towards obtaining, via an $O(n^ 2)$-algorithm,
@@ -461,12 +463,17 @@ $\mathcal{W} \rightarrow \mathcal{H}_1^\diamond$ is straighforward by a cone alg
 %-----------------------------------
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=13.5cm]{A.figs/Wdiamond1.pdf} \\
+\includegraphics[width=14.5cm]{A.figs/Wdiamond1.pdf} \\
 \caption{\sf To get $\mathcal{W}^\diamond_1=\mathcal{W}^{\diamond'}_1 
 \cup \mathcal{W}^{\diamond''}_1$ from $\mathcal{W}$ remove
 all but two straight line segments emanating from  $z_3^k$, one in each side.
-The segment that survices are the ones finishing at the smallest index upper case $A_p$
+The two segments that survive are the ones finishing at the smallest index upper case $A_p$
 and the smallest indexed upper case $B_q$.
+Let $\{x\} \cup Y \subseteq \mathbb{R}^N$, for $1\le N \in \mathbb{N}$. 
+The \index{cone} {\em cone} \cite{rourke1982introduction} 
+with vertex $x$ and base $Y$, denoted $x \ast Y \subseteq \mathbb{R}^N$,
+is the union of $Y$ with all line 
+segments which link $x$ to $y \in Y$.
 The passage 
 $\mathcal{W}_1^ \diamond \rightarrow \mathcal{H}_1^\diamond$ is 
 straighforward by a cone algorithm:
@@ -492,26 +499,46 @@ barycetric methods.
 
 A $k$-dipole $\{u,v\}$ involves color $i$ if it 
 if there is an edge of color $i$ linking $u$ to $v$.
-A blob is over 
+
+Let $H$ be the $J^2$-gem formed by the two Jordan curves $X$ and $Y$.
+A {\em $(X,Y)$-duet} in $H$ is a pair of crossings which are consecutive in $X$ and in $Y$.
+A {\em $(X,Y)$-trio} in $H$ is, likewise, a triple of crossings that 
+are consecutive in $X$ and in $Y$.
+
+\begin{lemma}
+\label{lem:trio}
+Let $H$ be a $J^2$-gem with $2n\geq4$ vertices. Then $H$ has a $(X,Y)$-trio. 
+\end{lemma}
+\begin{proof}
+By the Jordan theorem $H$ has a $(X,Y)$-duet $D$. If $n=2$ then $H$ has clearly a 
+$(X,Y)$-trio establishing the basis of the induction.
+Suppose $H$ has $2n\geq 4$ vertices. It has a $(X,Y)$-duet $D$.
+If $D$ extends to a trio, then we are done.
+Otherwise slightly deform $Y$ to miss $D$. The resulting
+$J^2$-gem $H'$ has $2n-2$ crossings and by induction hypothesis $H'$ has a $(X,Y)$-trio $T$,
+which is present in $H$, establishing the Lemma.
+\end{proof}
 
 \begin{proposition}
 \label{prop:startingwith}
-Starting with a $H$-gem $\mathcal{H}$ with $2n$ vertices we can arrive to an
+Starting with a $J^2$-gem $\mathcal{H}$ with $2n$ vertices we can arrive to an
 $n$-bloboid $\mathcal{B}$ by means of $n-1$ operations which 
 thickens a 2-dipole involving color 2 into a 3-dipole, where the new edge is of color 0 or color 1,
 producing a sequence of $J^2B$-gems each inducing $\mathbb{S}^3$,
-$$(\mathcal{H}=\mathcal{H}_{n},\mathcal{H}_{n-1},\ldots, \mathcal{H}_{2},\mathcal{H}_{1}=\mathcal{B}).$$
+$$(\mathcal{H}=\mathcal{H}_{n},\mathcal{H}_{n-1},\ldots, 
+\mathcal{H}_{2},\mathcal{H}_{1}=\mathcal{B}).$$
 
 \end{proposition}
 \label{prop:backsequence}
 \begin{proof}
-The proof is by induction. For $\ell=n$ we have $\mathcal{H}_{n}=\mathcal{H}$ and
+The proof is by backward induction. 
+For $\ell=n$ we have $\mathcal{H}_{n}=\mathcal{H}$ and
 so it is a $J^2B$-gem, establishing the basis of the induction. Assume that
 $\mathcal{H}_\ell$ is a $J^2B$-gem.
 For $\ell>1$, let $\mathcal{H}'_\ell$ denote  $\mathcal{H}_\ell$ after cancelling the blobs.
-Since $\mathcal{H}'_\ell$ is a $J^2$-gem by the Jordan curve theorem
-there is a vertex with two 2-dipoles incident to it.
-One of these dipole involve color 2 and the other involves color 3.
+By Lemma \ref{lem:trio} $\mathcal{H}_\ell'$ has a $(X,Y)$-trio $(x,y,z)$. Thus $y$
+is incident to two 2-dipoles. One of these dipoles, call it $D$,
+involves color 2, the other involves color 3.
 Take the one involving color 2, name it $D$. Put back the blobs over the edges of color 3.
 So, $D$ is present in $\mathcal{H}_\ell$. The colors involved in 
 $D$ are $0$ and $2$ or $1$ and $2$. In the first case we use color 1 to thicken $D$ and
@@ -540,8 +567,37 @@ an abstract compinatorial way. In doing so we get the minimum
 level of refinement in the PL2-faces required, so that latter, the levels are sufficient
 for a geometric PL-embedding in $\mathbb{R}^ 3$ which we seek.
 
-\subsubsection{Colored abstract PL-complexes: 
-$\mathcal{H}_1^{\star}$, \ldots, $\mathcal{H}_n^{\star}$}
+
+\subsubsection{Primal and dual correspondence between the gem and the colored complex}
+There is a simple topological interpretation between primal and dual complexes, given in 
+\cite{lins1995gca} pages 38, 39. Let us take a look 
+at this interpretation in our context. This will help 
+ to understand the $PL$-embedding $\mathcal{H}_m^\star$.
+In what follows the $k$ in PL$k$-face means the dimension $k\in\{0, 1, 2,3\}$ of the PL-face.
+
+\begin{itemize}
+ \item [i.] 
+a vertex $v$ in $G$ $\rightleftharpoons$ a 
+solid PL-tetrahedron or PL3-face,
+denoted by $\nabla_v$ in the dual of the gem whose
+PL0-faces are labelled $z_0$, $z_1$, $z_2$ e $z_3^v$; 
+in this work, it is enough to work with the 
+boundary of a PL3-face; this is topologically a sphere
+$\mathbb{S}^2$ with four PL2-faces one of each color; the 3-simplices forming
+a PL3-face need not be explicitly specified;
+ \item [ii.] an $i$ colored edge $e_i$ in $G$ $\rightleftharpoons$ a set 
+of $i$-colored 2-simplices defining 
+a PL2$_i$-face in the dual of the gem;
+ \item [iii.] a bigon $B_{ij}$ using the colors $i, j$ in 
+$G$ $\rightleftharpoons$ a set of  1-simplices $b_{ij}$
+ in $\mathcal{H}_n^\star$ defining a 
+PL1$_{ij}$-face;
+ \item [iv.] an $\overline{i}$-residue $V_i$ in $G$ 
+$\rightleftharpoons$ a 0-simplex in $\mathcal{H}_n^\star$ defining a PL0$_i$-face.
+\end{itemize}
+
+\subsubsection{Defining $\mathcal{H}_1^\star$ and the colored abstract PL-complexes: 
+$\mathcal{H}_2^{\star}$, \ldots, $\mathcal{H}_n^{\star}$}
 
 We define the combinatorial 2-dimensional PL complex $\mathcal{H}_1^{\star}$ as follows.
 %Let $j \in \{1, \ldots, 2n\}$, define $v_0^j, v_1^j$ and $v_2^j$ as the vertices of $2n$ 
@@ -557,27 +613,28 @@ We define the combinatorial 2-dimensional PL complex $\mathcal{H}_1^{\star}$ as 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=1]{A.figs/dualPL2.pdf}
-\caption{PL2-faces of $\mathcal{H}^\star_1$.}
-\label{fig:dualPL2}
-\end{center}
-\end{figure}
-%-----------------------------------
-
-
-
+\caption{\sf PL2-faces of $\mathcal{H}^\star_1$: the figure is an abreviation of a stack
+of tetrahedra, where $k = 0,1,\ldots,n-1.$ The 0-simplices 
+$z_3^j$ are defined as $z_3^j=(0,0,2n-j)$, $1\le j \le 2n$. For even $j=2k$,
+there are five simplices incident to $z_3^j$: two 0-colored, two 1-colored and 1 2-colored.
+For odd $j=2k+1$, the five 2-simplices incident to $z_3^j$ are all 3-colored.
 The 0-simplices $z_0$, $z_1$ and $z_2$ are positioned in clockwise order 
 as the vertices of an equilateral triangle 
 of side 1 in the 
 $xy$-plane so that $z_0z_1$ is parallel to the $x$-axis and the center of the triangle
 coincides with the origin of an $\mathbb{R}^3$-cartesian system. 
 The 0-simplex $a_1$ is $\frac{z_0+z_2}{2}$. The 0-simplex
-$b_1$ is $\frac{z_2+z_1}{2}$.
-Let the 0-simplices $z_3^j$ be defined as $z_3^j=(0,0,2n-j)$, $1\le j \le 2n$, 
-see Fig. \ref{fig:dualPL2}. 
-%We can easily adjust $\phi$ as a function of $\varphi$ so that
-%the 3-simplex $z_0z_1z_2z_3^1$ becomes a regular tetrahedron. 
+$b_1$ is $\frac{z_2+z_1}{2}$. Note that, in general, the PL3-faces are given
+by their boundary. We never use 3-simplices explicitly to triangulate the PL3-faces.
+From our construction, however, it will be clear that this is possible to achieve
+without spurious intersections among the 3-simplices.
+}
+\label{fig:dualPL2}
+\end{center}
+\end{figure}
+%-----------------------------------
 
-We detail the connection with the $J^2$-gem. In particular we 
+We detail the connection of the $J^2$-gem and its dual. In particular we 
 use the unique 23-gons of it to provide labels $1,2,\ldots,2n$ in the cyclic 
 order of the 23-gon. This labellings correpond to PL3-faces of the 
 $\mathcal{H}_1^{\star}$ and will be maintained for the PL3-faces 
@@ -601,13 +658,7 @@ The dual of a 3-colored edge $u'u$ is the image of PL2$_3$-face with odd index $
 The dual of an $i$-colored 
 edge $uv$ with $i\in\{0, 1, 2\}$ is the PL2$_i$-face with even index $v$.
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=15cm]{A.figs/pillowother2NOVO.pdf}
-\caption{Primal and dual $bp$-moves.}
-\label{fig:pillowother2NOVO}
-\end{center}
-\end{figure}
+\subsubsection{Primal and dual $bp$-moves}
 
 Before presenting $\mathcal{H}_m^\star$, $1< m \le n,$ and its embeddings, we need to understand
 the dual of the $(pb)^\star$-move and its inverse. In the primal, to apply a $(pb)^\star$-move, we need
@@ -619,28 +670,29 @@ described in the book \cite{lins1995gca}, page 39.
 This composite move is the {\em balloon-pillow move} \index{balloon-pillow move} or \index{bp-move} {\em bp-move}.
 Restricting our basic change in the colored 2-complex 
 to $bp$-moves we have nice theoretical properties which are responsible for avoiding an exponential
-proccess. In what follows we describe the $bp$-move assuming that the balloon's tail is 0-colored
-using a generic balloon's tail, of which we just draw the contour, according to
-Fig. \ref{fig:pillowother2NOVO}. The other case, color 1, is similar.
+proccess. 
 
-\begin{itemize}
- \item [i.] if the image of $v_5^u$ and $v_5^v$ is $b_q$, create two 0-simplices $b_{q'}$ and $b_{q''}$, 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm]{A.figs/pillowother2NOVO.pdf}
+\caption{\sf Primal and dual $bp$-moves: in what follows we describe the $bp$-move assuming that the balloon's tail is 0-colored
+using a generic balloon's tail, of which we just draw the contour. The other case, color 1, is similar.
+(1) if the image of $v_5^u$ and $v_5^v$ is $b_q$, create two 0-simplices $b_{q'}$ and $b_{q''}$, 
 define the images of $v_5^u$ and $v_5^{v'}$ as $b_{q'}$ 
 and $b_{q''}$ and change the label of the image of $v_5^{v}$ from $b_q$ to $B_q$;
  %(if balloon's tail is 1-colored, to be the image of $v_4^u$ and $v_4^{v'}$)
- \item [ii.] make two copies of the PL2$_0$-face, if necessary, 
+(2) make two copies of the PL2$_0$-face, if necessary, 
 refine each, from the middle vertex of the segment $z_2z_1$ to the third vertex $z_3^\dagger$, where $\dagger=j,$ for an adequate height $j$;
- \item [iii.] change the colors of the medial layer of the pillow as specified by the 
+(3) change the colors of the medial layer of the pillow as specified by the 
 dual structure, namely by the current $J^2B$-gem.
-\end{itemize}
+}
+\label{fig:pillowother2NOVO}
+\end{center}
+\end{figure}
 
-%This definition has some changes when the balloon's tail is 1-colored, the changes are in 1. the vertex are $v_4^u$ and $v_4^{v'}$, and the coloration, which the $2PL$-faces of $u$-$v$, here they are 0- and 2-colored.
 
-The choice of the letters $P, B, R, G$ in the set {\em types} of next proposition 
-comes from the colors $0=(P)ink$, $1=(B)lue$, $2=(R)ed$ and $3=(G)reen$. In the next proposition,
- $R_{2k-1}^b$ is a PL2$_2$-face which is inside
-the pillow neighboring a PL2$_1$-face. Similarly  $R_{2k-1}^p$ is a PL2$_2$-face which is inside
-the pillow neighboring a PL2$_0$-face.
+\subsubsection{Types of PL2-faces}
+
 \begin{proposition}
 \label{prop:allkinds}
 Each PL2-face of the combinatorial simplicial complex $\mathcal{H}_m^\star$,
@@ -651,29 +703,37 @@ $$\{G, P_{2k-1}, P_{2k-1}', B_{2k-1}, B_{2k-1}', R_{2k-1}^b, R_{2k-1}^p \ |
 described in Fig. 
 \ref{fig:allkinds3}, where the index means the number of 
 edges indicated and is called the {\em
-rank of the type}. \index{rank of the type} Moreover, the PL2-faces that appear, as duals of the gem edges, 
+rank of the type}. \index{rank of the type} Moreover, 
+the PL2-faces that appear, as duals of the gem edges, 
 have the minimum number of 2-simplices.
 \end{proposition}
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=13.1cm]{A.figs/allkinds3.pdf}
-\caption{All kinds of PL2-faces that we use. These PL2-faces 
+\caption{\sf All kinds of PL2-faces that we use: 
+the choice of the letters $P, B, R, G$ 
+comes from the colors $0=(P)ink$, $1=(B)lue$, 
+$2=(R)ed$ and $3=(G)reen$. Define
+$R_{2k-1}^b$ as the PL2$_2$-face which is inside
+the pillow neighboring a PL2$_1$-face. Similarly  $R_{2k-1}^p$ is a PL2$_2$-face which is inside
+the pillow neighboring a PL2$_0$-face.These PL2-faces 
 are for now abstract combinatorial triangulations that
-have the correct level of refinement so as to become PL-embedded into $\mathbb{R}^ 3$}
+have the correct level of refinement so as to become PL-embedded into $\mathbb{R}^ 3$.
+}
 \label{fig:allkinds3}
 \end{center}
 \end{figure}
 
 \begin{proof}
-We need to fix a notation for the head of the balloon, instead of drawing all the PL2-faces 
+We need to fix a notation for the head of the balloon. Instead of drawing all the PL2-faces 
 of the head, 
 we just draw one PL2$_3$-face and put a label $u'$-$v'$. If the balloon's tail, is 
 of type $P_1$, by applying a $bp$-move we can see at Fig. \ref{fig:pillowother5}
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics[width=12cm]{A.figs/pillowother5.pdf}
-\caption{bp move with balloon's tail of type $P_1$.}
+\caption{\sf A $bp$-move with the balloon's tail of type $P_1$.}
 \label{fig:pillowother5}
 \end{center}
 \end{figure}
@@ -688,7 +748,7 @@ we get two PL2$_1$-faces of type $B_3'$, one PL2$_0$-face of type $P_5$ and a PL
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics[width=12cm]{A.figs/pillowother3.pdf}
-\caption{bp move with balloon's tail of type $B_3$.}
+\caption{\sf A $bp$-move with the balloon's tail of type $B_3$.}
 \label{fig:pillowother3}
 \end{center}
 \end{figure}
@@ -718,7 +778,9 @@ It is whorthwhile to mention, in view of the above proof,
 that each PL2-face is refined at most one time. 
 So, if $X$ is a type of PL2-face, $X'$ is its refinement, then
 $X''=X'$. This idempotency is a crucial property inhibiting 
-the exponentiality of our algorithm and enables a quadratic bound..
+the exponentiality of our algorithm and enables a quadratic bound.
+
+\subsubsection{Quadratic bounds on the numer of simplices}
 
 \begin{corollary}
 \label{theo:thequadratic}
@@ -729,7 +791,7 @@ gem $G$ with 2n vertices.
 \end{corollary}
 \begin{proof} 
 
-We prove the first bound, on 0-simplicesm the other are similar: in the worse case,
+We prove the first bound, on 0-simplices; the other are similar: in the worse case,
 the increase of simplices is a linear function on the rank of the current PL2-face,
 and to get the final number we sum an arithmetic progreesion.
 
@@ -869,7 +931,7 @@ the Lemma is easily established by induction.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=15.4cm]{A.figs/controlmaps01.pdf}
-\caption{$wbp$-move: balloon's head section is painted in gray, 
+\caption{\sf $wbp$-move: balloon's head section is painted in gray, 
 and the part of balloon's tail that is intersecting the appropriate
 semi-plane is depicted as a {\em thick edge}. \index{thick edge}}
 \label{fig:controlmaps01}
@@ -880,7 +942,7 @@ semi-plane is depicted as a {\em thick edge}. \index{thick edge}}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=15cm]{A.figs/ExWings.pdf}
-\caption{An example of $wbp$-move: four new edges and two new vertices are created.
+\caption{\sf An example of $wbp$-move: four new edges and two new vertices are created.
 0-simplex $b_4$ corresponding to a 03-gon $(16\uparrow 23, 4, 5)$}
  %meaning that some faces are bounded by plane quadrilaterals instead of triangles.}
 \label{fig:controlmaps01novo1}
@@ -890,7 +952,7 @@ semi-plane is depicted as a {\em thick edge}. \index{thick edge}}
 \begin{figure}[!htb] 
 \begin{center}
 \includegraphics[width=15 cm]{A.figs/controlmaps01novo2.pdf}
-\caption{The general $wbp$-move: the {\em star} \index{star} of a vertex of a graph embedded in an onrientable
+\caption{\sf The general $wbp$-move: the {\em star} \index{star} of a vertex of a graph embedded in an onrientable
 surface (in our case the plane) is the counterclockwise cyclic sequence of 
 edges incident to the vertex (such an ordering is induced by the surface).
 The set of stars is called a { \em rotation} \index{rotation} and has the 
@@ -947,7 +1009,7 @@ the $x$-distance  between consecutive vertices of $\pi_i$
 (note that the $x$-coordinate of the last 
 vertex of $\pi_i$ has been already defined and so the $x$-coordinates 
 of the all the vertices of $\pi_i$ becomes fixed, never to change); 
-back to repeat, except if all the vertices have been declared used; stop; END. 
+UNTIL all vertices are used; END. 
 }
 \label{fig:coordX}
 \end{center}
@@ -986,8 +1048,24 @@ END.
 \end{figure}
 
 
-Defining the PL-embedding $\mathcal{H}_{1}^\diamond$
+\subsection{Fourth phase: filling the pillows, 
+to obtain the PL-embedding of $\mathcal{H}^\star$ we seek:
+$\mathcal{H}^\diamond_1, \mathcal{H}^\diamond_2,\ldots$  
+$\mathcal{H}^\diamond_{n-1}, \mathcal{H}^\diamond_n= \mathcal{H}^\star$}
 
+We start the fourth phase with $\mathcal{W}^\diamond_1$ and $\mathcal{H}^\diamond_1$, which is defined in
+Fig. \ref{fig:Wdiamond1}.
+
+\begin{proposition}
+\label{cor:embedcone}
+If $\mathcal{W}_1^\diamond$ is embedded rectilinearly in $\Pi'\cup \Pi''$,
+then it can be 
+extended to an embedding of $\mathcal{H}^\diamond_1$ into $\mathbb{R}^3$,
+via the cone construction.
+\end{proposition}
+\begin{proof}
+ Straighforward from the simple geometry of the situation. See Fig. \ref{fig:Wdiamond1}. 
+\end{proof}
 
 Let $\mathcal{L}_{i+1}^\star$ be a subset of the pillow $\mathcal{P}_{i+1}^\star$, formed by the part
 that comes from the tail of the balloon after the i-th $bp$-move is applied, see Fig. \ref{fig:U3}.
@@ -995,70 +1073,23 @@ that comes from the tail of the balloon after the i-th $bp$-move is applied, see
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=13cm]{A.figs/U3.pdf}
-\caption{The set $\mathcal{L}_{i+1}^\star$.} 
+\caption{\sf The set $\mathcal{L}_{i+1}^\star$'s: at each step of 
+Theorem \ref{theo:teoremadeumalinha} we embed a set 
+ $\mathcal{L}_{i+1}^\star$, $i=0,\ldots n-1$ of 2-simplices.
+ These sets are the complemetary parts of the PL2-faces 
+ already in $\mathcal{H}^\diamond_1$ after a change of colours
+ in the medial layer. 
+The process of replacing the combinatorial tail of a balloon 
+by the corresponding
+trio of embedded PL2-faces in the pillow is denominated 
+\index{blow up a tail} {\em the blowing up of the 
+balloon's tail}.
+ } 
 \label{fig:U3}
 \end{center}
 \end{figure}
 
 
-Let $\{x\} \cup Y \subseteq \mathbb{R}^N$, for $1\le N \in \mathbb{N}$. 
-The \index{cone} {\em cone} \cite{rourke1982introduction} 
-with vertex $x$ and base $Y$, denoted $x \ast Y \subseteq \mathbb{R}^N$,
-is the union of $Y$ with all line 
-segments which link $x$ to $y \in Y$.
-
-
-Now we define a PL-complex $\mathcal{H}^\diamond_1$ explicitly embedded into $\mathbb{R}^3$. 
-We use the (rectilinearly embedded into $\Pi_\ell \cup \Pi_r$) 
-final wings and the cone contruction to get the 
-$\mathcal{H}^\diamond_1$. To this end, select a distinguished representative 
-of the edges of $\mathcal{W}_n^\ell$ (resp. $\mathcal{W}_n^r$) incident to $z_3^j$ in the following way: if there is just one edge, choose it, 
-otherwise the representative is the edge whose other end has the smallest indexed upper case label.
-Let $R$ denote the set of representatives.
-
-For each $e \in R$ 
-%let  $v \in \{a_k,A_{k'},b_\ell,B_{\ell'}\}$ 
-%be the other end of $e$.
-add the two 2-simplices $z_0\ast e$ and $z_2\ast e$ (resp. the two 2-simplices 
-$z_1\ast e$ and $z_2\ast e$) to  $\mathcal{H}^\diamond_1$.  
-To complete 
-$\mathcal{H}^\diamond_1$ add the 
-2-simplices $\{z_3^jz_1z_0 \ | \ j=1,\ldots,2n\}$.
-In Fig. \ref{fig:U} the solid lines
-  (the edges of $R$) and the dashed edges are part of $\mathcal{L}^\star_i$,
-and are treated in next section.
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=15cm]{A.figs/U.pdf}
-\caption{We use the cone construction with the solid lines to obtain $\mathcal{H}_1^\diamond.$ 
-Then we use the dashed lines
-to obtain the information of $z_3^\dagger$ and $a_{p'}, A_p, a_{p''}$ or $b_{q'}, B_q, b_{q''}$ 
-latter when obtaining $\mathcal{L}_i^\star$. Also, we have $p'''\in\{p' ,p''\}$ and  $q'''\in\{q' ,q''\}$.} 
-\label{fig:U}
-\end{center}
-\end{figure}
-
-\begin{proposition}
-\label{cor:embedcone}
-If $\mathcal{W}_m^h$ is embedded rectilinearly in $\Pi_h$, $h \in \{\ell,r\}$,
-then the pair of embeddings can be 
-extended to an embedding of $\mathcal{H}^\diamond_1$ into $\mathbb{R}^3$,
-via the cone construction.
-\end{proposition}
-\begin{proof}
- Straighforward from the simple geometry of the situation.
-\end{proof}
-
-\subsection{Fourth phase: filling the pillows, 
-to obtain the PL-embedding of $\mathcal{H}^\star$ we seek:
-$\mathcal{H}^\diamond_1, \mathcal{H}^\diamond_2,\ldots$  
-$\mathcal{H}^\diamond_{n-1}, \mathcal{H}^\diamond_n= \mathcal{H}^\star$}
-
-
-The process of replacing the embedded tail of a balloon by the corresponding
-trio of PL2-faces in the pillow is denominated \index{blow up a tail} {\em the blowing up of the 
-balloon's tail}.
 
 %{\huge \bf Aqui insira seus $\alpha, \beta, \gamma$, bumps, etc}
 %\begin{theorem}\label{theo:teoremadeumalinha}
@@ -1105,7 +1136,7 @@ the middle, and define the 0-simplices like in Fig. \ref{fig:3d2}.
 \begin{figure}[!htb] 
 \begin{center}
 \includegraphics[width=14cm]{A.figs/3d2.pdf}
-\caption{Embedding the part of the pillow corresponding to the tail of the balloon: case $P_1$ of the tail.}
+\caption{\sf Embedding the part of the pillow corresponding to the tail of the balloon: case $P_1$ of the tail.}
 \label{fig:3d2}
 \end{center}
 \end{figure}
@@ -1131,7 +1162,7 @@ define each $\zeta_j$ as $\frac{z_2+\omega_{j+1}}{2}$, where $\omega_k$ is previ
 \begin{figure}[!htb] 
 \begin{center}
 \includegraphics[width=14cm]{A.figs/3d3.pdf}
-\caption{Embedding the part of the pillow corresponding to the tail of the balloon: case $B_i$ of the tail.}
+\caption{\sf Embedding the part of the pillow corresponding to the tail of the balloon: case $B_i$ of the tail.}
 \label{fig:3d3}
 \end{center}
 \end{figure}
@@ -1139,7 +1170,7 @@ define each $\zeta_j$ as $\frac{z_2+\omega_{j+1}}{2}$, where $\omega_k$ is previ
 \begin{figure}[!htb] 
 \begin{center}
 \includegraphics[scale=0.8]{A.figs/nextdual3.pdf}
-\caption{Using the PL3-face corresponding to $r$ to define the $\alpha_j$ as $\frac{\zeta_j+\beta_j}{2}$.}
+\caption{\sf Using the PL3-face corresponding to $r$ to define the $\alpha_j$ as $\frac{\zeta_j+\beta_j}{2}$.}
 \label{fig:nextdual3}
 \end{center}
 \end{figure}
@@ -1153,7 +1184,7 @@ are not analogous.
 \begin{figure}[!htb] 
 \begin{center}
 \includegraphics[width=15cm]{A.figs/3d4.pdf}
-\caption{Embedding the part of the pillow corresponding to the tail of the balloon: case $B_i'$ of the tail.}
+\caption{\sf Embedding the part of the pillow corresponding to the tail of the balloon: case $B_i'$ of the tail.}
 \label{fig:3d4}
 \end{center}
 \end{figure}
@@ -1177,7 +1208,7 @@ suppose that the PL2$_0$-face of this PL3-face is not refined,
 \begin{figure}[!htb] 
 \begin{center}
 \includegraphics[scale=0.7]{A.figs/3d5.pdf}
-\caption{Using the PL3-face $\nabla_r$ to define $\alpha_j$ as $\frac{\omega_j+\beta_j}{2}$.}
+\caption{\sf Using the PL3-face $\nabla_r$ to define $\alpha_j$ as $\frac{\omega_j+\beta_j}{2}$.}
 \label{fig:3d5}
 \end{center}
 \end{figure}
@@ -1198,7 +1229,7 @@ where not refined, some 1-simplices may cross.
 \begin{figure}[!htb] 
 \begin{center}
 \includegraphics[scale=0.7]{A.figs/3d6.pdf}
-\caption{The bump: a final subtlety and how to deal with it.}
+\caption{\sf The bump: a final subtlety and how to deal with it.}
 \label{fig:3d6}
 \end{center}
 \end{figure}
