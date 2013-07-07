@@ -293,9 +293,9 @@ $$\mathcal{B}^\star=\mathcal{H}^\star_{1} \mapright{bp}{move_1}  \mathcal{H}^\st
 \mapright{bp}{move_{2}} \ldots
 \mapright{bp}{move_{n-1}} \mathcal{H}^\star_{n}=\mathcal{H}^\star.$$ 
 In parallel to the construction of the sequence $\mathcal{H}^\star_{m}$'s we also construct
-(phase 2B) a sequence of {\em wings} $\mathcal{W}^\star_{m}$'s and their {\em nervures} 
-$\mathcal{N}^\star_{m}$'s so that  
-$\mathcal{S}^\star_m=\mathcal{W}^\star_{m} \cup \mathcal{N}^\star_{m}$,
+(phase 2B) a sequence of {\em wings} $\mathcal{W}_{m}$'s and their {\em nervures} 
+$\mathcal{N}_{m}$'s so that  
+$\mathcal{S}_m=\mathcal{W}_{m} \cup \mathcal{N}_{m}$,
 called {\em a strut}, is an adequate planar graph, defined recursively. 
 Moreover, wings and nervures are partitioned into their {\em left} and {\em right} parts: 
 $\mathcal{W}_m=\mathcal{W}'_m \cup \mathcal{W}''_m$ and
@@ -308,7 +308,7 @@ $$\mathcal{S}_1^\star=\mathcal{W}_{1} \cup \mathcal{N}_{1}
 \mathcal{W} \cup \mathcal{N}=\mathcal{S}^\star.$$ 
 Each wing $\mathcal{W}_m$'s corresponds to a section 
 of the previous sequence $\mathcal{H}_m^\star$'s by two adequated 
-fixed semi-planes $\Pi_\ell$ and $\Pi_r$.
+fixed semi-planes $\Pi'$ and $\Pi''$.
 The construction of the struts (which are planar graphs) is
 recursive. Initially $\mathcal{W}_1^\star$ is a pincel of lines and $\mathcal{N}_1^\star$ 
 is $\varnothing$.  Going from $\mathcal{S}^\star_{m}$
@@ -351,11 +351,12 @@ and $O(n^2)$-time complexity, where $2n$ is the number of vertices of the origin
 \subsection{A complete example}
 In the example coming from $r^{24}_5$ (Figs. \ref{fig:winglist01} to \ref{fig:winglist06})
 we gather and display the data structure we need for the $O(n^2)$-algorithm
-to PL-embed the dual of a $J^2$-gem. At each step only one of the left and right struts
-is changed in going from $\mathcal{S}^\star_m=\mathcal{W}_m \cup \mathcal{N}_m$ to
-$\mathcal{S}^\star_{m+1}=\mathcal{W}_{m+1} \cup \mathcal{N}_{m+1}$.
-
-
+to PL-embed the dual of a $J^2$-gem. The wings, nervures and their union the struts are
+partitioned into left and right parts:
+$$\mathcal{W}_m =  \mathcal{W}'_m \cup  \mathcal{W}''_m, \hspace{4mm} 
+\mathcal{N}_m =  \mathcal{N}'_m \cup  \mathcal{N}''_m, \hspace{4mm}
+\mathcal{S}^\star_m =  \mathcal{S}^{\star'}_m \cup  \mathcal{N}''_m, \hspace{4mm} 
+$$
 
 %\include{F.Appendix}
 %-----------------------------------
@@ -381,9 +382,9 @@ $A_j, B_k$ are auxiliary 0-simplexes.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=14.1cm]{A.figs/bpandwinglist345.pdf} \\
-\caption{\sf A left wing and nervure is modified by a $wbp$-move. What is needed as input 
+\caption{\sf A left strut is modified by a $wbp$-move. What is needed as input 
 is a pair of adjacent 
-shaded triangles and a thick edge. In the lower part a left wing and nervure is further 
+shaded triangles and a thick edge. In the lower the left strut is further 
 modified by another $wbp$-move. The modification of balloons into pillows define the new
 colored abstract combinatorial complexes. The nervures $\mathcal{N}_m$ are auxiliar devices
 that will be disposed after we find the rectilinear embedded
@@ -399,15 +400,15 @@ See Fig. \ref{fig:winglist06}.}
 \begin{center}
 \includegraphics[width=15cm]{A.figs/bpandwinglist567.pdf}
 \caption{\sf
-In the above first $wbp$-move a left wing is extended based on $a_5$. 
+In the first $wbp$-move a left strut is {\em extended based on $a_5$}. 
 In all the figures of this $r^{24}_5$-example (except for the $\mathcal{W}$ at the last one) 
 we have used Tutte's barycentric
 method \cite{tutte1963dg,colin2003tutte} to obtain the embedded final struts. 
-However, only the combinatorics of the embeddings (the rotations)
-are needed.
+However, except for $\mathcal{W}$, only the combinatorics of the embeddings (the rotations)
+are needed to encode the struts in an implementation of the algorithm.
 In the second $wbp$-move one of the two shaded triangles
-is in the outside. Depite this special case, the manifestation of the 
-move behaves as in the usual case.
+is in the outside. Depite this special case, the rotation manifestation of the 
+move behaves as usual.
 }
 \label{fig:winglist03}
 \end{center}
@@ -811,148 +812,46 @@ and we have at the begining $2n+5$ 0-simplices, we have that $3n^2-5n+9$ is
 an upper bound for the number of 0-simplices. 
 \end{proof}
 
-\subsubsection{Wings and their nervures: $\mathcal{H}_m \longleftrightarrow  
-\mathcal{W}_m \cup \mathcal{N}_m$, $m=1,\ldots,n$}
+\subsubsection{Detailing the combinatorics of the wings, nervures and struts}
 
-At some point in our research it became evident that what was needed to obtain the embedded PL-complex $\mathcal{H}_n^\star$ 
-was a proper embedding into $\mathbb{R}^3$ of two special sets of 0-simplices $\{a'_1, a'_2,\ldots,a'_f\}$ and $\{b'_1, b'_2,\ldots,b'_g\}$,
+An embedding of a graph into an oriented surface is combinatorially encoded
+as a {\em rotation at the vertices} or simply a {\em rotation}. That is the cyclic ordering
+of the edges around the vertices (induced by the surface) so that each edge appears exactly twice, 
+one with each orientation. We encode the
+struts as rotations. Since the struts have no two edges with the same ends, an edge is
+conveniently encoded as a pair of label-vertices. The labels for the vertices of the 
+strut are defined recursively and play an important role. 
+
+At some point in our research it became evident that what was 
+needed to obtain the embedded PL-complex $\mathcal{H}_n^\star$ 
+was a proper embedding into $\mathbb{R}^3$ of two special sets 
+of 0-simplices $\{a'_1, a'_2,\ldots,a'_f\}$ and $\{b'_1, b'_2,\ldots,b'_g\}$,
 where $f+g=2n$. Each $a'_i \in\{a_i,A_i\}$ and each $b'_i \in\{b_i,B_i\}$. 
 This terminology for the 0-simplices is obtained recursively
-and detailed at the proper location. For now we just say that all 
-other 0-simplices are obtained by bisections of segments linking previously defined points. It came as a surprise to discover
+and detailed at the proper location in this section. For now we just say that all 
+other 0-simplices of the colored complexes $\mathcal{H}^\star_m$
+are obtained by bisections of segments linking previously defined points. It came as a surprise to discover
 that this apparently difficult 3D problem can be reformulated as a plane problem with an easy solution,
-via a linear algorithm. That is the role of the wings and nervures corresponding to the colored complexes.
-The wing $\mathcal{W}_m$ is a planar graph so that $\mathcal{W}_m \backslash Z$ is a forest with
-two trees. The nervure of $\mathcal{W}_m$, denoted $\mathcal{N}_m$ is a pair of trees which is the disjoint union of
-$\mathcal{N}^\ell_m$ and $\mathcal{N}^r_m$ with
-edge set disjoint from $\mathcal{W}_m$ satisfying 
-$\mathcal{W}_m \cup \mathcal{N}_m \backslash \delta(Z)=\mathcal{N}_m$.
-\vspace{5cm}
+via a linear algorithm. That is the role of the wings, nervures and
+struts associated to the colored complexes.
 
-
-
-
-Let $\Pi_\ell$  ($\Pi_r$) be the half plane limited by the $z$-axis 
-which contains $a_1=z_0z_2/2$ $(b_1=z_1z_2/2)$.
-The construction of the wings and nervures of the next section are exemplified in Figs. \ref{fig:winglist01} to \ref{fig:winglist06}.
-
-
-
-We construct a 
-sequence of pairs of plane
-graphs $\{\{\mathcal{W}^\ell_1,\mathcal{W}^r_1\},
-\{\mathcal{W}^\ell_2,\mathcal{W}^r_2\},\ldots,
-\{\mathcal{W}^\ell_n,\mathcal{W}^r_n\} \}.$ The $m$-th such pair
-constitutes the {\em left} and {\em right wings} \index{wings} of the colored $2$-complex
-$\mathcal{H}_m^\star$. The left wings are embedded into $\Pi_\ell$ and
-the right wings are embedded into $\Pi_r$. 
-We define $\mathcal{W}^\ell_1$ as the set of $2n$ straight line segments
-$a_1z_3^1, a_1z_3^2, \ldots, a_1z_3^{2n} \subseteq \Pi_\ell$,
-and $\mathcal{W}^\ell_1$ as the set of $2n$ straight line segments
-$b_1z_3^1, b_1z_3^2, \ldots, b_1z_3^{2n}  \subseteq \Pi_r$.
-The {\em outer triangular region of the left wings} is the plane region
-spanned by $a_1, z_3^1,z_3^{2n}$. The {\em outer triangular region of 
-the right wings} is the plane region spanned by
-$b_1, z_3^1, z_3^{2n}$. 
-The passage from $\{\mathcal{W}^\ell_{m-1},\mathcal{W}^r_{m-1}\}$
-to $\{\mathcal{W}^\ell_m,\mathcal{W}^r_m\}$ in the $(m-1)$-th $bp$-move,
-which we call a {\em $wbp$-move}, corresponds
-in $(\mathcal{H}_{m-1}, \mathcal{H}_{m})$ to either a 
-0-flip that subdivides a 13-gon into two (case
-where the tail of the balloon is of color 0)
-or else to a 1-flip that subdivides a 03-gon into two (case
-where the tail of the balloon's is of color 1).  
-At this point, we need to define a tree called the \index{nervure of a wing} {\em nervure of a wing}.
-This is done inductively.
-The first ones, $\mathcal{W}^\ell_1$ and $\mathcal{W}^r_1$ have, respectively 
-the degenerated trees formed by single points $a_1$ and $b_1$ as their nervures.
-In the unique wing that changes with the $bp$-move, a vertex $x_\ell$ corresponding
-to either a 13-gon or else to a 03-gon (in a way to be made clear in the poof of
-Lemma \ref{lem:internalpointsbigons}).
-The intersection of the balloon's head and 
-its tail in $\mathcal{H}^\star_m$ is a PL1-face formed by two
-simplices meeting at a point $a_p$ (if the tail of the balloon is of color 1)
-or $b_q$, if it is of color 0. 
-Along the process we define the following auxiliary functions, with arguments
-%$1 \le m \le n-1$ or
- $1 \le m \le n-1$:  
-$c(m),u(m),v(m),r(m),s(m),
-\ell_a(m), \ell_b(m), t_a(m), t_b(m).$
-The color
-of the $m$-th balloon's tail is denoted by $c(m) \in \{0,1\}$.
-Let $u(m), v(m)$ be the odd and even indices of the $m$-th 
-balloon's head $\nabla_{u(m)} \cup \nabla_{v(m)}$. 
-Let $r(m), s(m)$ be the odd and even indices of the $m$-th 
-balloon's tail given by the PL2$_{c(m)}$-face $\subseteq 
-\nabla_{r(m)} \cap \nabla_{s(m)}$.
-The positive integers $\ell_a(m)$ and $\ell_b(m)$ are the last $a$- and $b$-indices
-in left $m$-th wing and right $m$-th wing, respectively.
-Indices $p$ or $q$ in the $m$-th $bp$-move satisfy $p=t_a(m)$ or $q=t_b(m)$.
-In the passage $\mathcal{H}_m^\star$ to $\mathcal{H}_{m+1}^\ast$ either 
-vertex $a_p$ is replaced by $a_{p'},A_p,a_{p''}$, where $p'=\ell_a(m)+1$ and 
-$p'' =\ell_a(m)+2$ or else
-$b_q$ is replaced by $b_{q'},B_p,b_{q''}$, where $q'=\ell_b(m)+1$ and $q''=\ell_b(m)+2$,
-depending on the color of the balloon's tail. In the first case, we add two new edges
-$a_{p'}A_p$ and $a_{p''}A_p$ to the nervure, in the second case, we add the edges
-$b_{q'}B_p$ and $b_{q''}B_q$ to the nervure. In both cases, $p''=p'+1$ or
-$q''=q'+1$. In the pictures the edges of the nervure
-are thicker than the ones in the respective wing.
-For $1\le m\le n$, and $h\in \{\ell,r\}$, the nervure of $\mathcal{W}^h_m$, 
-denoted $\mathcal{N}^h_m$, is a spanning tree of the graph 
-$\mathcal{W}^h_m \cup \mathcal{N}^h_m \backslash Z$, where $Z= \{z_3^j~|~ j\in \{1, \ldots, 2n\}\}.$
-See Fig. \ref{fig:controlmaps01}, Fig. \ref{fig:controlmaps01novo1},  
-Fig. \ref{fig:controlmaps01novo2}
-and the complete sequence of figures for the $r^{24}_5$-example, 
-Figs. \ref{fig:winglist01}-\ref{fig:winglist11}. 
-A vertex in the tree $\mathcal{N}^h_m$ is {\em pendant} if it has degree at most 1.
-
-
-
-\begin{lemma}
- Let $1\le m \le n$. The set of pendant vertices of $\mathcal{N}_m^\ell$ is
-in 1-1 correspondence with the set of 13-gons of $\mathcal{H}_m$. 
- The set of pendant vertices in $\mathcal{N}_m^r$ is
-in 1-1 correspondence with the 03-gons of $\mathcal{H}_m$.
-\label{lem:internalpointsbigons}
-\end{lemma}
-\begin{proof}
-The intersection of the $(m-1)$-th balloon's head and tail is a 
-PL1-face with two 1-simplices. Their intersection is a point in $\Pi_h$.
-The PL1-face dualy corresponds to a 13-gon (resp. 03-gon) in $\mathcal{H}_{m-1}$
-if $h=\ell$ ($h=r$). After the 0-flip (resp. 1-flip) that produces  $\mathcal{H}_m$
-the PL1-face is splitted into two, in a conformal way with the passage 
-from  $\mathcal{W}^h_{m-1} \cup \mathcal{N}^h_{m-1}$ to  
-$\mathcal{W}^h_m \cup \mathcal{N}^h_m$. Given this interpretation
-the Lemma is easily established by induction.
-\end{proof}
-
-
-%--------------------
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=15.4cm]{A.figs/controlmaps01.pdf}
-\caption{\sf $wbp$-move: balloon's head section is painted in gray, 
+\caption{\sf Generic $wbp$-move: balloon's head section is painted in gray, 
 and the part of balloon's tail that is intersecting the appropriate
-semi-plane is depicted as a {\em thick edge}. \index{thick edge}}
+semi-plane $(\Pi'')$ is depicted as a {\em thick edge}. \index{thick edge}}
 \label{fig:controlmaps01}
 \end{center}
 \end{figure}
 %--------------------
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=15cm]{A.figs/ExWings.pdf}
-\caption{\sf An example of $wbp$-move: four new edges and two new vertices are created.
-0-simplex $b_4$ corresponding to a 03-gon $(16\uparrow 23, 4, 5)$}
- %meaning that some faces are bounded by plane quadrilaterals instead of triangles.}
-\label{fig:controlmaps01novo1}
-\end{center}
-\end{figure}
-
 \begin{figure}[!htb] 
 \begin{center}
 \includegraphics[width=15 cm]{A.figs/controlmaps01novo2.pdf}
-\caption{\sf The general $wbp$-move: the {\em star} \index{star} of a vertex of a graph embedded in an onrientable
+\caption{\sf The effect of the general $wbp$-move
+in the combinatorial strut: the {\em star} \index{star} of a vertex 
+of a graph embedded in an onrientable
 surface (in our case the plane) is the counterclockwise cyclic sequence of 
 edges incident to the vertex (such an ordering is induced by the surface).
 The set of stars is called a { \em rotation} \index{rotation} and has the 
@@ -960,11 +859,26 @@ characterizing property that each edge appears twice.
 The general case of changing rotation when going from 
 $\mathcal{W}_{m-1} \cup \mathcal{N}_{m-1}$ to
 $\mathcal{W}_{m} \cup \mathcal{N}_{m}$ is depicted above: 
+labels $X,Y,Z$ stand for arbitrary (maybe empty) sequences of edges;
 the vertex $XxyzYt$ breaks into three $Xxnt'$, $nyn't$ and $n'zYt''$ and
 the vertex $Zt$ changes into $Zt'tt''$. Two new vertices and four new edges are created. 
 Two of these edges ($n$ and $n'$) are in the nervure $\mathcal{N}_{m}$ and the other two ($t'$ and $t''$) are in the wing $\mathcal{W}_{m}$.
-The new rotation completely specifies the topological embedding of $\mathcal{W}_{m} \cup \mathcal{N}_{m}$.}
+The new rotation completely specifies the topological 
+embedding of $\mathcal{W}_{m} \cup \mathcal{N}_{m}$.}
 \label{fig:controlmaps01novo2}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm]{A.figs/ExWings.pdf}
+\caption{\sf An example of $wbp$-move: four new edges and two new vertices are created.
+0-simplex $b_4$ corresponding to a 03-gon $(16\uparrow 23, 4, 5)$.
+Here $X=(b_4-22.5,b_4-B_2,b_4-3.5,b_4-4.5,b_4-B_1,b_4-15.5)$.
+}
+ %meaning that some faces are bounded by plane quadrilaterals instead of triangles.}
+\label{fig:controlmaps01novo1}
 \end{center}
 \end{figure}
 
@@ -1073,15 +987,23 @@ that comes from the tail of the balloon after the i-th $bp$-move is applied, see
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=13cm]{A.figs/U3.pdf}
-\caption{\sf The set $\mathcal{L}_{i+1}^\star$.} 
+\caption{\sf The set $\mathcal{L}_{i+1}^\star$'s: at each step of 
+Theorem \ref{theo:teoremadeumalinha} we embed a set 
+ $\mathcal{L}_{i+1}^\star$, $i=0,\ldots n-1$ of 2-simplices.
+ These sets are the complemetary parts of the PL2-faces 
+ already in $\mathcal{H}^\diamond_1$ after a change of colours
+ in the medial layer. 
+The process of replacing the combinatorial tail of a balloon 
+by the corresponding
+trio of embedded PL2-faces in the pillow is denominated 
+\index{blow up a tail} {\em the blowing up of the 
+balloon's tail}.
+ } 
 \label{fig:U3}
 \end{center}
 \end{figure}
 
 
-The process of replacing the embedded tail of a balloon by the corresponding
-trio of PL2-faces in the pillow is denominated \index{blow up a tail} {\em the blowing up of the 
-balloon's tail}.
 
 %{\huge \bf Aqui insira seus $\alpha, \beta, \gamma$, bumps, etc}
 %\begin{theorem}\label{theo:teoremadeumalinha}
