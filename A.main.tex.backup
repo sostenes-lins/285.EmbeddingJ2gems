@@ -1,7 +1,7 @@
 \documentclass[a4paper,12pt,twoside]{article}
 
 %===========PACOTES
-\usepackage[body={173mm,235mm}]{geometry}
+\usepackage[body={175mm,235mm}]{geometry}
 %\usepackage[portuguese]{babel}
 \usepackage{a1}
 \usepackage[english]{babel}
@@ -449,51 +449,17 @@ wing based on $a_2$.}
 \includegraphics[width=14.5cm]{A.figs/bpandwinglist1112LW.pdf} \\
 \caption{\sf The globally last $wbp$-move is the extension based at $a_8$ 
 (correponding to a 13-gon which breaks into two $a_{12}$ and $a_{13}$). The bottom part of
-the figure despict the final pair of wings $\mathcal{W}$. For this object we have
-a rectilinear embedding based on the deterministic 
-linear algorithm which we explain in Section{??}.
-Obtaining this embedding by a linear deterministic 
-algorithmic is central for our purposes. The passage 
-$\mathcal{W} \rightarrow \mathcal{H}_1^\diamond$ is straighforward by a cone algorithm.
+the figure despicts the final pair of wings $\mathcal{W}$. 
+This is the first time that the geometry of the embedding needs to be specified.
+Up to this point we need only the struts given combinatorially.
+To obtain the above embedding for  $\mathcal{W}$ we have used the deterministic 
+linear algorithm explained in Subection \ref{subsec:diamondW}. 
 }
 \label{fig:winglist06}
 \end{center}
 \end{figure}
 %-----------------------------------
 
-%-----------------------------------
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=14.5cm]{A.figs/Wdiamond1.pdf} \\
-\caption{\sf To get $\mathcal{W}^\diamond_1=\mathcal{W}^{\diamond'}_1 
-\cup \mathcal{W}^{\diamond''}_1$ from $\mathcal{W}$ remove
-all but two straight line segments emanating from  $z_3^k$, one in each side.
-The two segments that survive are the ones finishing at the smallest index upper case $A_p$
-and the smallest indexed upper case $B_q$.
-Let $\{x\} \cup Y \subseteq \mathbb{R}^N$, for $1\le N \in \mathbb{N}$. 
-The \index{cone} {\em cone} \cite{rourke1982introduction} 
-with vertex $x$ and base $Y$, denoted $x \ast Y \subseteq \mathbb{R}^N$,
-is the union of $Y$ with all line 
-segments which link $x$ to $y \in Y$.
-The passage 
-$\mathcal{W}_1^ \diamond \rightarrow \mathcal{H}_1^\diamond$ is 
-straighforward by a cone algorithm:
-for each $e'\in \mathcal{W}_1^{\diamond'}$ add the two 2-simplices $z_0\ast e'$ and $z_2\ast e'$
-to $\mathcal{H}^\diamond_1$;
-for each $e''\in \mathcal{W}_1^{\diamond''}$ add the two 2-simplices $z_1\ast e''$ and $z_2\ast e''$
-to $\mathcal{H}^\diamond_1.$ 
-To complete $\mathcal{H}^\diamond_1$ add the 2-simplices $\{z_3^jz_1z_0 ~|~ j=1, \ldots, 2n \}.$
-}
-\label{fig:Wdiamond1}
-\end{center}
-\end{figure}
-%-----------------------------------
-
-
-\subsection{Acknowledgements}
-We thank the anonimous referees, which made us think and provide an $O(n)$-solution
-for finding the wing sequence, instead of an $O(n^3)$-solution based on a bare Tutte's
-barycetric methods.
 
 \section{Details of the whole construction}
 \subsection{First phase: from a $J^2$-gem $\mathcal{H}$ to a bloboid $\mathcal{B}$}
@@ -815,12 +781,10 @@ an upper bound for the number of 0-simplices.
 \subsubsection{Detailing the combinatorics of the wings, nervures and struts}
 
 An embedding of a graph into an oriented surface is combinatorially encoded
-as a {\em rotation at the vertices} or simply a {\em rotation}. That is the cyclic ordering
+as a {\em rotation at the vertices} or simply a {\em rotation}. A rotation is the set of cyclic orderings
 of the edges around the vertices (induced by the surface) so that each edge appears exactly twice, 
-one with each orientation. We encode the
-struts as rotations. Since the struts have no two edges with the same ends, an edge is
-conveniently encoded as a pair of label-vertices. The labels for the vertices of the 
-strut are defined recursively and play an important role. 
+one with each orientation. We encode the struts as rotations. Only the last one needs to be
+dealt with geometrically.
 
 At some point in our research it became evident that what was 
 needed to obtain the embedded PL-complex $\mathcal{H}_n^\star$ 
@@ -846,7 +810,7 @@ semi-plane $(\Pi'')$ is depicted as a {\em thick edge}. \index{thick edge}}
 \end{figure}
 %--------------------
 
-\begin{figure}[!htb] 
+\begin{figure}[H] 
 \begin{center}
 \includegraphics[width=15 cm]{A.figs/controlmaps01novo2.pdf}
 \caption{\sf The effect of the general $wbp$-move
@@ -869,43 +833,38 @@ embedding of $\mathcal{W}_{m} \cup \mathcal{N}_{m}$.}
 \end{center}
 \end{figure}
 
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=15cm]{A.figs/ExWings.pdf}
-\caption{\sf An example of $wbp$-move: four new edges and two new vertices are created.
-0-simplex $b_4$ corresponding to a 03-gon $(16\uparrow 23, 4, 5)$.
-Here $X=(b_4-22.5,b_4-B_2,b_4-3.5,b_4-4.5,b_4-B_1,b_4-15.5)$.
-}
- %meaning that some faces are bounded by plane quadrilaterals instead of triangles.}
-\label{fig:controlmaps01novo1}
-\end{center}
-\end{figure}
-
-A graph is {\em rectilinearly embedded into $\mathbb{R}^3$} if 
-the images of their edges are straight
-line segments. We need to find by a linear algorithm a rectilinear 
-embedding of the final pair of wings.
-
-\begin{lemma}\label{lem:numberofedges}
- The number of edges of $\mathcal{W}_n^h \cup \mathcal{N}_n^h$, $h \in \{\ell,r\}$
-is at most $6n-4$.
-\end{lemma}
-\begin{proof}
-The number of 1-simplices in the left wing and in the right wing of the 
-initial complex in the sequence are both $2n$. At each one of the $n-1$ $bp$-moves
-we add 4 edges either to the left or to the right wing with its nervure.
-Thus each one of the final left and right wings with nervures has at most $6n-4$ edges.
-\end{proof}
+The initial wing $\mathcal{W}_1=\mathcal{W}'_1 \cup \mathcal{W}''_1$ is formed by 
+$2n$-edges linking $a_1$ to $Z$ and $2n$ edges linking 
+$b_1$ to $Z$. We also have $\mathcal{N}_1=\varnothing$. At each $wbp$-move two new vertices
+and 2 new edges are added when going from $\mathcal{S}_{m-1}$ to $\mathcal{S}_{m}$ according to
+the scheme of Fig. \ref{fig:controlmaps01novo2}
 
 
 \subsection{Third phase: a rectilinear PL-embedding for 
 $\mathcal{W}^\star \cup \mathcal{N}^\star$ 
 and its induced diamond complex $\mathcal{H}_1^\diamond$, by a cone construction}
+\label{subsec:diamondW}
+
+A graph is {\em rectilinearly embedded into $\mathbb{R}^3$} if 
+the images of their edges are straight
+line segments. We will find by a linear algorithm a rectilinear 
+embedding for the final strut. We do it in the plane and lift it to space
+by two simple rotations to position $\mathcal{S}'_n$ in $\Pi'$ and 
+$\mathcal{S}''_n$ in $\Pi''$.
+
+\begin{lemma}\label{lem:numberofedges}
+ The number of edges of $\mathcal{S}_n$ is $8n-4$.
+\end{lemma}
+\begin{proof}
+The number of 1-simplices in the strut associated with
+initial complex in the sequence is $4n$. At each one of the $n-1$ $bp$-moves
+we add 4 edges to it.
+\end{proof}
+
 
 \begin{figure}[H] 
 \begin{center}
-\includegraphics[width=16cm]{A.figs/coordX.pdf}
+\includegraphics[width=14cm]{A.figs/coordX.pdf}
 \caption{\sf Algorithm to find the $x$-coordinates of the vertices of the left nervure
 $\mathcal{N}'$ (the right nervure $\mathcal{N}''$ is similar). BEGIN: 
 find the BFS-number (\cite{cormen2001introduction}) of vertices of the tree $\mathcal{N}'$
@@ -932,7 +891,7 @@ UNTIL all vertices are used; END.
 
 \begin{figure}[H] 
 \begin{center}
-\includegraphics[width=15 cm]{A.figs/drawLastWing.pdf}
+\includegraphics[width=14cm]{A.figs/drawLastWing.pdf}
 \caption{\sf A linear algorithm for 
 rectilinearly embedding $\mathcal{W}'$, that is, the last left wing 
 (the right side of the last wing $\mathcal{W}''$ is similar). BEGIN:
@@ -960,6 +919,40 @@ END.
 \label{fig:drawLasWing}
 \end{center}
 \end{figure}
+
+We apply the algorithms of the previous two figures to obtain a rectilinear
+embedding of $\mathcal{W}$ in linear time. The connection between 
+ $\mathcal{W}$ ,  $\mathcal{W}_1^\diamond$  
+ and  $\mathcal{H}_1^\diamond$ is explained in Figure \ref{fig:Wdiamond1}.
+
+%-----------------------------------
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=14.5cm]{A.figs/Wdiamond1.pdf} \\
+\caption{\sf To get $\mathcal{W}^\diamond_1=\mathcal{W}^{\diamond'}_1 
+\cup \mathcal{W}^{\diamond''}_1$ from $\mathcal{W}$ remove
+all but two straight line segments emanating from  $z_3^k$, one in each side.
+The two segments that survive are the ones 
+finishing at the smallest index upper case $A_p$ (when there is a choice)
+and the smallest indexed upper case $B_q$ (when there is a choice).
+Let $\{x\} \cup Y \subseteq \mathbb{R}^N$, for $1\le N \in \mathbb{N}$. 
+The \index{cone} {\em cone} \cite{rourke1982introduction} 
+with vertex $x$ and base $Y$, denoted $x \ast Y \subseteq \mathbb{R}^N$,
+is the union of $Y$ with all line 
+segments which link $x$ to $y \in Y$.
+The passage 
+$\mathcal{W}_1^ \diamond \rightarrow \mathcal{H}_1^\diamond$ is 
+straighforward by a cone algorithm:
+for each $e'\in \mathcal{W}_1^{\diamond'}$ add the two 2-simplices $z_0\ast e'$ and $z_2\ast e'$
+to $\mathcal{H}^\diamond_1$;
+for each $e''\in \mathcal{W}_1^{\diamond''}$ add the two 2-simplices $z_1\ast e''$ and $z_2\ast e''$
+to $\mathcal{H}^\diamond_1.$ 
+To complete $\mathcal{H}^\diamond_1$ add the 2-simplices $\{z_3^jz_1z_0 ~|~ j=1, \ldots, 2n \}.$
+}
+\label{fig:Wdiamond1}
+\end{center}
+\end{figure}
+%-----------------------------------
 
 
 \subsection{Fourth phase: filling the pillows, 
@@ -1137,9 +1130,6 @@ and $\alpha_j$ as $\frac{\beta_{j-1}+\nu_j}{2}$, for $j=1,\ldots, i-1$. Observe 
 if we define $\alpha_j$ as if the PL2$_0$-face
 where not refined, some 1-simplices may cross.
 
-
-
-
 \begin{figure}[!htb] 
 \begin{center}
 \includegraphics[scale=0.7]{A.figs/3d6.pdf}
@@ -1149,12 +1139,6 @@ where not refined, some 1-simplices may cross.
 \end{figure}
 
 \end{proof}
-
-\section{Conclusion and further work}
-
-
-
-
 
 
 \include{E.refAffiliation}
