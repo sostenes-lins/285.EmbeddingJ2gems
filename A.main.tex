@@ -68,36 +68,19 @@ into $\mathbb{S}^ 3$ by an $O(n^ 2)$-algorithm
 Let be given a {\em colored 3-pseudo-triangulation} $\mathcal{H}^\star$ with $n$ tetrahedra.
 Colored means that each tetrahedron have vertices 
 distinctively colored 0,1,2,3.
-In a {\em pseudo} 3-triangulation the intersection of simplices might be subsets of simplices
-of smaller dimensions, instead of singletons of such faces, 
-as for true triangulations. If $\mathcal{H}^\star$ is the dual of a $J^2$-gem 
-(shortly to be defined in the Introduction),
-then we show that the induced 3-manifold $|\mathcal{H}^\star|$ is $\mathbb{S}^3$ and we make available an $O(n^2$)-algorithm to produce a
+In a {\em pseudo} 3-triangulation the intersection of simplices might be 
+subsets of simplices
+of smaller dimensions (faces), instead of a single maximal face, 
+as for true triangulations. If $\mathcal{H}^\star$ is the dual of a cell
+3-complex induced (in an specific way to be made clear) 
+by a pair of Jordan curves with $2n$ transversal crossings,
+then we show that the induced 3-manifold $|\mathcal{H}^\star|$ is 
+$\mathbb{S}^3$ and we make available an $O(n^2$)-algorithm to produce a
 PL-embedding (\cite{rourke1982introduction}) of $\mathcal{H}^\star$ into $\mathbb{S}^3$.
-This is rather surprising because such PL-embeddings are often of exponential size.
+This bound is rather surprising because such PL-embeddings are often of exponential size.
 This work is the first step towards obtaining, via an $O(n^ 2)$-algorithm,
 a framed link presentation inducing the same closed orientable 3-manifold
 as the one given by a colored pseudo-triangulation. 
-% A {\em $J^ 2$-gem} is a 4-regular, 4-edge-colored planar graph $\mathcal{H}$ obtained from the
-% intersection pattern of two Jordan curves $X$ and $Y$ with $2n$ transversal
-% crossings.
-% These crossings define consecutive segments of $X$ alternatively 
-% inside $Y$ and outside $Y$. Color the first type 2 and the second type 3.
-% The crossings also define consecutive segments of $Y$ alternatively 
-% inside $X$ and outside $X$. Color the first type 0 and the second type 1.
-% This defines a 4-regular 4-edge-colored graph $\mathcal{H}$ where the vertices are the crossings
-% and the edges are the colored colored segments.
-% Let $\mathcal{H}^ \star$ be the 3-dimensional abstract 3-complex formed by taking a set of 
-% vertex colored tetrahedra in 1--1 correspondence with $V(\mathcal{H})$ so that each tetrahedra
-% has vertices of colors 0,1,2,3. For each $i$-colored edge of $\mathcal{H}$ with ends $u$ and $v$
-% paste the corresponding tetrahedra $\nabla_u$ and $\nabla_v$ so as to paste the two triangular
-% faces that do not contain a vertex of color $i$ in such a way as to
-% to match vertices of the other three colors. 
-% We show that the topological space 
-% $|\mathcal{H}^\star|$ induced by $\mathcal{H}^\star$ is $\mathbb{S}^ 3$. Moreover we describe an $O(n^2)$-algorithm
-% to make available a PL-embedding (\cite{rourke1982introduction}) of $\mathcal{H}^\star$ 
-% into $\mathbb{S}^3$. We get explicit coordinates in $\mathbb{S}^ 3$ for the 0-simplices and
-% the p-simplices $(p \in \{1,2,3\}$) are linear simplices in the spherical geometry.
 Previous work on this topic appear in
 \cite{linsmachadoA2012}, \cite{linsmachadoB2012} and \cite{linsmachadoC2012}.
 However, the exposition and the new proofs of this paper are meant to be entirely self-contained.
@@ -129,7 +112,8 @@ We show that the topological space
 $|K|$ induced by $\mathcal{H}^\star$ is $\mathbb{S}^ 3$. Moreover we describe an $O(n^2)$-algorithm
 to make available a PL-embedding (\cite{rourke1982introduction}) of $\mathcal{H}^\star$ 
 into $\mathbb{S}^3$. We get explicit coordinates in $\mathbb{S}^ 3$ for the 0-simplices and
-the p-simplices $(p \in \{1,2,3\}$) are linear simplices in the spherical geometry.
+the p-simplices $(p \in \{1,2,3\}$) become linear simplices in the spherical geometry. For basic
+topological definitions we refer to the lucid book by Stillwell \cite{stillwell1993classical}.
 
 
 \subsection{Gems and their duals}
@@ -747,7 +731,7 @@ So, if $X$ is a type of PL2-face, $X'$ is its refinement, then
 $X''=X'$. This idempotency is a crucial property inhibiting 
 the exponentiality of our algorithm and enables a quadratic bound.
 
-\subsubsection{Quadratic bounds on the numer of simplices}
+\subsubsection{Quadratic bounds on the number of simplices}
 
 \begin{corollary}
 \label{theo:thequadratic}
@@ -757,7 +741,6 @@ of the colored 2-complex $\mathcal{H}_{n}^\star$ induced by a resoluble
 gem $G$ with 2n vertices.
 \end{corollary}
 \begin{proof} 
-
 We prove the first bound, on 0-simplices; the other are similar: in the worse case,
 the increase of simplices is a linear function on the rank of the current PL2-face,
 and to get the final number we sum an arithmetic progreesion.
@@ -788,15 +771,18 @@ dealt with geometrically.
 
 At some point in our research it became evident that what was 
 needed to obtain the embedded PL-complex $\mathcal{H}_n^\star$ 
-was a proper embedding into $\mathbb{R}^3$ of two special sets 
-of 0-simplices $\{a'_1, a'_2,\ldots,a'_f\}$ and $\{b'_1, b'_2,\ldots,b'_g\}$,
+was a proper embedding into $\mathbb{R}^3$ of two special sequences 
+of 0-simplices $\mathcal{A}=(a'_1, a'_2,\ldots,a'_f)$ and $\mathcal{B}=(b'_1, b'_2,\ldots,b'_g)$,
 where $f+g=2n$. Each $a'_i \in\{a_i,A_i\}$ and each $b'_i \in\{b_i,B_i\}$. 
 This terminology for the 0-simplices is obtained recursively
-and detailed at the proper location in this section. For now we just say that all 
-other 0-simplices of the colored complexes $\mathcal{H}^\star_m$
-are obtained by bisections of segments linking previously defined points. It came as a surprise to discover
-that this apparently difficult 3D problem can be reformulated as a plane problem with an easy solution,
-via a linear algorithm. That is the role of the wings, nervures and
+and detailed shortly in this section. For now we just say that all 
+other 0-simplices not in $\mathcal{A}\cup\mathcal{B}$ of the colored complexes $\mathcal{H}^\star_m$
+are obtained by bisections of segments linking previously defined points. 
+It came as a surprise to discover
+that the apparently difficult 3D problem of 
+positioning $\mathcal{A}\cup\mathcal{B}$ could be 
+reformulated as a plane problem with an easy solution,
+via a linear unique solution algorithm. That is the role of the wings, nervures and
 struts associated to the colored complexes.
 
 \begin{figure}[H]
@@ -833,24 +819,42 @@ embedding of $\mathcal{W}_{m} \cup \mathcal{N}_{m}$.}
 \end{center}
 \end{figure}
 
-The initial wing $\mathcal{W}_1=\mathcal{W}'_1 \cup \mathcal{W}''_1$ is formed by 
+\begin{algorithm}[Obtaining the rotations for the struts, arriving to $\mathcal{S}_n$]
+BEGIN: $i=1$; $\mathcal{W}_i=\mathcal{W}'_i \cup \mathcal{W}''_i$ is formed by 
 $2n$-edges linking $a_1$ to $Z$ and $2n$ edges linking 
-$b_1$ to $Z$. We also have $\mathcal{N}_1=\varnothing$. At each $wbp$-move two new vertices
-and 2 new edges are added when going from $\mathcal{S}_{m-1}$ to $\mathcal{S}_{m}$ according to
-the scheme of Fig. \ref{fig:controlmaps01novo2} and the control of the thinning of a blob 
-in the combinatorics of the involved $J^2B$-gems. We arrive to a combinatorial embedding of
-$\mathcal{S}_n$ given by a rotation. We need to make $\mathcal{S}_n$ geometric.
+$b_1$ to $Z$; we also have $\mathcal{N}_1=\varnothing$; REPEAT: $i \leftarrow i+1$; 
+there are two cases, according to the color of the edges 
+which are flipped in the associated thinning of a blob is 1 or 0; 
+in the first case the strut that 
+changes is the left one 
+(while $\mathcal{S}_{i}''=\mathcal{S}_{i-1}''$), 
+in the other case it is the right strut that changes
+(while $\mathcal{S}_{i}'=\mathcal{S}_{i-1}'$);
+perform the appropriate $wbp$-move creating two new vertices $a_{2\ell}, a_{2\ell+1}$ 
+in the first case or $b_{2\ell}, b_{2 \ell+1}$ in the second ($2\ell-1$ is the last index
+of $\mathcal{A}$ or of $\mathcal{B}$); let $a_q$ (resp. $b_q$) denote the 13-gon (resp. the 03-gon)
+which is being subdivided; then we relabel $a_q$ as $A_q$ (resp. $b_q$ as $B_q$); these capital
+letter labeled 0-simplices no longer correspond to bigons, while bigon $a_q$ (resp $b_q$) has
+been subdivided into $a_{2\ell}, a_{2\ell+1}$ (resp. $b_{2\ell}, b_{2 \ell+1}$); 
+also 2 new edges are added when going from $\mathcal{S}_{m-1}$ to $\mathcal{S}_{m}$ according to
+the rotation changing of Fig. \ref{fig:controlmaps01novo2}; 
+UNTIL $i=n$; Output $\mathcal{S}_n$; END.
+\end{algorithm}
 
+It is easy to verify that the above algorithm is linear in $n$.
+Now we need to make $\mathcal{S}_n'$ rectilinearly embedded into $\Pi'$
+and $\mathcal{S}_n''$ rectilinearly embedded into $\Pi''$. 
+This is provided in the next subsection.
 
 \subsection{Third phase: a rectilinear PL-embedding for 
-$\mathcal{W}^\star \cup \mathcal{N}^\star$ 
+$\mathcal{S}_n$ 
 and its induced diamond complex $\mathcal{H}_1^\diamond$, by a cone construction}
 \label{subsec:diamondW}
 
-A graph is {\em rectilinearly embedded into $\mathbb{R}^3$} if 
+A graph is {\em rectilinearly embedded into a plane} if 
 the images of their edges are straight
 line segments. We will find by a linear algorithm a rectilinear 
-embedding for the final strut. We do it in the plane and lift it to space
+embedding for $\mathcal{S}_n$. We do it in the plane and lift it to space
 by two simple rotations to position $\mathcal{S}'_n$ in $\Pi'$ and 
 $\mathcal{S}''_n$ in $\Pi''$.
 
