@@ -12,6 +12,8 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage[pdftex]{hyperref}
+\usepackage{url}
 
 % makeidx
 \usepackage{makeidx}
@@ -45,7 +47,7 @@
 into $\mathbb{S}^ 3$ by an $O(n^ 2)$-algorithm
 \footnote{2010 Mathematics Subject Classification: 
 57M25 and 57Q15 (primary), 57M27 and 57M15 (secondary)}} 
-\author{Sóstenes Lins and Ricardo Machado}
+\author{Sóstenes L. Lins and Ricardo N. Machado}
 
 \date{\today}
 
@@ -82,13 +84,60 @@ This work is the first step towards obtaining, via an $O(n^ 2)$-algorithm,
 a framed link presentation inducing the same closed orientable 3-manifold
 as the one given by a colored pseudo-triangulation. 
 Previous work on this topic appear in
-\cite{linsmachadoA2012}, \cite{linsmachadoB2012} and \cite{linsmachadoC2012}.
+\url{http://arxiv.org/abs/1212.0827}, \cite{linsmachadoA2012}, 
+\url{http://arxiv.org/abs/1212.0826}, \cite{linsmachadoB2012} and 
+\url{http://arxiv.org/abs/1211.1953}, \cite{linsmachadoC2012}.
 However, the exposition and the new proofs of this paper are meant to be entirely self-contained.
 
 \end{abstract}
 
 
 \section{Introduction}
+The subject of this paper is motivated by the following problem:
+given a triangulated closed, connected, orientable 3-manifold $\mathbb{R}^3$, 
+how to obtain by a polynomial algorithm  a {\em blackboard-framed link presentation}
+inducing  $\mathbb{R}^3$. This is one of the most basic open problems in
+3-manifold topology: there are two main languages to present a specific 3-manifold.
+The triangulation based presentations (triangulations, Heegaard diagrams, gems, special
+spines, etc) and the framed link presentations (various types of decorated links which
+yield the 3-manifold as a recipe for surgery on $\mathbb{S}^3$). Going from the
+second type presentation to a first type one is straightforward by a linear algorithm,
+see Section 2 of \url{http://arxiv.org/abs/1305.5590}, \cite{lins2013C}.
+However there is no known polynomial algorithm to go from the first to the second.
+This paper starts to remedy this situation.
+
+A blackboard-framed link is in 1-1 correspondence with a {\em  blink}, which is
+simply a plane graph with an arbitrary bipartition of the edges set into black and gray edges.
+For a recent combinatorially oriented 
+account about how a blink induces a 3-manifold, see 
+\url{http://arxiv.org/abs/1305.4540}, \cite{lins2013B}. 
+The blink of the bottom part of Fig. \ref{fig:euclideans} provides a solution for a problem
+left open in \url{http://arxiv.org/arXiv:math/0702057}, \cite{lins2007blink}.
+Even though the general problem remains unconquered, substantial advances were
+possible and, in practice, it permits to find by an $O(n^2)$-algorithm a 
+blink presentation inducing the same 3-manifold
+as a given gem. From here on we concentrate in producing an embedding into $\mathbb{S}^3$ 
+of a $J^2$-gem. This result is used as a central important lemma in finding the 
+blink equivalent to a gem, which is the subject of 
+subsequent papers currently being polished.
+
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=10.5cm]{A.figs/euclideans.pdf} \\
+\caption{\sf The discovery of a blink for EUCLID$_1$, solving an
+open problem left in page 117 of \cite{lins2007blink}:
+of the six euclidean 3-manifolds only EUCLID$_1$ did not have a blink presentation. 
+To find this blink it is necessary to develop 
+and understanding some deep geometric properties of gems, 
+as we start doing in in this paper. The blink presentation for EUCLID$_1$
+was obtained in this way.
+}
+\label{fig:euclideans}
+\end{center}
+\end{figure}
+
+
 \subsection{$J^2$-gems}
 A {\em $J^ 2$-gem} is a 4-regular, 4-edge-colored planar graph $\mathcal{H}$ obtained from the
 intersection pattern of two Jordan curves $X$ and $Y$ with $2n$ transversal
@@ -98,7 +147,21 @@ inside $Y$ and outside $Y$. Color the first type 2 and the second type 3.
 The crossings also define consecutive segments of $Y$ alternatively 
 inside $X$ and outside $X$. Color the first type 0 and the second type 1.
 This defines a 4-regular 4-edge-colored graph $\mathcal{H}$ where the vertices are the crossings
-and the edges are the colored colored segments.
+and the edges are the colored colored segments, see Fig. \ref{fig:j2gemr245}.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=5cm]{A.figs/j2gemr245.pdf} \\
+\caption{\sf How to interpret a pattern formed by two $2n$-crossing Jordan curves as a gem:
+start labeling the crossings of $X$ in consecutively in a counterclockwise 
+way so that edge linking 1 to 2 is of color 2 which alternates with color 3.
+Let the segments of $Y$ internal to $X$ be colored 0 and the ones external to $X$
+be colored 1. The result is, by definition, a $J^2$-gem.
+}
+\label{fig:j2gemr245}
+\end{center}
+\end{figure} 
+
 Let $\mathcal{H}^\star$ be the 3-dimensional abstract 3-complex formed by taking a set of 
 vertex colored tetrahedra in 1--1 correspondence with the set of vertices of $\mathcal{H}$,
 $V(\mathcal{H})$, so that each tetrahedra
@@ -114,6 +177,7 @@ to make available a PL-embedding (\cite{rourke1982introduction}) of $\mathcal{H}
 into $\mathbb{S}^3$. We get explicit coordinates in $\mathbb{S}^ 3$ for the 0-simplices and
 the p-simplices $(p \in \{1,2,3\}$) become linear simplices in the spherical geometry. For basic
 topological definitions we refer to the lucid book by Stillwell \cite{stillwell1993classical}.
+
 
 
 \subsection{Gems and their duals}
@@ -167,8 +231,8 @@ it corresponds a {\em PL3-face} of $\mathcal{H}^\star$ which is a 3-ball formed 
 The $3$-manifold induced by a $J^2$-gem $\mathcal{H}$ is $\mathbb{S}^3$.
 \end{proposition}
 \begin{proof}
-Removing from $\mathcal{H}$ all the edges of a given color still yields a connected graph
-which a plane graph and they come embedded so that the faces are the 2-residues.
+Removing from $\mathcal{H}$ all the edges of any given color produces a restricted graph
+which is connected (whose faces are bounded by the $ij$-gons). 
 So $\mathcal{H}$ has four 3-residues, one of each type. 
 Denote by $b_{ij}$ the number of $ij$-gons of $\mathcal{H}$.
 Each one of these residues are planar graphs
@@ -213,13 +277,13 @@ are homeomorphic if and only if any two gems inducing it are linked by a finite 
 cancellations and creations of dipoles, \cite{ferri1982crystallisation, lins2006blobs}.
 
 The dual of a $2$-dipole $\{u,v\}$, with internal colors $i,j$ is named a {\em pillow}. 
-It consistes of two PL3-faces $\nabla_u$ and $\nabla_v$ sharing two PL2-faces colored $i$ and $j$.
+It consists of two PL3-faces $\nabla_u$ and $\nabla_v$ sharing two PL2-faces colored $i$ and $j$.
 The {\em thickening of a 2-dipole into a 3-dipole} is defined as follows. Let
 $i,j$ be the two colors internal to 2-dipole $\{u,v\}$ and $k$ a third color.
-Let $a$ be the $k$-neighboor of $x$ and $b$ be the $k$-neighboor of $y$. Remove
+Let $a$ be the $k$-neighbor of $x$ and $b$ be the $k$-neighbor of $y$. Remove
 edges $[a,x]$ and $[b,y]$ and put back $k$-edges $[u,v]$ and $[r,s]$. This completes
 the thickening. It is simple to prove that the thickening in a gem produces a gem. 
-We must be carefull because the inverse blind inverse operation {\em thinning a 3-dipole} 
+We must be careful because the inverse blind inverse operation {\em thinning a 3-dipole} 
 not always produces a gem. The catch is that the result of the thinning perhaps is not a 2-dipole.
 In this sense the thinning move is not local: we must make sure that the result is a 2-dipole.
 To the data needed in thinning a 3-dipole $\{u,v\}$ with internal colors $\{i,j,k\}$ 
@@ -260,7 +324,7 @@ of $n$ 3-dipoles with internal
 colors $0,1,2$. Such a canonical $n$-gem is 
 named a {\em bloboid} and is denoted $\mathcal{B}_n$. 
 Such 3-dipoles are also named a {\em blob over a 3-colored edge}.
-A $J^2B$-gem is a gem that, after cancelling blobs over $3$-colored edge becomes
+A $J^2B$-gem is a gem that, after canceling blobs over $3$-colored edge becomes
 a $J^2$-gem. 
 This indexing decreasing sequence is easily obtainable from the
 primal objects, in the case, simplifying $J^2B$-gems until the bloboid is obtained: 
@@ -291,10 +355,11 @@ $$\mathcal{S}_1^\star=\mathcal{W}_{1} \cup \mathcal{N}_{1}
 \mathcal{S}_n^\star=\mathcal{W}_{n} \cup \mathcal{N}_{n}=
 \mathcal{W} \cup \mathcal{N}=\mathcal{S}^\star.$$ 
 Each wing $\mathcal{W}_m$'s corresponds to a section 
-of the previous sequence $\mathcal{H}_m^\star$'s by two adequated 
+of the previous sequence $\mathcal{H}_m^\star$'s by two adequate 
 fixed semi-planes $\Pi'$ and $\Pi''$.
 The construction of the struts (which are planar graphs) is
-recursive. Initially $\mathcal{W}_1^\star$ is a pincel of lines and $\mathcal{N}_1^\star$ 
+recursive. Initially $\mathcal{W}_1^\star$ is a set of $2n$ lines incident to $a_1$ 
+and a set of $2n$ lines incident to $b_1$, while $\mathcal{N}_1^\star$ 
 is $\varnothing$.  Going from $\mathcal{S}^\star_{m}$
 to $\mathcal{S}_{m+1}^\star$ is very simple: two new vertices and four
 new edges appear, so as to maintain planarity.
@@ -306,10 +371,10 @@ new edges appear, so as to maintain planarity.
 
 In the third phase we make the abstract final element 
 $\mathcal{W}^\star \cup \mathcal{N}^\star$
-of the second phase {\em rectilinearly} (that is each edge is a straihgt line segment) PL-embedded. 
+of the second phase {\em rectilinearly} (that is each edge is a straight line segment) PL-embedded. 
 By a cone construction we obtain from the rectilinearly PL-embedded strut
 $\mathcal{S}^\star$ a special
-PL-complex, named $\mathcal{H}_1^\diamond$. This complex does not correpond to a gem dual
+PL-complex, named $\mathcal{H}_1^\diamond$. This complex does not correspond to a gem dual
 and it can be loosely explained as $\mathcal{H}_1^\star$ with all balloon's heads ``opened''.
 % More details can only be given in the actual construct of Section \ref{}.
 
@@ -326,32 +391,44 @@ is the PL-embedding that we seek: the PL-embedding of the dual of the original
 $J^2$-gem $\mathcal{H}$ minus a vertex into $\mathbb{R}^3$.
 % It is worth mentioning that (except for the last one) these
 % complexes have no counterpart in the dual gems, that is they do not have PL2-faces, only
-% the part correspondig to the balloon's head  $\nabla_u \cup \nabla_v$.
+% the part corresponding to the balloon's head  $\nabla_u \cup \nabla_v$.
 
 The whole procedure can be implemented as a formal 
 algorithm that takes $O(n^2)$-space
 and $O(n^2)$-time complexity, where $2n$ is the number of vertices of the original $J^2$-gem.
 
 \subsection{A complete example}
-In the example coming from $r^{24}_5$ (Figs. \ref{fig:winglist01} to \ref{fig:winglist06})
+In the example corresponding to Fig. \ref{fig:winglist01}, \ldots, Fig. \ref{fig:winglist06}
 we gather and display the data structure we need for the $O(n^2)$-algorithm
-to PL-embed the dual of a $J^2$-gem. The wings, nervures and their union the struts are
+to PL-embed the dual of the $J^2$-gem $\mathcal{H}_{12}$ of Fig. \ref{fig:winglist06}. 
+The wings, nervures and their union, the struts, are
 partitioned into left and right parts:
 $$\mathcal{W}_m =  \mathcal{W}'_m \cup  \mathcal{W}''_m, \hspace{4mm} 
 \mathcal{N}_m =  \mathcal{N}'_m \cup  \mathcal{N}''_m, \hspace{4mm}
 \mathcal{S}^\star_m =  \mathcal{S}^{\star'}_m \cup  \mathcal{N}''_m, \hspace{4mm} 
 $$
 
+The sequence of figures displays the sequences of three data structures that we need:
+the inverse sequence of
+$J^2B$-gems $\mathcal{H}_m$, the colored 2-dimensional 
+complexes $\mathcal{H}^\star_m$ 
+(partitioned into colored PL2-faces)
+and the struts $\mathcal{S}_m = \mathcal{W}_m \cup \mathcal{N}_m$. 
+The initial data structures are very simple and, in the figures we make clear
+how to obtain the next term of these sequences. In particular, the next colored 
+2-complex is given as the result of a $bp$-move, which changes a {\em balloon} into a
+{\em pillow}. See definitions in Subsection \ref{subsec:primaldualmoves}.
+
 %\include{F.Appendix}
 %-----------------------------------
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=15cm]{A.figs/bpandwinglist123.pdf} \\
+\includegraphics[width=14.7cm]{A.figs/bpandwinglist123.pdf} \\
 \caption{\sf The initial right wing $\mathcal{W}''_1$
-is a pincel of lines emanating from $b_1$.
+is a set of lines emanating from $b_1$.
 The initial right nervure $\mathcal{N}''_1$ is empty. 
 The initial left wing $\mathcal{W}'_1$
-is a pincel of lines emanating from $a_1$.
+is a set of lines emanating from $a_1$.
 The initial left nervure $\mathcal{N}'_1$ is empty.
 At the end of each $wpb$-move a pair of edges is added to the nervure.
 Lower case symbols $a_j, b_k$ refer to 13-gons and 03-gons. Upper case symbols
@@ -370,7 +447,7 @@ $A_j, B_k$ are auxiliary 0-simplexes.
 is a pair of adjacent 
 shaded triangles and a thick edge. In the lower the left strut is further 
 modified by another $wbp$-move. The modification of balloons into pillows define the new
-colored abstract combinatorial complexes. The nervures $\mathcal{N}_m$ are auxiliar devices
+colored abstract combinatorial complexes. The nervures $\mathcal{N}_m$ are auxiliary devices
 that will be disposed after we find the rectilinear embedded
 $\mathcal{W}$ by a deterministic linear algorithm,
 See Fig. \ref{fig:winglist06}.}
@@ -391,7 +468,7 @@ method \cite{tutte1963dg,colin2003tutte} to obtain the embedded final struts.
 However, except for $\mathcal{W}$, only the combinatorics of the embeddings (the rotations)
 are needed to encode the struts in an implementation of the algorithm.
 In the second $wbp$-move one of the two shaded triangles
-is in the outside. Depite this special case, the rotation manifestation of the 
+is in the outside. Despite this special case, the rotation manifestation of the 
 move behaves as usual.
 }
 \label{fig:winglist03}
@@ -432,12 +509,12 @@ wing based on $a_2$.}
 \begin{center}
 \includegraphics[width=14.5cm]{A.figs/bpandwinglist1112LW.pdf} \\
 \caption{\sf The globally last $wbp$-move is the extension based at $a_8$ 
-(correponding to a 13-gon which breaks into two $a_{12}$ and $a_{13}$). The bottom part of
-the figure despicts the final pair of wings $\mathcal{W}$. 
+(corresponding to a 13-gon which breaks into two $a_{12}$ and $a_{13}$). The bottom part of
+the figure depicts the final pair of wings $\mathcal{W}$. 
 This is the first time that the geometry of the embedding needs to be specified.
 Up to this point we need only the struts given combinatorially.
 To obtain the above embedding for  $\mathcal{W}$ we have used the deterministic 
-linear algorithm explained in Subection \ref{subsec:diamondW}. 
+linear algorithm explained in Subsection \ref{subsec:diamondW}. 
 }
 \label{fig:winglist06}
 \end{center}
@@ -486,7 +563,7 @@ The proof is by backward induction.
 For $\ell=n$ we have $\mathcal{H}_{n}=\mathcal{H}$ and
 so it is a $J^2B$-gem, establishing the basis of the induction. Assume that
 $\mathcal{H}_\ell$ is a $J^2B$-gem.
-For $\ell>1$, let $\mathcal{H}'_\ell$ denote  $\mathcal{H}_\ell$ after cancelling the blobs.
+For $\ell>1$, let $\mathcal{H}'_\ell$ denote  $\mathcal{H}_\ell$ after canceling the blobs.
 By Lemma \ref{lem:trio} $\mathcal{H}_\ell'$ has a $(X,Y)$-trio $(x,y,z)$. Thus $y$
 is incident to two 2-dipoles. One of these dipoles, call it $D$,
 involves color 2, the other involves color 3.
@@ -513,8 +590,8 @@ every member of the sequence induces $\mathbb{S}^3$.
 The second phase starts with an easy task, namely to define the dual of the bloboid,
 named $\mathcal{H}_1^{\star}$. We get this first term in an embedded form. 
 The others $\mathcal{H}_2^{\star}$, \ldots, $\mathcal{H}_n^{\star}$,
-are, at this stage, obtained by slight modifications of the antecessor, but only in 
-an abstract compinatorial way. In doing so we get the minimum 
+are, at this stage, obtained by slight modifications of the ancestor, but only in 
+an abstract combinatorial way. In doing so we get the minimum 
 level of refinement in the PL2-faces required, so that latter, the levels are sufficient
 for a geometric PL-embedding in $\mathbb{R}^ 3$ which we seek.
 
@@ -531,7 +608,7 @@ In what follows the $k$ in PL$k$-face means the dimension $k\in\{0, 1, 2,3\}$ of
 a vertex $v$ in $G$ $\rightleftharpoons$ a 
 solid PL-tetrahedron or PL3-face,
 denoted by $\nabla_v$ in the dual of the gem whose
-PL0-faces are labelled $z_0$, $z_1$, $z_2$ e $z_3^v$; 
+PL0-faces are labeled $z_0$, $z_1$, $z_2$ e $z_3^v$; 
 in this work, it is enough to work with the 
 boundary of a PL3-face; this is topologically a sphere
 $\mathbb{S}^2$ with four PL2-faces one of each color; the 3-simplices forming
@@ -564,7 +641,7 @@ We define the combinatorial 2-dimensional PL complex $\mathcal{H}_1^{\star}$ as 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=1]{A.figs/dualPL2.pdf}
-\caption{\sf PL2-faces of $\mathcal{H}^\star_1$: the figure is an abreviation of a stack
+\caption{\sf PL2-faces of $\mathcal{H}^\star_1$: the figure is an abbreviation of a stack
 of tetrahedra, where $k = 0,1,\ldots,n-1.$ The 0-simplices 
 $z_3^j$ are defined as $z_3^j=(0,0,2n-j)$, $1\le j \le 2n$. For even $j=2k$,
 there are five simplices incident to $z_3^j$: two 0-colored, two 1-colored and 1 2-colored.
@@ -587,7 +664,7 @@ without spurious intersections among the 3-simplices.
 
 We detail the connection of the $J^2$-gem and its dual. In particular we 
 use the unique 23-gons of it to provide labels $1,2,\ldots,2n$ in the cyclic 
-order of the 23-gon. This labellings correpond to PL3-faces of the 
+order of the 23-gon. This labellings correspond to PL3-faces of the 
 $\mathcal{H}_1^{\star}$ and will be maintained for the PL3-faces 
 of the whole remaining sequence $\mathcal{H}_2^{\star}$, 
 \ldots, $\mathcal{H}_n^{\star}$. This invariance is a dual 
@@ -610,7 +687,7 @@ The dual of an $i$-colored
 edge $uv$ with $i\in\{0, 1, 2\}$ is the PL2$_i$-face with even index $v$.
 
 \subsubsection{Primal and dual $bp$-moves}
-
+\label{subsec:primaldualmoves}
 Before presenting $\mathcal{H}_m^\star$, $1< m \le n,$ and its embeddings, we need to understand
 the dual of the $(pb)^\star$-move and its inverse. In the primal, to apply a $(pb)^\star$-move, we need
 a blob and a 0- or 1-colored edge. The dual of this pair is the {\em balloon:} the \index{balloon's head} {\em balloon's head} is
@@ -621,7 +698,7 @@ described in the book \cite{lins1995gca}, page 39.
 This composite move is the {\em balloon-pillow move} \index{balloon-pillow move} or \index{bp-move} {\em bp-move}.
 Restricting our basic change in the colored 2-complex 
 to $bp$-moves we have nice theoretical properties which are responsible for avoiding an exponential
-proccess. 
+process. 
 
 \begin{figure}[H]
 \begin{center}
@@ -725,7 +802,7 @@ ranks are enough to make the PL-embedding geometric into $\mathbb{R}^3$.
 
 \end{proof}
 
-It is whorthwhile to mention, in view of the above proof, 
+It is worthwhile to mention, in view of the above proof, 
 that each PL2-face is refined at most one time. 
 So, if $X$ is a type of PL2-face, $X'$ is its refinement, then
 $X''=X'$. This idempotency is a crucial property inhibiting 
@@ -743,7 +820,7 @@ gem $G$ with 2n vertices.
 \begin{proof} 
 We prove the first bound, on 0-simplices; the other are similar: in the worse case,
 the increase of simplices is a linear function on the rank of the current PL2-face,
-and to get the final number we sum an arithmetic progreesion.
+and to get the final number we sum an arithmetic progression.
 
 We detail the strategy for 0-simplexes. Note that $\mathcal{H}_{1}^\star$ has exactly 
 $z_0, z_1, z_2, a_1, b_1$ and $z_3^j, j\in \{1,\ldots,2n\}$ as 0-simplices, which is $2n+5$
@@ -757,7 +834,7 @@ last $bp$-move, therefore the balloon's tail has to be of type $P_{2k-1}$ or $B_
 and we add $6\cdot(k-1)+2$ 0-simplices. 
 By adding the number of 0-simplices created by $bp$-moves from step 1 until step $k$ 
 we get  $3k^2-k$ 0-simplices. Since the number of steps is $n-1$, 
-and we have at the begining $2n+5$ 0-simplices, we have that $3n^2-5n+9$ is 
+and we have at the beginning $2n+5$ 0-simplices, we have that $3n^2-5n+9$ is 
 an upper bound for the number of 0-simplices. 
 \end{proof}
 
@@ -801,7 +878,7 @@ semi-plane $(\Pi'')$ is depicted as a {\em thick edge}. \index{thick edge}}
 \includegraphics[width=15 cm]{A.figs/controlmaps01novo2.pdf}
 \caption{\sf The effect of the general $wbp$-move
 in the combinatorial strut: the {\em star} \index{star} of a vertex 
-of a graph embedded in an onrientable
+of a graph embedded in an orientable
 surface (in our case the plane) is the counterclockwise cyclic sequence of 
 edges incident to the vertex (such an ordering is induced by the surface).
 The set of stars is called a { \em rotation} \index{rotation} and has the 
@@ -820,6 +897,7 @@ embedding of $\mathcal{W}_{m} \cup \mathcal{N}_{m}$.}
 \end{figure}
 
 \begin{algorithm}[Obtaining the rotations for the struts, arriving to $\mathcal{S}_n$]
+{\sf 
 BEGIN: $i=1$; $\mathcal{W}_i=\mathcal{W}'_i \cup \mathcal{W}''_i$ is formed by 
 $2n$-edges linking $a_1$ to $Z$ and $2n$ edges linking 
 $b_1$ to $Z$; we also have $\mathcal{N}_1=\varnothing$; REPEAT: $i \leftarrow i+1$; 
@@ -839,6 +917,7 @@ been subdivided into $a_{2\ell}, a_{2\ell+1}$ (resp. $b_{2\ell}, b_{2 \ell+1}$);
 also 2 new edges are added when going from $\mathcal{S}_{m-1}$ to $\mathcal{S}_{m}$ according to
 the rotation changing of Fig. \ref{fig:controlmaps01novo2}; 
 UNTIL $i=n$; Output $\mathcal{S}_n$; END.
+}
 \end{algorithm}
 
 It is easy to verify that the above algorithm is linear in $n$.
@@ -867,10 +946,18 @@ we add 4 new edges.
 \end{proof}
 
 
+We present an algorithm to obtain a rectilinear embedding in the plane $xz$ of
+$\mathcal{S}_n$. The algorithm is subdivided into two sub-algorithms:  
+the first one
+produces the $x$-coordinates of the vertices of $\mathcal{N}_n$ 
+and the second one produce the $z$-coordinates
+of the vertices of $\mathcal{S}_n$.
+
+
 \begin{figure}[H] 
 \begin{center}
-\includegraphics[width=14cm]{A.figs/coordX.pdf}
-\caption{\sf Algorithm to find the $x$-coordinates of the vertices of the left nervure
+\includegraphics[width=15.5cm]{A.figs/coordX2.pdf}
+\caption{\sf A linear sub-algorithm to find the $x$-coordinates of the vertices of the left nervure
 $\mathcal{N}'$ (the right nervure $\mathcal{N}''$ is similar). BEGIN: 
 find the BFS-number (\cite{cormen2001introduction}) of vertices of the tree $\mathcal{N}'$
 with root vertex being the leftmost one of $\mathcal{N}'$. Let the vertices be labeled by its BFS-number.
@@ -897,20 +984,20 @@ UNTIL all vertices are used; END.
 \begin{figure}[H] 
 \begin{center}
 \includegraphics[width=14cm]{A.figs/drawLastWing.pdf}
-\caption{\sf A linear algorithm for 
-rectilinearly embedding $\mathcal{W}'$, that is, the last left wing 
-(the right side of the last wing $\mathcal{W}''$ is similar). BEGIN:
+\caption{\sf A linear sub-algorithm to find the $z$-coordinates of the vertices
+for a rectilinear embedding of $\mathcal{W}'$
+($\mathcal{W}''$ is similar). BEGIN:
 by using the Algorithm of Fig. \ref{fig:coordX} we have already the $x$-coordinates
 of all the vertices of $\mathcal{W}'$. Let $\gamma_1, \gamma_2, 
 \ldots \gamma_k$ be the sequence of inverses of the 
 paths $\pi_i$'s, obtained in the algorithm of Fig. \ref{fig:coordX}; 
-let $y_1^1$ be the $y$-coordinate of the first vertex of $\gamma_1$; 
-$y_1^1 \leftarrow 0$; $i \leftarrow 0$; REPEAT: $i \leftarrow i+1$;  $j \leftarrow 0$; 
+let $z_1^1$ be the $z$-coordinate of the first vertex of $\gamma_1$; 
+$z_1^1 \leftarrow 0$; $i \leftarrow 0$; REPEAT: $i \leftarrow i+1$;  $j \leftarrow 0$; 
 REPEAT: $j \leftarrow j+1$; let $e_{ij}$ be the edge in the 
 nervure incident to $\gamma_i^{j}$ (the $j$-th vertex in the path $\gamma_i$)
 and $\gamma_i^{j-1}$; 
 let $e_{ij}'$ be the edge which succeeds $e_{ij}$ and $e_{ij}''$ 
-be the edge that preceeds it in the counterclockwise 
+be the edge that precedes it in the counterclockwise 
 rotation of vertex $\gamma_i^{j-1}$; note that the other ends of 
 $e_{ij}'$ and $e_{ij}''$ are $z_3^p$ and $z_3^q$ for some $p<q$;
 (Obs: in the case of $\gamma_1^1$ it might happen that $e_{11}''$ does not exist; 
@@ -918,7 +1005,7 @@ in this case define $e_{11}''$ as a virtual edge that links $\gamma_1^1$ to $z_3
 where $2n$ is the number of vertices of the $J^2$-gem);
 let $v$ be the intersection of the line $x=x_i^j$ and the edge $e_{ij}'$;
 let $w$ be the intersection of the line $x=x_i^j$ and the edge $e_{ij}''$;
-$y_i^j \leftarrow (v+w)/2$; UNTIL $j$ = length of $\gamma_i$; UNTIL $i = k$; 
+$z_i^j \leftarrow (v+w)/2$; UNTIL $j$ = length of $\gamma_i$; UNTIL $i = k$; 
 END.
 }
 \label{fig:drawLasWing}
@@ -947,7 +1034,7 @@ is the union of $Y$ with all line
 segments which link $x$ to $y \in Y$.
 The passage 
 $\mathcal{W}_1^ \diamond \rightarrow \mathcal{H}_1^\diamond$ is 
-straighforward by a cone algorithm:
+straightforward by a cone algorithm:
 for each $e'\in \mathcal{W}_1^{\diamond'}$ add the two 2-simplices $z_0\ast e'$ and $z_2\ast e'$
 to $\mathcal{H}^\diamond_1$;
 for each $e''\in \mathcal{W}_1^{\diamond''}$ add the two 2-simplices $z_1\ast e''$ and $z_2\ast e''$
@@ -976,7 +1063,7 @@ extended to an embedding of $\mathcal{H}^\diamond_1$ into $\mathbb{R}^3$,
 via the cone construction.
 \end{proposition}
 \begin{proof}
- Straighforward from the simple geometry of the situation. See Fig. \ref{fig:Wdiamond1}. 
+ Straightforward from the simple geometry of the situation. See Fig. \ref{fig:Wdiamond1}. 
 \end{proof}
 
 Let $\mathcal{L}_{i+1}^\star$ be a subset of the pillow $\mathcal{P}_{i+1}^\star$, formed by the part
@@ -988,8 +1075,8 @@ that comes from the tail of the balloon after the i-th $bp$-move is applied, see
 \caption{\sf The set $\mathcal{L}_{i+1}^\star$'s: at each step of 
 Theorem \ref{theo:teoremadeumalinha} we embed a set 
  $\mathcal{L}_{i+1}^\star$, $i=0,\ldots n-1$ of 2-simplices.
- These sets are the complemetary parts of the PL2-faces 
- already in $\mathcal{H}^\diamond_1$ after a change of colours
+ These sets are the complementary parts of the PL2-faces 
+ already in $\mathcal{H}^\diamond_1$ after a change of colors
  in the medial layer. 
 The process of replacing the combinatorial tail of a balloon 
 by the corresponding
@@ -1062,7 +1149,7 @@ The images $\chi_j$ we already know from previous $bp$-move, now we need to defi
 $\alpha_j, \beta_j$ and $\gamma_j.$
 Let $\beta_j$ be $\frac{z_2+\chi_{j+1}}{2}$ 
 for each $j=1,\ldots, i$.
-As the images $\alpha_j$ and $\gamma_j$ can be defined in analogus way, we just explain how to define each $\alpha_j$.
+As the images $\alpha_j$ and $\gamma_j$ can be defined in analogs way, we just explain how to define each $\alpha_j$.
 We know that each $\alpha_j$ is in the PL3-face $\nabla_r$. To 
 define each $\alpha_j$ we need 
 to reduce the PL3-face $\nabla_r$

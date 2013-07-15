@@ -1,7 +1,23 @@
+@book{cormen2001introduction,
+  title={Introduction to {A}lgorithms},
+  author={Cormen, Thomas H and Leiserson, Charles E and Rivest, Ronald L and Stein, Clifford},
+  year={2001},
+  publisher={MIT press}
+}
+
+@article{ullman1974design,
+  title={The design and analysis of computer algorithms},
+  author={Ullman, Jeffrey D and Aho, Alfred V and Hopcroft, John E},
+  journal={Addison-Wesley, Reading},
+  volume={4},
+  pages={1--2},
+  year={1974}
+}
+
 @article{lins2013B,
   title={Closed oriented 3-manifolds are equivalence classes of plane graphs},
   author={Lins, S. L.},
-  journal={arXiv:1305.4540v3 [math.GT]},
+  journal={arXiv:1305.4540v5 [math.GT]},
   year={2013},
 }
 
